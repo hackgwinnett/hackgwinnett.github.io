@@ -39,7 +39,6 @@ h4 {
 h5 {
 	font-size: 14px;
 	color: #2d3033;
-	text-transform: uppercase;
 	font-weight: 700;
 }
 .btn {
@@ -53,7 +52,6 @@ h5 {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   display: inline-block;
-  text-transform: uppercase;
 }
 .btn:hover, .btn:focus {
   background-color: #3d3d3d !important;
@@ -152,7 +150,6 @@ ul li {
 	font-weight: 400;
 	margin-left: 40px;
 	letter-spacing: 3px;
-	text-transform: uppercase;
 }
 .navigation a:hover, .navigation a.active {
 	color: #fff;
@@ -472,7 +469,6 @@ ul li {
 	font-size: 11px;
 	color: #7f7f7f;
 	letter-spacing: 2px;
-	text-transform: uppercase;
 }
 .footer a {
 	color: #7f7f7f;
@@ -598,7 +594,6 @@ margin-top:50px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
-	text-transform: uppercase;
 }
 .conForm .submitBnt:hover {
 	background:#3d3d3d;
