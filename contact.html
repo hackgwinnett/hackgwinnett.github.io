@@ -16,18 +16,36 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 
 textarea {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    width: 500px;
-    height: 200px;
+    width: 600px;
+    height: 250px;
+    border: none;
 }
 
 input {
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-    width: 500px;
+    border: none;
+    width: 600px;
+}
+
+#contactTitle {
+  color: rgb(45, 45, 45);
+  font-weight: bolder;
+  font-size: 55px;
+}
+
+#subject, #body {
+  background-color: rgb(180, 200, 180);
+  color: rgb(45, 45, 45);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#footer {
+  background-color: rgb(180, 200, 180);
 }
 
 </style>
@@ -56,13 +74,17 @@ input {
 
 <!-- Header -->
 <header class="w3-container w3-green w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Contact</h1>
+  <h1 id="contactTitle">Contact</h1>
+  <img id="divider" src="images/line.png"/>
+  <br/>
+  <br/>
+  <br/>
   <input id="subject", placeholder="Subject"/>
   <br/>
   <br/>
   <textarea id="body", placeholder="Body"></textarea>
   <br/>
-  <button class="w3-button w3-light-green w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top", onclick="sendEmail()">Email</button>
+  <button class="w3-button w3-light-grey w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top", onclick="sendEmail()">Email</button>
 </header>
 </div>
 
@@ -71,7 +93,7 @@ input {
 
 <!-- Footer -->
 
-  <div class="w3-xlarge w3-padding-32 w3-center">
+  <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
