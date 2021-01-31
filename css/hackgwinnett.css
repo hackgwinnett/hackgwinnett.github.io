@@ -1,0 +1,40 @@
+#homeImage {
+    width: 55px;
+    height: 55px;
+}
+
+#but {
+    text-align: center;
+    align-items: center;
+}
+
+#reg-button {
+    text-align: center;
+    align-items: center;
+}
+
+#name_container {
+    text-align: center;
+    align-items: center;
+}
+
+#wabydaby {
+    text-align: center;
+    align-items: center;
+}
+
+#topheader {
+    text-align: center;
+    align-items: center;
+}
+
+#insidetopheader {
+    text-align: center;
+    align-items: center;
+}
+
+#homeTitle {
+    color: rgb(45, 45, 45);
+    font-weight: bolder;
+    font-size: 75px;
+}
