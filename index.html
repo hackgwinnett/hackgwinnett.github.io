@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <html lang="en">
-<title>Contact</title>
+<title>HackGwinnett</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/jquery.fancybox.css">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/hackgwinnett.css">
 
 
 
@@ -28,34 +29,29 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     #mycontainer {
       min-height: 750px;
     }
-
-    #name_container{
-      margin-right: auto;
-      margin-left: auto;
-      border:1px solid transparent;
-      height:50px;
-      position:absolute ;
-      top:15px;
-      left:700px;
-    }
          
-         #but {
-               margin-right: auto;
+    #but {
+      margin-right: auto;
       margin-left: auto;
       border:1px solid transparent ;
       height:50px;
-      position:absolute ;
-             top:75px;
-            left:850px;
-         }
+      position: relative;
+      /*top:75px;*/
+      /*left:850px;*/
+    }
 
     p{
       width:10px;
       height:10px;
       border:1px solid black;
       border-radius:3px;
-      position:absolute ;
+      position: absolute;
       background: #ffffff;
+    }
+
+    #div-desktop {
+      text-align: center;
+      align-items: center;
     }
 
     @media screen and (max-width: 965px) {
@@ -68,9 +64,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       #div-desktop {    display: block;  }
 
     }
-         
-    
-
   </style>
  
  
@@ -78,12 +71,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <body>
     
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/colors.js"></script>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-green w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <!--<img id="homeImage", class="image w3-bar-item w3-hover-white" src="images/logo.png"/> -->
+    <!-- <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a> -->
+    <a href="http://hackgwinnett.github.io"><img id="homeImage", src="images/homelogo.png", class="w3-bar-block w3-hover-white"/></a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Q/A</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
     <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
@@ -103,27 +99,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
  
   <!-- banner text -->
-<header class="w3-container w3-green w3-center" style="padding:200px 60px">
-    <div class="col-md-10 col-md-offset-1">
+<header id="topheader", class="w3-container w3-green w3-center" style="padding:200px 60px">
 
+    <strong><h1 id="homeTitle">HackGwinnett</h1></strong>
+
+    <br/>
+    <br/>
+  
     <div id="but">
-          <a class="w3-button w3-light-grey w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top" href="https://tinyurl.com/hackgwinnett">Register For HackGwinnett 1.0</a>  
-        </div>
-        <div id="but "id="div-desktop">
-          <div id="name_container"></div>
-          <script src="./js/name_prework.js"></script>
-          <script src="js/stark.js"></script>
-          <br>
-        </div>
-
-        <!-- banner text -->
-      </div>
+      <a id="reg-button", class="w3-button w3-light-grey w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top" href="https://tinyurl.com/hackgwinnett">Register For HackGwinnett 1.0</a>  
+    </div>
+  
+    <!-- banner text -->
+  </div>
 </header>
 
 
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div id="wabydaby", class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-half">
       <h1>Hack-a-What?</h1>
@@ -141,7 +135,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-content">
 
     <div class="w3-first w3-center">
-      <h1 style="color:white">Sponsors</h1>
+      <h2>Sponsors</h2>
     </div>
  <div class="w3-first w3-center">
         <img src="images/bars2.png" alt="onesource">
