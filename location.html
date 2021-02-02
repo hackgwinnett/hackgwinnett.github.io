@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<title>Contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/hackgwinnett.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
 
+textarea {
+    width: 600px;
+    height: 250px;
+    border: none;
+}
+
+input {
+    border: none;
+    width: 600px;
+}
+
+#contactTitle {
+  color: rgb(45, 45, 45);
+  font-weight: bolder;
+  font-size: 55px;
+}
+
+#subject, #body {
+  background-color: rgb(180, 200, 180);
+  color: rgb(45, 45, 45);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#footer {
+  background-color: rgb(180, 200, 180);
+}
+
+#frame {
+    height: 750px;
+    width: 750px;
+}
+
+#title {
+    color: rgb(45, 45, 45);
+}
+
+</style>
+ </head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="http://hackgwinnett.github.io"><img id="homeImage", src="images/homelogo.png", class="w3-bar-block w3-hover-white"/></a>
+    <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Q/A</a>
+    <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
+    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Github</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-green w3-center" style="padding:128px 16px">
+    <h1 id="title">Location</h1>
+    <br/>
+    <iframe id="frame", src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.5375651192303!2d-84.06237238478761!3d33.953020080632925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5bcf7c51d0e1b%3A0x666719f592cdc63d!2sGwinnett%20School%20of%20Mathematics%2C%20Science%2C%20and%20Technology!5e0!3m2!1sen!2sus!4v1612230349847!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</header>
+</div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+
+  <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+ </div>
+
+
+<script>
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
+    function sendEmail() {
+        var subject = document.getElementById("subject").value;
+        var body = document.getElementById("body").value;
+        window.open("mailto:hackgwinnett@gmail.com?subject=" + subject + "&body=" + body);
+    }
+
+</script>
+
+</body>
+</html>
