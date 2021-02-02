@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<title>Q&A</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/hackgwinnett.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+textarea {
+    width: 600px;
+    height: 250px;
+    border: none;
+}
+
+input {
+    border: none;
+    width: 600px;
+}
+
+#contactTitle {
+  color: rgb(45, 45, 45);
+  font-weight: bolder;
+  font-size: 55px;
+}
+
+#subject, #body {
+  background-color: rgb(180, 200, 180);
+  color: rgb(45, 45, 45);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#footer {
+  background-color: rgb(180, 200, 180);
+}
+
+#c {
+  text-align: center;
+}
+
+h3 {
+  color: rgb(45, 45, 45);
+}
+
+p {
+  font-size: 17px;
+}
+
+</style>
+ </head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="http://hackgwinnett.github.io"><img id="homeImage", src="images/homelogo.png", class="w3-bar-block w3-hover-white"/></a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Q/A</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Github</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
+
+  <h1>Questions and Answers</h1>
+
+  <br>
+  <img id="divider" src="images/line.png"/>
+
+  <h3>What is a Hackathon?</h3>
+  <p>
+    A hackathon is a fun, competitive way of learning computer science concepts, software development, and problem solving.<br/>
+    Participants will work in groups (or alone) to create anything they can imagine relating to the theme of the event.
+  </p>
+
+  <br>
+
+  <h3>Who can attend?</h3>
+  <p>
+    Any GCPS middle or high school student may attend Hackgwinnett.
+  </p>
+
+  <br>
+
+  <h3>How much does it cost?</h3>
+  <p>
+    Admission is free, participants will be admitted on a first come, first serve basis.
+  </p>
+
+  <br>
+
+  <h3>What if I don’t know how to code?</h3>
+  <p>
+    That's okay! Hackathons are a great way to learn, meet new people, and gain experience.<br/>
+    We also plan to offer educational workshops to get beginners up to speed, as well as discuss more complex concepts in CS.
+  </p>
+
+  <br>
+
+  <h3>Will there be prizes?</h3>
+  <p>
+    Yes! We will have traditional first, second, and third place prizes as well as prizes for most creative projects, best solo projects, etc.
+  </p>
+
+  <br>
+
+  <h3>How do teams work?</h3>
+  <p>
+    Participants can choose to work in a team of up to four people, but solo projects are welcome too!
+  </p>
+
+  <br>
+
+  <h3>What are your future plans with Hackgwinnett?</h3>
+  <p>
+    We are planning to host smaller, more frequent competitive programming competitions focusing on algorithms and datastructures (similar to Leetcode or Google Kickstart).<br/>
+    As mentioned before, we are also passionate about CS education. We strive to host engaging workshops that help participants learn in a fun way.
+  </p>
+</header>
+</div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+
+  <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+ </div>
+
+
+<script>
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
+    function sendEmail() {
+        var subject = document.getElementById("subject").value;
+        var body = document.getElementById("body").value;
+        window.open("mailto:hackgwinnett@gmail.com?subject=" + subject + "&body=" + body);
+    }
+
+</script>
+
+</body>
+</html>
