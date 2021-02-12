@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<title>Q&A</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/hackgwinnett.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+textarea {
+    width: 600px;
+    height: 250px;
+    border: none;
+}
+
+input {
+    border: none;
+    width: 600px;
+}
+
+#contactTitle {
+  color: rgb(45, 45, 45);
+  font-weight: bolder;
+  font-size: 55px;
+}
+
+#subject, #body {
+  background-color: rgb(180, 200, 180);
+  color: rgb(45, 45, 45);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#footer {
+  background-color: rgb(180, 200, 180);
+}
+
+#c {
+  text-align: center;
+}
+
+h3 {
+  color: rgb(45, 45, 45);
+}
+
+p {
+  font-size: 17px;
+}
+
+</style>
+ </head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="http://hackgwinnett.github.io"><img id="homeImage", src="images/homelogo.png", class="w3-bar-block w3-hover-white"/></a>
+    <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Q/A</a>
+    <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
+    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Github</a>
+    <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
+
+  <h3>At HackGwinnett, we believe that starting a hackathon should be easy and accessible for everyone. That's why we made these tools to help you bring you build your own hackathon.</h3>
+    <img src="images/gren.PNG" usemap="#tools">
+    
+
+
+<map name="tools">
+    <area coords="62,266,370,379" shape="rect" href="https://github.com/hackgwinnett/birdie" 
+	alt="no" target="_blank">
+    <area coords="468,255,740,404" shape="rect" href="https://github.com/hackgwinnett/bogey" 
+	alt="no" target="_blank">
+    <area coords="800,272,1114,373" shape="0" href="https://github.com/hackgwinnett/pyscan" 
+	alt="no" target="_blank">
+</map>
+    
+    
+    
+
+</header>
+</div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+
+  <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+ </div>
+
+
+<script>
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
+    function sendEmail() {
+        var subject = document.getElementById("subject").value;
+        var body = document.getElementById("body").value;
+        window.open("mailto:hackgwinnett@gmail.com?subject=" + subject + "&body=" + body);
+    }
+
+</script>
+
+</body>
+</html>
