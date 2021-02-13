@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <html lang="en">
-<title>Q&A</title>
+<title>Tools</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ input {
     width: 600px;
 }
 
-#contactTitle {
+#contactTitle, #toolstitle {
   color: rgb(45, 45, 45);
   font-weight: bolder;
   font-size: 55px;
@@ -44,11 +44,24 @@ input {
   width: 1000px;
 }
 
+#message {
+  color: rgb(255, 255, 255);
+}
+
 #footer {
   background-color: rgb(180, 200, 180);
 }
 
 #c {
+  text-align: center;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#tools-content {
   text-align: center;
 }
 
@@ -58,6 +71,11 @@ h3 {
 
 p {
   font-size: 17px;
+}
+
+.desc {
+  color: rgb(45, 45, 45);
+  font-size: 22px;
 }
 
 </style>
@@ -87,24 +105,28 @@ p {
 
 <!-- Header -->
 <header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
-
-  <h3>At HackGwinnett, we believe that starting a hackathon should be easy and accessible for everyone. That's why we made these tools to help you bring you build your own hackathon.</h3>
-    <img src="images/gren.PNG" usemap="#tools">
-    
-
-
-<map name="tools">
-    <area coords="62,266,370,379" shape="rect" href="https://github.com/hackgwinnett/birdie" 
-	alt="no" target="_blank">
-    <area coords="468,255,740,404" shape="rect" href="https://github.com/hackgwinnett/bogey" 
-	alt="no" target="_blank">
-    <area coords="800,272,1114,373" shape="0" href="https://github.com/hackgwinnett/pyscan" 
-	alt="no" target="_blank">
-</map>
-    
-    
-    
-
+  <h1 id="toolstitle">Tools</h1>
+  <br>
+  <h3 id="message">
+    At HackGwinnett, we believe that starting a hackathon should be easy and accessible for everyone.<br>
+    That's why we made these tools to help you bring you build your own hackathon.
+  </h3>
+  <br>
+  <img src="images/line.png" id="divider">
+  <br>
+  <br>
+  <div id="tools-content">
+    <a href="https://www.github.com/hackgwinnett/bogey"><img class="icons" src="images/bogey.png" alt="Bogey"></a>
+    <p class="desc">Hackathon project judging system in a CLI</p>
+    <br>
+    <br>
+    <a href="https://www.github.com/hackgwinnett/birdie"><img class="icons" src="images/birdie.png"></a>
+    <p class="desc">Mass E-mailing solution for event planners</p>
+    <br>    
+    <br>
+    <a href="https://www.github.com/hackgwinnett/pyscan"><img class="icons" src="images/pyscan.png"></a>
+    <p class="desc">JSON parsing module for Python</p>
+  </div>
 </header>
 </div>
 
