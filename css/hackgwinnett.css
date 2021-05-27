@@ -1,5 +1,5 @@
 #homeImage {
-  width: 100%;
+width: 100%;
   max-width: 55px;
   height: auto;
 }
@@ -38,4 +38,11 @@
     color: rgb(45, 45, 45);
     font-weight: bolder;
     font-size: 600%;
+    font-size: 6vw;
 }
+
+#wab {
+     max-width: 100%;
+  height: auto;
+}
+
