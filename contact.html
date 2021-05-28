@@ -13,13 +13,46 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
+.fa-anchor,.fa-coffee {font-size:200vw}
+    
 
 textarea {
-    width: 600px;
-    height: 250px;
+    max-width:95%
+    height: relative;
     border: none;
 }
+    
+   
+
+        .comment {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+        .commenter {
+            float: left;
+        }
+
+        .commenter img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .comment-text-area {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+        .textinput {
+            float: left;
+            width: 100%;
+            min-height: 100px;
+            outline: none;
+            resize: none;
+            border: 1px solid grey;
+        }
 
 input {
     border: none;
@@ -38,6 +71,20 @@ input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
 }
+    
+    #subject{
+         width: 40%;
+            min-height: 20px;
+            outline: none;
+            resize: none;
+    }
+    
+    #body {
+         width: 85%;
+            min-height: 200px;
+            outline: none;
+            resize: none;
+    }
 
 #divider {
   height: 7px;
@@ -85,7 +132,16 @@ input {
   <input id="subject", placeholder="Subject"/>
   <br/>
   <br/>
+    
+    
+     <div class="container">
+         <div class="comment">
   <textarea id="body", placeholder="Body"></textarea>
+     </div>
+    </div>
+    
+    
+    
   <br/>
   <button class="w3-button w3-light-grey w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top", onclick="sendEmail()">Email</button>
 </header>
