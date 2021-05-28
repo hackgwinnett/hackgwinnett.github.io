@@ -12,6 +12,7 @@ width: 100%;
 #reg-button {
     text-align: center;
     align-items: center;
+    ;
 }
 
 #name_container {
@@ -46,3 +47,13 @@ width: 100%;
   height: auto;
 }
 
+
+#navDem{
+    position: relative; 
+  top: -125px;
+}
+
+#sponsors {
+    max-width: 100%;
+  height: auto;
+}
