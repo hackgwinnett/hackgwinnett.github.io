@@ -17,7 +17,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     
 
         textarea {
-            max-width:95%
+            max-width: 95%;
             height: relative;
             border: none;
         }
@@ -75,6 +75,7 @@ input {
     #subject{
          width: 40%;
             min-height: 20px;
+            width: 600px;
             outline: none;
             resize: none;
     }
@@ -82,6 +83,7 @@ input {
     #body {
          width: 85%;
             min-height: 200px;
+            width: 600px;
             outline: none;
             resize: none;
     }
@@ -141,9 +143,8 @@ input {
     </div>
     
     
-    
-  <br/>
-  <button class="w3-button w3-light-grey w3-border w3-border-white w3-round-large w3-padding-large w3-large w3-margin-top", onclick="sendEmail()">Email</button>
+    <br>
+  <button id="reg-button" class="w3-button w3-round-large w3-padding-medium w3-large", onclick="sendEmail()">Email</button>
 </header>
 </div>
 
