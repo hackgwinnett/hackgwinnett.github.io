@@ -12,7 +12,10 @@ width: 100%;
 #reg-button {
     text-align: center;
     align-items: center;
-    ;
+    background-color: rgb(144, 209, 142);
+    color:rgb(45, 45, 45);
+    font-size: 18px;
+    border: none;
 }
 
 #name_container {
