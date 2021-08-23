@@ -12,8 +12,8 @@ width: 100%;
 #reg-button {
     text-align: center;
     align-items: center;
-    background-color: rgb(144, 209, 142);
-    color:rgb(45, 45, 45);
+    background-color: black;
+    color:white;
     font-size: 18px;
     border: none;
 }
@@ -26,6 +26,7 @@ width: 100%;
 #wabydaby {
     text-align: center;
     align-items: center;
+    background-color: rgb(94, 142, 94);
 }
 
 #topheader {
@@ -48,6 +49,7 @@ width: 100%;
 #wab {
      max-width: 100%;
   height: auto;
+  border-radius: 50%;
 }
 
 
