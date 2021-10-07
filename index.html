@@ -79,10 +79,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   }
 
   #sponsor-div {
-    background-color: rgb(81, 117, 81);
+    background-color: rgb(68, 104, 68);
   }
 
-  #sponsor-title {
+  .sponsor-title {
     color: rgb(45, 45, 45);
     font-size: 27px;
     font-weight: bold;
@@ -92,14 +92,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     font-weight: bold;
   }
 
+  #jefywefy {
+    background-color: rgb(85, 119, 85);
+  }
+
   #smol {
-    background-color: rgb(69, 94, 69);
+    background-color: rgb(51, 70, 51);
   }
 
   .sponsor-img {
     max-width: 100%;
     height: auto;
   }
+
+  
+#divider {
+  height: 7px;
+  width: 350px;
+}
   </style>
  
  
@@ -149,7 +159,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   
     <div id="but">
       <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3z8paB4">Sign Me Up!</a>  
-        <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/MSsKBcRiUEu331bj8">Volunteer!</a> 
+        <!-- <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/MSsKBcRiUEu331bj8">Volunteer!</a> -->
         <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://discord.gg/5arhb9vGYr">Discord!</a>  
     </div>
   
@@ -179,24 +189,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
 </div>
 
+
+<div id="jefywefy" class="w3-first w3-center" style="padding-bottom: 3%; padding-top: 3%">
+  <h2 style="font-weight: bold;">Speakers</h2>
+    <a href="https://www.linkedin.com/in/jeffrey-jacob-234061136/"><img src="images/jeff.png" style="border-radius: 50%;"  alt="inspiritai" class="sponsor-img"></a>
+    <h4>Jeffrey Jacob, Amazon SWE</h4>
+</div>
+
 <!-- Second Grid -->
 <div id="sponsor-div" class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
 
-    <div class="w3-first w3-center" style="padding-bottom: 3%;">
-      <h2 id="sponsor-title">Speakers</h2>
-      <div>
-       
-        <a href="https://www.linkedin.com/in/jeffrey-jacob-234061136/"><img src="images/jeff.png" style="border-radius: 50%;padding-bottom: 2%;"  alt="inspiritai" class="sponsor-img"></a>
-        <h4>Jeffrey Jacob, Amazon SWE</h4>
-      
-      </div>
-    </div>
-
 
 
     <div class="w3-first w3-center">
-        <h2 id="sponsor-title">Sponsors<a id="atendcolor" href="https://www.instagram.com/p/CTfeyXsrvm9/"> (Attendee Benefits)</a></h2>
+        <h2 style="font-weight: bold;">Sponsors & Attendee Benefits</h2>
+        <img src="images/line.png" id="divider">
+        <br>
+        <br>
          <div>
           <a href="https://music.amazon.com/"><img src="images/amazon-music.png" alt="amazon music" class="sponsor-img" width="350px"></a>
           <a href="https://bit.ly/3n4Q5eS"><img src="images/slingshot-dark.png" alt="slingshot" class="sponsor-img"></a>
@@ -218,8 +228,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
    
   </div>
 </div>
-
-
 
 <!-- Footer -->
 
@@ -249,5 +257,3 @@ function myFunction() {
 
 </body>
 </html>
-
-<!---->
