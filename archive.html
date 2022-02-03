@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <html lang="en">
-<title>Q&A</title>
+<title>Tools</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ input {
     width: 600px;
 }
 
-#contactTitle {
+#contactTitle, #toolstitle {
   color: rgb(45, 45, 45);
   font-weight: bolder;
   font-size: 55px;
@@ -44,11 +44,24 @@ input {
   width: 350px;
 }
 
+#message {
+  color: rgb(255, 255, 255);
+}
+
 #footer {
   background-color: rgb(180, 200, 180);
 }
 
 #c {
+  text-align: center;
+}
+
+#divider {
+  height: 7px;
+  width: 1000px;
+}
+
+#tools-content {
   text-align: center;
 }
 
@@ -60,10 +73,15 @@ p {
   font-size: 17px;
 }
 
-#title {
+.desc {
   color: rgb(45, 45, 45);
-  font-weight: bolder;
+  font-size: 22px;
 }
+
+#message {
+  color: rgb(45, 45, 45)
+}
+
 </style>
  </head>
 <body>
@@ -95,61 +113,40 @@ p {
 
 <!-- Header -->
 <header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
-
-  <h1 id="title">Questions and Answers</h1>
-  <img src="images/line.png" id="divider">
-
+  <h1 id="toolstitle">Bulletin</h1>
   <br>
+  <h3 id="message">
+    Checkout the media linked below to view HackGwinnett's past and present projects.<br>
 
-  <h3>What is a Hackathon?</h3>
-  <p>
-    A hackathon is a fun, competitive way of learning computer science concepts, software development, and problem solving.<br/>
-    Participants will work in groups (or alone) to create anything they can imagine relating to the theme of the event.
-  </p>
-
+  </h3>
   <br>
-
-  <h3>Who can attend?</h3>
-  <p>
-    Any high-school student in Metro Atlanta is eligible to attend our first hackathon!
-  </p>
-
+  <img src="images/line.png" width="350px" height="7px"/>
   <br>
-
-  <h3>How much does it cost?</h3>
-  <p>
-    Admission is free, participants will sign up to secure their spot before the event.
-  </p>
-
   <br>
-
-  <h3>What if I don’t know how to code?</h3>
-  <p>
-    That's okay! Hackathons are a great way to learn, meet new people, and gain experience.<br/>
-    We also plan to offer educational workshops to get beginners up to speed, as well as discuss more complex concepts in CS.
-  </p>
-
-  <br>
-
-  <h3>Will there be prizes?</h3>
-  <p>
-    Yes! We will have traditional first, second, and third place prizes as well as prizes for most creative projects, best solo projects, etc.
-  </p>
-
-  <br>
-
-  <h3>How do teams work?</h3>
-  <p>
-    Participants can choose to work in a team of up to four people, but solo projects are welcome too!
-  </p>
-
-  <br>
-
-  <h3>What are your future plans with HackGwinnett?</h3>
-  <p>
-    We are planning to host smaller, more frequent competitive programming competitions focusing on algorithms and datastructures (similar to Leetcode or Google Kickstart).<br/>
-    As mentioned before, we are also passionate about CS education. We strive to host engaging workshops that help participants learn in a fun way.
-  </p>
+  <div id="tools-content">
+    <h1 class="desc">HackGwinnett[0]</h1>
+    <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett.devpost.com/project-gallery">HackGwinnett[0] Projects</a> 
+    <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing">HackGwinnett[0] Recap</a> 
+    
+    <br>
+    <br>
+    <h1 class="desc">Workshops</h1>
+    <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3Gs27F0">Recordings</a> 
+    
+    <br>    
+    <br>
+    <h1 class="desc">Chapters</h1>
+    <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large w3-disabled" href="https://bit.ly/3Gs27F0">Coming Soon!</a>
+    <h1 class="desc">Panel Series</h1>
+    <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large w3-disabled" href="https://bit.ly/3Gs27F0">Coming Soon!</a>
+    <br>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
 </header>
 </div>
 
@@ -159,7 +156,7 @@ p {
 <!-- Footer -->
 
   <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
-   <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
+  <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
  </div>
 
 
