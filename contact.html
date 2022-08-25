@@ -34,7 +34,6 @@
     }
 
     textarea {
-      max-width: 95%;
       height: relative;
       border: none;
     }
@@ -112,13 +111,26 @@
     #footer {
       background-color: rgb(180, 200, 180);
     }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+      input, textarea {
+        width: 80vw !important;
+      } 
+    }
   </style>
 </head>
 
 <body>
 
   <!-- Navbar -->
-  <div class="w3-top">
+  <div class="w3-top" style="flex-grow: 0">
     <div class="w3-bar w3-green w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -148,27 +160,25 @@
   </div>
 
   <!-- Header -->
-  <header class="w3-container w3-green w3-center" style="padding:128px 16px">
-    <h1 id="contactTitle">Contact</h1>
-    <img id="divider" src="images/line.png" />
-    <br />
-    <br />
-    <br />
-    <input id="subject" , placeholder="Subject" />
-    <br />
-    <br />
+  <header class="w3-container w3-green w3-center" style="flex-grow: 1; display: flex; justify-content: center; align-items: center">
+    <form style="margin: 20px;">
+      <h1 id="contactTitle">Contact</h1>
+      <img id="divider" src="images/line.png" />
+      <br />
+      <br />
+      <br />
+      <input id="subject" placeholder="Subject" />
+      <br />
+      <br />
 
-
-    <div class="container">
-      <div class="comment">
-        <textarea id="body" , placeholder="Body"></textarea>
+      <div class="container" style="padding: 0; margin-bottom: 20px">
+        <div class="comment">
+          <textarea id="body" , placeholder="Body"></textarea>
+        </div>
       </div>
-    </div>
-
-
-    <br>
-    <button id="reg-button" class="w3-button w3-round-large w3-padding-medium w3-large" ,
-      onclick="sendEmail()">Email</button>
+      <button id="reg-button" class="w3-button w3-round-large w3-padding-medium w3-large" ,
+        onclick="sendEmail()">Email</button>
+    </form>
   </header>
   </div>
 
