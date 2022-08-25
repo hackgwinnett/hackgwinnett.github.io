@@ -1,188 +1,209 @@
 <!DOCTYPE html>
+
 <head>
-<html lang="en">
-<title>Contact</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/hackgwinnett.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200vw}
-    
-
-        textarea {
-            max-width: 95%;
-            height: relative;
-            border: none;
-        }
-    
-   
-
-        .comment {
-            float: left;
-            width: 100%;
-            height: auto;
-        }
-
-        .commenter {
-            float: left;
-        }
-
-        .commenter img {
-            width: 35px;
-            height: 35px;
-        }
-
-        .comment-text-area {
-            float: left;
-            width: 100%;
-            height: auto;
-        }
-
-        .textinput {
-            float: left;
-            width: 100%;
-            min-height: 100px;
-            outline: none;
-            resize: none;
-            border: 1px solid grey;
-        }
-
-input {
-    border: none;
-    width: 600px;
-}
-
-#contactTitle {
-  color: rgb(45, 45, 45);
-  font-weight: bolder;
-  font-size: 55px;
-}
-
-#subject, #body {
-  background-color: rgb(180, 200, 180);
-  color: rgb(45, 45, 45);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-}
-    
-    #subject{
-         width: 40%;
-            min-height: 20px;
-            width: 600px;
-            outline: none;
-            resize: none;
+  <html lang="en">
+  <title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/hackgwinnett.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif
     }
-    
+
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200vw
+    }
+
+    textarea {
+      max-width: 95%;
+      height: relative;
+      border: none;
+    }
+
+    .comment {
+      float: left;
+      width: 100%;
+      height: auto;
+    }
+
+    .commenter {
+      float: left;
+    }
+
+    .commenter img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .comment-text-area {
+      float: left;
+      width: 100%;
+      height: auto;
+    }
+
+    .textinput {
+      float: left;
+      width: 100%;
+      min-height: 100px;
+      outline: none;
+      resize: none;
+      border: 1px solid grey;
+    }
+
+    input {
+      border: none;
+      width: 600px;
+    }
+
+    #contactTitle {
+      color: rgb(45, 45, 45);
+      font-weight: bolder;
+      font-size: 55px;
+    }
+
+    #subject,
     #body {
-         width: 85%;
-            min-height: 200px;
-            width: 600px;
-            outline: none;
-            resize: none;
+      background-color: rgb(180, 200, 180);
+      color: rgb(45, 45, 45);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
     }
 
-#divider {
-  height: 7px;
-  width: 350px;
-}
+    #subject {
+      width: 40%;
+      min-height: 20px;
+      width: 600px;
+      outline: none;
+      resize: none;
+    }
 
-#footer {
-  background-color: rgb(180, 200, 180);
-}
+    #body {
+      width: 85%;
+      min-height: 200px;
+      width: 600px;
+      outline: none;
+      resize: none;
+    }
 
-</style>
- </head>
+    #divider {
+      height: 7px;
+      width: 350px;
+    }
+
+    #footer {
+      background-color: rgb(180, 200, 180);
+    }
+  </style>
+</head>
+
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html"><img id="homeImage", src="images/homelogo.png", class="w3-bar-block w3-hover-white"/></a>
-    <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
-    <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-    <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">Github</a>
-    <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
-    <a href="archive.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
-    <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDem" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="q&a.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-    <a href="location.html" class="w3-bar-item w3-button w3-padding-large">Location</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-    <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-padding-large">Github</a>
-    <a href="git.html" class="w3-bar-item w3-button w3-padding-large">Tools</a>
-    <a href="archive.html" class="w3-bar-item w3-button w3-padding-large">Archive</a>
-    <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-padding-large">Blog</a>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="w3-container w3-green w3-center" style="padding:128px 16px">
-  <h1 id="contactTitle">Contact</h1>
-  <img id="divider" src="images/line.png"/>
-  <br/>
-  <br/>
-  <br/>
-  <input id="subject", placeholder="Subject"/>
-  <br/>
-  <br/>
-    
-    
-     <div class="container">
-         <div class="comment">
-  <textarea id="body", placeholder="Body"></textarea>
-     </div>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
+        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="index.html"><img id="homeImage" , src="images/homelogo.png" , class="w3-bar-block w3-hover-white" /></a>
+      <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+      <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
+      <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+      <a href="https://github.com/hackgwinnett"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">Github</a>
+      <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
+      <a href="archive.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
+      <a href="https://hackgwinnett.github.io/blog"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
     </div>
-    
-    
+
+    <!-- Navbar on small screens -->
+    <div id="navDem" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="q&a.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+      <a href="location.html" class="w3-bar-item w3-button w3-padding-large">Location</a>
+      <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+      <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-padding-large">Github</a>
+      <a href="git.html" class="w3-bar-item w3-button w3-padding-large">Tools</a>
+      <a href="archive.html" class="w3-bar-item w3-button w3-padding-large">Archive</a>
+      <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-padding-large">Blog</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="w3-container w3-green w3-center" style="padding:128px 16px">
+    <h1 id="contactTitle">Contact</h1>
+    <img id="divider" src="images/line.png" />
+    <br />
+    <br />
+    <br />
+    <input id="subject" , placeholder="Subject" />
+    <br />
+    <br />
+
+
+    <div class="container">
+      <div class="comment">
+        <textarea id="body" , placeholder="Body"></textarea>
+      </div>
+    </div>
+
+
     <br>
-  <button id="reg-button" class="w3-button w3-round-large w3-padding-medium w3-large", onclick="sendEmail()">Email</button>
-</header>
-</div>
+    <button id="reg-button" class="w3-button w3-round-large w3-padding-medium w3-large" ,
+      onclick="sendEmail()">Email</button>
+  </header>
+  </div>
 
   </div>
-</div>
+  </div>
 
-<!-- Footer -->
+  <!-- Footer -->
 
-  <div id= "footer", class="w3-xlarge w3-padding-32 w3-center">
+  <div id="footer" , class="w3-xlarge w3-padding-32 w3-center">
 
-     <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
+    <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
 
- </div>
+  </div>
 
 
-<script>
+  <script>
 
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
-    } else { 
+      } else {
         x.className = x.className.replace(" w3-show", "");
-    }
+      }
     }
 
     function sendEmail() {
-        var subject = document.getElementById("subject").value;
-        var body = document.getElementById("body").value;
-        window.open("mailto:hackgwinnett@gmail.com?subject=" + subject + "&body=" + body);
+      var subject = document.getElementById("subject").value;
+      var body = document.getElementById("body").value;
+      window.open("mailto:hackgwinnett@gmail.com?subject=" + subject + "&body=" + body);
     }
 
-</script>
+  </script>
 
 </body>
+
 </html>
