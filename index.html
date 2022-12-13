@@ -125,8 +125,28 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   width: 100%;
 }
 
+.videoContainer {
+  width: 100vw; /*now it is 100% of viewport (window) width.*/
+  display: inline-block;
+  position: relative;
+}
 
-  </style>
+.videoContainer::after {
+  padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
+  display: block;
+  content: '';
+}
+
+.videoContainer>iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+</style>
  
  
 </head>
@@ -192,6 +212,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
          <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/2pv68BtejrsZ1zuS8">HG 2.0 Feedback Form!</a>
          <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett.github.io/blog/">HG Blog!</a>
         <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett-2-0.devpost.com/project-gallery">HackGwinnett 2.0 Project Gallery!</a>
+        
     </div>
     <div>
     </div>
@@ -201,12 +222,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </header>
 
 
-<div id= "sched", class="w3-xlarge w3-padding-32 w3-center">
+<!-- <div id= "sched", class="w3-row-padding w3-padding-64 w3-container">
+</div> -->
 
-  <!-- <img src="images/sched.png" width="50%"> -->
-  <!-- <h5 data-aos="zoom-in" data-aos-delay="1200"><strong>Interested in sponsoring us? Click <a style="color:blue;"href="https://drive.google.com/file/d/13_msUDEAuoSAPzI228jqYDIniUhwwxVB/view?usp=sharing">here.</a></strong></h5> -->
-  <img src="images/sched2022.png" width="500px">
-
+<div class="videoContainer">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CvzxvPKVAiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <!-- First Grid -->
