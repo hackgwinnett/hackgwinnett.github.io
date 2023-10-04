@@ -52,6 +52,12 @@ width: 100%;
   border-radius: 50%;
 }
 
+#imgdab {
+    max-width: 100%;
+    height: auto;
+    padding-right: 5%;
+}
+
 
 #navDem{
     position: relative; 
