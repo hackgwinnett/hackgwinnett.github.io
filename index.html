@@ -126,6 +126,10 @@
     background-color: rgb(85, 119, 85);
   }
 
+  #wabyshop {
+    background-color: rgb(75, 130, 80);
+  }
+
   #smol {
     background-color: rgb(51, 70, 51);
   }
@@ -135,10 +139,21 @@
     height: auto;
   }
 
+  #workshoplist {
+    color: rgb(45, 45, 45);
+  }
 
   #divider {
     height: 7px;
     width: 350px;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  li::before{
+    content: "\2192";
   }
 
   iframe {
@@ -298,7 +313,34 @@
     <h4>Jeffrey Jacob, Amazon SDE</h4>
 </div> -->
 
-  <!-- Second Grid -->
+
+  <!-- Second Grid-->
+  <div id="wabyshop" class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-half" data-aos="fade-up-right">
+        <img id="wab" src="images\HackGwinnett3-Schedule.png" alt="drone">
+      </div>
+      <div class="w3-half w3-right">
+        <h2 data-aos="fade-up-left">
+          HackGwinnett3 Information
+        </h2>
+        <h5 data-aos="fade-up-left" style="line-height: 1.6;" class="w3-padding-32" style="padding:3%">
+          At HackGwinnett3 this year, we are offering 7!! workshops:
+          <ul>
+            <li id="workshoplist">Front End Development</li>
+            <li id="workshoplist">Mobile App Development</li>
+            <li id="workshoplist">Functional Programming</li>
+            <li id="workshoplist">Intro to Continuous Integration (CI)</li>
+            <li id="workshoplist">Machine Learning / Artificial Intelligence</li>
+            <li id="workshoplist">Basic Cryptography</li>
+            <li id="workshoplist">Computer Vision</li>
+          </ul>
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Third Grid -->
   <div id="sponsor-div" class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
 
