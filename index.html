@@ -1,309 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>HackGwinnett</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico" />
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/hackgwinnett.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/hackgwinnett.css" />
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
 
-<head>
-  <title>HackGwinnett</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-  <link rel="stylesheet" href="css/hackgwinnett.css">
-  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/hackgwinnett.css">
-  <!-- AOS (Animate On Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-</head>
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Montserrat", sans-serif;
+    }
 
-<style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Montserrat", sans-serif
-  }
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif;
+    }
 
-  .w3-bar,
-  h1,
-  button {
-    font-family: "Montserrat", sans-serif
-  }
+    .w3-button-outlined {
+      fill: transparent !important;
+      stroke: currentColor !important;
+    }
 
-  .fa-anchor,
-  .fa-coffee {
-    font-size: 200vw
-  }
-</style>
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200vw;
+    }
+  </style>
 
-<style>
-  #atendcolor {
-    color: #00ced1;
-  }
+  <style>
+    #atendcolor {
+      color: #00ced1;
+    }
 
-  #but {
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px solid transparent;
-    height: auto;
-    position: relative;
-    /*top:75px;*/
-    /*left:850px;*/
-  }
+    #but {
+      margin-right: auto;
+      margin-left: auto;
+      border: 1px solid transparent;
+      height: auto;
+      position: relative;
+      /*top:75px;*/
+      /*left:850px;*/
+    }
 
-  p {
-    width: 100%;
-    height: relative;
-    border: 1px solid black;
-    border-radius: 3vw;
-    position: absolute;
-    background: #ffffff;
-  }
-
-  #div-desktop {
-    text-align: center;
-    align-items: center;
-  }
-
-  @media only screen and (min-width: 375px) and (max-width: 767px) {
-    #div-mobile {
-      display: block;
+    p {
+      width: 100%;
+      height: relative;
+      border: 1px solid black;
+      border-radius: 3vw;
+      position: absolute;
+      background: #ffffff;
     }
 
     #div-desktop {
-      display: block;
+      text-align: center;
+      align-items: center;
     }
 
-    #homeTitle {
+    @media only screen and (min-width: 375px) and (max-width: 767px) {
+      #div-mobile {
+        display: block;
+      }
+
+      #div-desktop {
+        display: block;
+      }
+
+      #homeTitle {
+        color: rgb(45, 45, 45);
+        font-weight: bolder;
+        font-size: 200%;
+        margin-top: 25%;
+      }
+    }
+
+    @media screen and (min-width: 360px) {
+      #div-mobile {
+        display: none;
+      }
+
+      #div-desktop {
+        display: block;
+      }
+    }
+
+    #sched {
+      background-color: rgb(96, 158, 96);
+    }
+
+    #sponsor-div {
+      background-color: rgb(68, 104, 68);
+    }
+
+    .sponsor-title {
       color: rgb(45, 45, 45);
-      font-weight: bolder;
-      font-size: 200%;
-      margin-top: 25%
+      font-size: 27px;
+      font-weight: bold;
     }
 
-  }
-
-  @media screen and (min-width: 360px) {
-    #div-mobile {
-      display: none;
+    #what {
+      font-weight: bold;
     }
 
-    #div-desktop {
+    #jefywefy {
+      background-color: rgb(85, 119, 85);
+    }
+
+    #wabyshop {
+      background-color: rgb(75, 130, 80);
+    }
+
+    #smol {
+      background-color: rgb(51, 70, 51);
+    }
+
+    .sponsor-img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #workshoplist {
+      color: rgb(45, 45, 45);
+    }
+
+    #divider {
+      height: 7px;
+      width: 350px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    li::before {
+      content: "\2192";
+    }
+
+    iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+    }
+
+    video {
+      height: 100%;
+      width: 100%;
+    }
+
+    .videoContainer {
+      width: 100vw;
+      /*now it is 100% of viewport (window) width.*/
+      display: inline-block;
+      position: relative;
+    }
+
+    .videoContainer::after {
+      padding-top: 56.25%;
+      /* 16:9 ratio - divide height by width and multiply by 100 */
       display: block;
+      content: "";
     }
 
-  }
+    .videoContainer > iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
 
+  <body>
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="js/colors.js"></script>
 
-  #sched {
-    background-color: rgb(96, 158, 96);
-  }
+    <!-- Navbar -->
 
-  #sponsor-div {
-    background-color: rgb(68, 104, 68);
-  }
+    <div class="w3-top">
+      <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+        <a
+          class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
+          href="javascript:void(0);"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="index.html"
+          ><img
+            id="homeImage"
+            src="images/homelogo.png"
+            class="w3-bar-block w3-hover-white"
+        /></a>
+        <a
+          href="q&a.html"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >FAQ</a
+        >
+        <a
+          href="location.html"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Location</a
+        >
+        <a
+          href="contact.html"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Contact</a
+        >
+        <a
+          href="https://github.com/hackgwinnett"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          target="_blank"
+          >Github</a
+        >
+        <a
+          href="git.html"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Tools</a
+        >
+        <a
+          href="archive.html"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Bulletin</a
+        >
+        <a
+          href="https://hackgwinnett.github.io/blog"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Blog</a
+        >
+      </div>
 
-  .sponsor-title {
-    color: rgb(45, 45, 45);
-    font-size: 27px;
-    font-weight: bold;
-  }
-
-  #what {
-    font-weight: bold;
-  }
-
-  #jefywefy {
-    background-color: rgb(85, 119, 85);
-  }
-
-  #wabyshop {
-    background-color: rgb(75, 130, 80);
-  }
-
-  #smol {
-    background-color: rgb(51, 70, 51);
-  }
-
-  .sponsor-img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  #workshoplist {
-    color: rgb(45, 45, 45);
-  }
-
-  #divider {
-    height: 7px;
-    width: 350px;
-  }
-
-  li{
-    list-style: none;
-  }
-
-  li::before{
-    content: "\2192";
-  }
-
-  iframe {
-    border: none;
-    height: 100%;
-    width: 100%;
-  }
-
-  video {
-    height: 100%;
-    width: 100%;
-  }
-
-  .videoContainer {
-    width: 100vw;
-    /*now it is 100% of viewport (window) width.*/
-    display: inline-block;
-    position: relative;
-  }
-
-  .videoContainer::after {
-    padding-top: 56.25%;
-    /* 16:9 ratio - divide height by width and multiply by 100 */
-    display: block;
-    content: '';
-  }
-
-  .videoContainer>iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-</style>
-
-<body>
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="js/colors.js"></script>
-
-  <!-- Navbar -->
-
-
-  <div class="w3-top">
-    <div class="w3-bar w3-green w3-card w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
-        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="index.html"><img id="homeImage" src="images/homelogo.png" class="w3-bar-block w3-hover-white" /></a>
-      <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
-      <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
-      <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-      <a href="https://github.com/hackgwinnett"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">Github</a>
-      <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
-      <a href="archive.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
-      <a href="https://hackgwinnett.github.io/blog"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
-
+      <!-- Navbar on small screens -->
+      <div
+        id="navDemo"
+        class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"
+      >
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large"
+          >Home</a
+        >
+        <a href="q&a.html" class="w3-bar-item w3-button w3-padding-large"
+          >FAQ</a
+        >
+        <a href="location.html" class="w3-bar-item w3-button w3-padding-large"
+          >Location</a
+        >
+        <a href="contact.html" class="w3-bar-item w3-button w3-padding-large"
+          >Contact</a
+        >
+        <a
+          href="https://github.com/hackgwinnett"
+          class="w3-bar-item w3-button w3-padding-large"
+          >Github</a
+        >
+        <a href="git.html" class="w3-bar-item w3-button w3-padding-large"
+          >Tools</a
+        >
+        <a href="archive.html" class="w3-bar-item w3-button w3-padding-large"
+          >Bulletin</a
+        >
+        <a
+          href="https://hackgwinnett.github.io/blog"
+          class="w3-bar-item w3-button w3-padding-large"
+          >Blog</a
+        >
+      </div>
     </div>
 
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="q&a.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-      <a href="location.html" class="w3-bar-item w3-button w3-padding-large">Location</a>
-      <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-      <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-padding-large">Github</a>
-      <a href="git.html" class="w3-bar-item w3-button w3-padding-large">Tools</a>
-      <a href="archive.html" class="w3-bar-item w3-button w3-padding-large">Bulletin</a>
-      <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-padding-large">Blog</a>
-    </div>
-  </div>
-
-  <!-- Header -->
-
-  <!-- banner text -->
-
-  <header id="div-desktop" class="w3-container w3-green w3-center" style="padding:5%">
-
-    <strong>
-      <h1 id="homeTitle" data-aos="fade-up" data-aos-delay="300">HackGwinnett</h1>
-    </strong>
-
-    <img src="images/line.png" id="divider">
-    <br>
-    <br>
-    <h4 data-aos="fade-down" data-aos-delay="500">HackGwinnett3: October 28, 2023</h4>
-
-
-    <br />
-    <br />
-
-    <div id="but">
-      <!-- <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/MSsKBcRiUEu331bj8">Volunteer!</a> -->
-      <!-- <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3PwudVy">Chapter Application</a>
-        <a data-aos="fade-left" data-aos-delay="1000" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing">Chapter Information</a> -->
-      <!-- <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett.github.io/blog/">Our Blog!</a> -->
-      <a data-aos="fade-right" data-aos-delay="800" id="reg-button"
-        class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/cjtMgb4huFo6ZF4G9">HackGwinnett3 Registration Form!</a>
-      <a data-aos="fade-right" data-aos-delay="800" id="reg-button"
-        class="w3-button w3-round-large w3-padding-medium w3-large" href="https://discord.gg/M5JM3USkeW">HackGwinnett
-        Discord!</a>
-      <a data-aos="fade-right" data-aos-delay="800" id="reg-button"
-        class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett.github.io/blog/">HG
-        Blog!</a>
-      <a data-aos="fade-right" data-aos-delay="800" id="reg-button"
-        class="w3-button w3-round-large w3-padding-medium w3-large"
-        href="https://hackgwinnett-2-0.devpost.com/project-gallery">HackGwinnett 2.0 Project Gallery!</a>
-    </div>
+    <!-- Header -->
 
     <!-- banner text -->
-  </header>
 
+    <header
+      id="div-desktop"
+      class="w3-container w3-green w3-center"
+      style="padding: 5%"
+    >
+      <strong>
+        <h1 id="homeTitle" data-aos="fade-up" data-aos-delay="300">
+          HackGwinnett
+        </h1>
+      </strong>
 
-  <!-- <div id= "sched", class="w3-row-padding w3-padding-64 w3-container">
+      <img src="images/line.png" id="divider" />
+      <br />
+      <br />
+      <h4 data-aos="fade-down" data-aos-delay="500">
+        HackGwinnett3: October 28, 2023
+      </h4>
+
+      <br />
+      <br />
+
+      <div id="but">
+        <!-- <a id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://forms.gle/MSsKBcRiUEu331bj8">Volunteer!</a> -->
+        <!-- <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3PwudVy">Chapter Application</a>
+        <a data-aos="fade-left" data-aos-delay="1000" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing">Chapter Information</a> -->
+        <!-- <a data-aos="fade-right" data-aos-delay="800" id="reg-button", class="w3-button w3-round-large w3-padding-medium w3-large" href="https://hackgwinnett.github.io/blog/">Our Blog!</a> -->
+        <a
+          data-aos="fade-right"
+          data-aos-delay="800"
+          id="reg-button"
+          class="w3-button w3-round-large w3-padding-medium w3-large"
+          href="https://forms.gle/6JQT1XnzsjF5b8Qo6"
+        >
+          Apply to be an HackGwinnett Officer!
+        </a>
+        <a
+          data-aos="fade-right"
+          data-aos-delay="800"
+          id="reg-button"
+          class="w3-button w3-round-large w3-padding-medium w3-large"
+          href="https://discord.gg/M5JM3USkeW"
+          >HackGwinnett Discord!</a
+        >
+        <a
+          data-aos="fade-right"
+          data-aos-delay="800"
+          id="reg-button"
+          class="w3-button w3-round-large w3-padding-medium w3-large"
+          href="https://hackgwinnett.github.io/blog/"
+          >HG Blog!</a
+        >
+        <a
+          data-aos="fade-right"
+          data-aos-delay="800"
+          id="reg-button"
+          class="w3-button w3-round-large w3-padding-medium w3-large"
+          href="https://hackgwinnett-2-0.devpost.com/project-gallery"
+          >HackGwinnett 2.0 Project Gallery!</a
+        >
+      </div>
+
+      <!-- banner text -->
+    </header>
+
+    <!-- <div id= "sched", class="w3-row-padding w3-padding-64 w3-container">
 </div> -->
 
-  <div class="videoContainer">
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=J1_x9p6g6Kc" title="YouTube video player"
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-  </div>
-
-  <!-- First Grid -->
-  <div id="wabydaby" class="w3-row-padding w3-padding-64 w3-container">
-    <div class="w3-content">
-      <div class="w3-half">
-        <h1 data-aos="fade-up-right" id="what">Hack-a-What?</h1>
-        <h5 data-aos="fade-up-right" style="line-height: 1.6;" class="w3-padding-32" style="padding:3%">
-          HackGwinnett features mentors, workshops, and prizes, and strives to build an inclusive environment for
-          individuals interested in technology. They run Panel Series and HackFest events for younger kids interested in
-          technology.<br>
-          HackGwinnett's signature event is its annual hackathon, free of cost, hosted at GSMST for high school students
-          all over Metro Atlanta. Here, students gather to create innovative solutions to real-world problems within a
-          short time constraint.<br>
-          Be on the lookout for HackGwinnett's third hackathon on October 28th to build awesome projects, participate in
-          enriching workshops, and make new friends!
-        </h5>
-      </div>
-      <div class="w3-half w3-right" data-aos="fade-up-left">
-        <img id="wab" src="images/vec.png" alt="drone">
-      </div>
-
+    <div class="videoContainer">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/watch?v=J1_x9p6g6Kc"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
-  </div>
 
+    <!-- First Grid -->
+    <div id="wabydaby" class="w3-row-padding w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-half">
+          <h1 data-aos="fade-up-right" id="what">Hack-a-What?</h1>
+          <h5
+            data-aos="fade-up-right"
+            style="line-height: 1.6"
+            class="w3-padding-32"
+            style="padding: 3%"
+          >
+            HackGwinnett features mentors, workshops, and prizes, and strives to
+            build an inclusive environment for individuals interested in
+            technology. They run Panel Series and HackFest events for younger
+            kids interested in technology.<br />
+            HackGwinnett's signature event is its annual hackathon, free of
+            cost, hosted at GSMST for high school students all over Metro
+            Atlanta. Here, students gather to create innovative solutions to
+            real-world problems within a short time constraint.<br />
+            Be on the lookout for HackGwinnett's third hackathon on October 28th
+            to build awesome projects, participate in enriching workshops, and
+            make new friends!
+          </h5>
+        </div>
+        <div class="w3-half w3-right" data-aos="fade-up-left">
+          <img id="wab" src="images/vec.png" alt="drone" />
+        </div>
+      </div>
+    </div>
 
-  <!-- <div id="jefywefy" class="w3-first w3-center" style="padding-bottom: 3%; padding-top: 3%">
+    <!-- <div id="jefywefy" class="w3-first w3-center" style="padding-bottom: 3%; padding-top: 3%">
   <h1 data-aos="fade-up-right" id="what">Chapters</h1>
   <img src="images/HackGwinnett Chapters.png" alt="Chapters Ad" width="500px" data-aos="fade-up-right">
   
@@ -313,114 +422,249 @@
     <h4>Jeffrey Jacob, Amazon SDE</h4>
 </div> -->
 
-
-  <!-- Second Grid-->
-  <div id="wabyshop" class="w3-row-padding w3-padding-64 w3-container">
-    <div class="w3-content">
-      <div class="w3-half" data-aos="fade-up-right">
-        <img id="imgdab" src="images\HackGwinnett3-Schedule.png" alt="drone">
-      </div>
-      <div class="w3-half w3-right">
-        <h2 data-aos="fade-up-left">
-          HackGwinnett3 Information
-        </h2>
-        <h5 data-aos="fade-up-left" style="line-height: 1.6;" class="w3-padding-32" style="padding:3%">
-          At HackGwinnett3 this year, we are offering 7 workshops:
-          <ul>
-            <li id="workshoplist">Front End Development (EASY): <br> Dive into the world of HTML/CSS/JS with an introduction to websites and front-end code.</li>
-            <li id="workshoplist">Mobile App Development (ADVANCED): <br>Learn how to construct a mobile app using React Native and Expo.</li>
-            <li id="workshoplist">Functional Programming (EASY): <br>Check out the concept of functional programming: programs solely from functions. </li>
-            <li id="workshoplist">Intro to Continuous Integration (ADVANCED): <br>Immerse yourself in the Git universe for building and testing new programs.</li>
-            <li id="workshoplist">Machine Learning / Artificial Intelligence (INTERMEDIATE): <br>Create ML models and use AI algorithms and RNNs to solve real-world problems.</li>
-            <li id="workshoplist">Basic Cryptography (EASY/INTERMEDIATE): <br>Explore encryption, decryption, and several ciphers in programming.</li>
-            <li id="workshoplist">Computer Vision (ADVANCED): <br>Build a computer vision, image-based Convolutional Neural Network using Tensorflow.</li>
-          </ul>
-        </h5>
-      </div>
-    </div>
-  </div>
-
-  <!-- Third Grid -->
-  <div id="sponsor-div" class="w3-row-padding w3-padding-64 w3-container">
-    <div class="w3-content">
-
-
-
-      <div class="w3-first w3-center">
-        <h2 data-aos="flip-left" data-aos-duration="1000" style="font-weight: bold;">Sponsors & Attendee Benefits</h2>
-        <img src="images/line.png" id="divider">
-        <br>
-        <br>
-        <div>
-          <a data-aos="fade-left" href="https://music.amazon.com/"><img src="images/amazon-music.png" alt="amazon music"
-              class="sponsor-img" width="400px"></a>
-          <h4>Prizes Sponored by Amazon Music</h4>
-          <br>
-          <br>
-          <a href="https://www.repl.it"><img data-aos="fade-right" src="images/replit3.png" alt="replit"
-              class="sponsor-img" width="350px"></a>
-          <a href="https://bit.ly/3n4Q5eS"><img data-aos="fade-left" src="images/slingshot-dark.png" alt="slingshot"
-              class="sponsor-img" width="350px"></a>
-          <a href="https://www.inspiritai.com/"><img data-aos="fade-right" src="images/inspirit2.png" alt="inspiritai"
-              class="sponsor-img" width="350px"></a>
-          <a href="https://www.taskade.com"><img data-aos="fade-left" src="images/taskade.png" alt="taskade"
-              class="sponsor-img" width="350px"></a>
-          <a href="https://www.egghead.io"><img data-aos="fade-right" src="images/egghead.png" alt="egghead"
-              class="sponsor-img" width="350px"></a>
-          <a href="https://hackclub.com/"><img data-aos="fade-left" src="images/hackclub2.png" width="350px"
-              alt="hackclub" class="sponsor-img"></a>
-          <a href="https://www.interviewcake.com/"><img data-aos="fade-right" src="images/interviewcake.png"
-              alt="interview cake" class="sponsor-img" width="350px"></a>
-          <img data-aos="fade-left" src="images/bars2.png" alt="onesource" class="sponsor-img">
-          <img data-aos="flip-down" alt="mie coach" src="images/mie-logo.png" width="200px">
-          <a href="https://www.gcpsk12.org/GSMST"><img data-aos="flip-down" src="images/gsmst.png" alt="gsmst"
-              class="sponsor-img"></a>
-
-
+    <!-- Second Grid-->
+    <div id="wabyshop" class="w3-row-padding w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-half" data-aos="fade-up-right">
+          <img
+            id="imgdab"
+            src="images\HackGwinnett3-Schedule.png"
+            alt="drone"
+          />
+        </div>
+        <div class="w3-half w3-right">
+          <h2 data-aos="fade-up-left">HackGwinnett3 Information</h2>
+          <h5
+            data-aos="fade-up-left"
+            style="line-height: 1.6"
+            class="w3-padding-32"
+            style="padding: 3%"
+          >
+            At HackGwinnett3 this year, we are offering 7 workshops:
+            <ul>
+              <li id="workshoplist">
+                Front End Development (EASY): <br />
+                Dive into the world of HTML/CSS/JS with an introduction to
+                websites and front-end code.
+              </li>
+              <li id="workshoplist">
+                Mobile App Development (ADVANCED): <br />Learn how to construct
+                a mobile app using React Native and Expo.
+              </li>
+              <li id="workshoplist">
+                Functional Programming (EASY): <br />Check out the concept of
+                functional programming: programs solely from functions.
+              </li>
+              <li id="workshoplist">
+                Intro to Continuous Integration (ADVANCED): <br />Immerse
+                yourself in the Git universe for building and testing new
+                programs.
+              </li>
+              <li id="workshoplist">
+                Machine Learning / Artificial Intelligence (INTERMEDIATE):
+                <br />Create ML models and use AI algorithms and RNNs to solve
+                real-world problems.
+              </li>
+              <li id="workshoplist">
+                Basic Cryptography (EASY/INTERMEDIATE): <br />Explore
+                encryption, decryption, and several ciphers in programming.
+              </li>
+              <li id="workshoplist">
+                Computer Vision (ADVANCED): <br />Build a computer vision,
+                image-based Convolutional Neural Network using Tensorflow.
+              </li>
+            </ul>
+          </h5>
         </div>
       </div>
-
-
-
-
     </div>
-  </div>
 
-  <!-- Footer -->
+    <!-- Third Grid -->
+    <div id="sponsor-div" class="w3-row-padding w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-first w3-center">
+          <h2
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            style="font-weight: bold"
+          >
+            Sponsors & Attendee Benefits
+          </h2>
+          <img src="images/line.png" id="divider" />
+          <br />
+          <br />
+          <div>
+            <a data-aos="fade-left" href="https://music.amazon.com/"
+              ><img
+                src="images/amazon-music.png"
+                alt="amazon music"
+                class="sponsor-img"
+                width="400px"
+            /></a>
+            <h4>Prizes Sponored by Amazon Music</h4>
+            <br />
+            <br />
+            <a href="https://www.repl.it"
+              ><img
+                data-aos="fade-right"
+                src="images/replit3.png"
+                alt="replit"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <a href="https://bit.ly/3n4Q5eS"
+              ><img
+                data-aos="fade-left"
+                src="images/slingshot-dark.png"
+                alt="slingshot"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <a href="https://www.inspiritai.com/"
+              ><img
+                data-aos="fade-right"
+                src="images/inspirit2.png"
+                alt="inspiritai"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <a href="https://www.taskade.com"
+              ><img
+                data-aos="fade-left"
+                src="images/taskade.png"
+                alt="taskade"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <a href="https://www.egghead.io"
+              ><img
+                data-aos="fade-right"
+                src="images/egghead.png"
+                alt="egghead"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <a href="https://hackclub.com/"
+              ><img
+                data-aos="fade-left"
+                src="images/hackclub2.png"
+                width="350px"
+                alt="hackclub"
+                class="sponsor-img"
+            /></a>
+            <a href="https://www.interviewcake.com/"
+              ><img
+                data-aos="fade-right"
+                src="images/interviewcake.png"
+                alt="interview cake"
+                class="sponsor-img"
+                width="350px"
+            /></a>
+            <img
+              data-aos="fade-left"
+              src="images/bars2.png"
+              alt="onesource"
+              class="sponsor-img"
+            />
+            <img
+              data-aos="flip-down"
+              alt="mie coach"
+              src="images/mie-logo.png"
+              width="200px"
+            />
+            <a href="https://www.gcpsk12.org/GSMST"
+              ><img
+                data-aos="flip-down"
+                src="images/gsmst.png"
+                alt="gsmst"
+                class="sponsor-img"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div id="smol" class="w3-padding-32" style="text-align:center;font-size: 80%;align-content:center;">
-    <a style="border-right: 2px solid #c4c4c4;display: inline-block;padding: 0 15px;color:white" href="q&a.html">FAQ</a>
+    <!-- Footer -->
 
-    <a style="border-right: 2px solid #c4c4c4;display: inline-block;padding: 0 15px;color:white;"
-      href="location.html">Location</a>
-    <a style="border-right: 2px solid #c4c4c4;display: inline-block;padding: 0 15px;color:white;"
-      href="https://github.com/hackgwinnett">Github</a>
-    <a style="border-right: 2px solid #c4c4c4;display: inline-block;padding: 0 15px;color:white;"
-      href="contact.html">Contact</a>
-    <a style="border-right: 2px solid #c4c4c4;display: inline-block;padding: 0 15px;color:white;"
-      href="git.html">Tools</a>
-    <a style="display: inline-block;padding: 0 15px;color:white;" href="archive.html">Archive</a>
-  </div>
+    <div
+      id="smol"
+      class="w3-padding-32"
+      style="text-align: center; font-size: 80%; align-content: center"
+    >
+      <a
+        style="
+          border-right: 2px solid #c4c4c4;
+          display: inline-block;
+          padding: 0 15px;
+          color: white;
+        "
+        href="q&a.html"
+        >FAQ</a
+      >
 
+      <a
+        style="
+          border-right: 2px solid #c4c4c4;
+          display: inline-block;
+          padding: 0 15px;
+          color: white;
+        "
+        href="location.html"
+        >Location</a
+      >
+      <a
+        style="
+          border-right: 2px solid #c4c4c4;
+          display: inline-block;
+          padding: 0 15px;
+          color: white;
+        "
+        href="https://github.com/hackgwinnett"
+        >Github</a
+      >
+      <a
+        style="
+          border-right: 2px solid #c4c4c4;
+          display: inline-block;
+          padding: 0 15px;
+          color: white;
+        "
+        href="contact.html"
+        >Contact</a
+      >
+      <a
+        style="
+          border-right: 2px solid #c4c4c4;
+          display: inline-block;
+          padding: 0 15px;
+          color: white;
+        "
+        href="git.html"
+        >Tools</a
+      >
+      <a
+        style="display: inline-block; padding: 0 15px; color: white"
+        href="archive.html"
+        >Archive</a
+      >
+    </div>
 
-  <script>
-    // Used to toggle the menu on small screens when clicking on the menu button
-    function myFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
+    <script>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
       }
-    }
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true
-    });
-  </script>
-
-</body>
-
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
 </html>
