@@ -1,68 +1,56 @@
 #homeImage {
-width: 100%;
+  width: 100%;
   max-width: 55px;
   height: auto;
 }
 
 #but {
-    text-align: center;
-    align-items: center;
-}
-
-#reg-button {
-    text-align: center;
-    align-items: center;
-    background-color: black;
-    color:white;
-    font-size: 18px;
-    border: none;
+  text-align: center;
+  align-items: center;
 }
 
 #name_container {
-    text-align: center;
-    align-items: center;
+  text-align: center;
+  align-items: center;
 }
 
 #wabydaby {
-    text-align: center;
-    align-items: center;
-    background-color: rgb(94, 142, 94);
+  text-align: center;
+  align-items: center;
+  background-color: rgb(94, 142, 94);
 }
 
 #topheader {
-    text-align: center;
-    align-items: center;
+  text-align: center;
+  align-items: center;
 }
 
 #insidetopheader {
-    text-align: center;
-    align-items: center;
+  text-align: center;
+  align-items: center;
 }
 
 #homeTitle {
-    color: rgb(45, 45, 45);
-    font-weight: bolder;
-    font-size: 600%;
-    font-size: 6vw;
+  color: rgb(45, 45, 45);
+  font-weight: bolder;
+  font-size: 600%;
+  font-size: 6vw;
 }
 
 #wab {
-     max-width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 50%;
 }
 
 #imgdab {
-    max-width: 100%;
-    height: auto;
-    padding-right: 5%;
-    padding-top: 20%;
+  max-width: 100%;
+  height: auto;
+  padding-right: 5%;
+  padding-top: 20%;
 }
 
-
-#navDem{
-    position: relative; 
+#navDem {
+  position: relative;
   top: -125px;
 }
-
-
