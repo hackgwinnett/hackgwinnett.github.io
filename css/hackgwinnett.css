@@ -34,7 +34,8 @@
   color: rgb(45, 45, 45);
   font-weight: bolder;
   font-size: 600%;
-  font-size: 6vw;
+  font-size: min(600%, 5vw);
+  margin-bottom: 0;
 }
 
 #wab {
