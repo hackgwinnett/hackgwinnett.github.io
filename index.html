@@ -30,7 +30,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom Font Family -->
     <style>
-      body, h1, h2, h3, h4, h5, h6 {
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: "Inter", sans-serif;
       }
     </style>
@@ -44,22 +50,59 @@
           <!-- Logo -->
           <div class="flex items-center">
             <a href="index.html">
-              <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto">
+              <img
+                src="images/homelogo.png"
+                alt="HackGwinnett Logo"
+                class="h-8 w-auto"
+              />
             </a>
           </div>
           <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a href="q&a.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-            <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
-            <a href="contact.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-            <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
-            <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
-            <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
-            <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+            <a
+              href="q&a.html"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >FAQ</a
+            >
+            <a
+              href="location.html"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >Location</a
+            >
+            <a
+              href="contact.html"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >Contact</a
+            >
+            <a
+              href="https://github.com/hackgwinnett"
+              target="_blank"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >GitHub</a
+            >
+            <a
+              href="git.html"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >Tools</a
+            >
+            <a
+              href="bulletin.html"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >Bulletin</a
+            >
+            <a
+              href="https://hackgwinnett.github.io/blog"
+              target="_blank"
+              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              >Blog</a
+            >
           </div>
           <!-- Mobile Menu Button -->
           <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <button
+              id="mobile-menu-button"
+              class="text-white focus:outline-none"
+            >
               <i class="fas fa-bars fa-lg"></i>
             </button>
           </div>
@@ -67,14 +110,44 @@
       </div>
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
-        <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
-        <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
-        <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
-        <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
+        <a
+          href="index.html"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >Home</a
+        >
+        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700"
+          >FAQ</a
+        >
+        <a
+          href="location.html"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >Location</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >Contact</a
+        >
+        <a
+          href="https://github.com/hackgwinnett"
+          target="_blank"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >GitHub</a
+        >
+        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700"
+          >Tools</a
+        >
+        <a
+          href="bulletin.html"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >Bulletin</a
+        >
+        <a
+          href="https://hackgwinnett.github.io/blog"
+          target="_blank"
+          class="block px-4 py-2 text-white hover:bg-green-700"
+          >Blog</a
+        >
       </div>
     </nav>
 
@@ -149,10 +222,11 @@
             </h2>
             <div class="space-y-4 text-lg">
               <p>
-                HackGwinnett features mentors, workshops, and prizes, and
-                strives to build an inclusive environment for individuals
-                interested in technology. They run Panel Series and HackFest
-                events for younger kids interested in technology.
+                HackGwinnett is MetroAtlanta's primer high school computer
+                science organization. It features mentors, workshops, and
+                prizes, and strives to build an inclusive environment for
+                individuals interested in technology. They run Panel Series and
+                HackFest events for younger kids interested in technology.
               </p>
               <p>
                 HackGwinnett's signature event is its annual hackathon, free of
