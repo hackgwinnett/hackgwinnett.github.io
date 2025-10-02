@@ -11,34 +11,66 @@
     <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/hackgwinnett.css">
-
     <style>
         body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Lato", sans-serif
+            font-family: "Lato", sans-serif;
         }
+
         .w3-bar, h1, button {
-            font-family: "Montserrat", sans-serif
+            font-family: "Montserrat", sans-serif;
         }
+
         #toolstitle {
-            color: rgb(45, 45, 45);
+            color: #2d2d2d;
             font-weight: bolder;
             font-size: 55px;
         }
+
+        #message {
+            color: #2d2d2d;
+        }
+
         #footer {
-            background-color: rgb(180, 200, 180);
+            background-color: #b4c8b4;
         }
-        .desc {
-            color: rgb(45, 45, 45);
-            font-size: 26px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: bold;
+
+        #c {
+            text-align: center;
         }
-        .btn-custom {
+
+        #tools-content {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h3 {
+            color: #2d2d2d;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
             margin: 8px;
-            padding: 12px 24px;
-            font-size: 18px;
-            border-radius: 10px;
+            border-radius: 6px;
+            background-color: #2e7d32; /* Consistent green */
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #256528;
+        }
+
+        .btn-secondary {
+            background-color: #555;
+        }
+
+        .btn-secondary:hover {
+            background-color: #333;
         }
     </style>
 </head>
@@ -49,69 +81,62 @@
 <div class="w3-top">
     <div class="w3-bar w3-green w3-card w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
-           href="javascript:void(0);" onclick="toggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+           href="javascript:void(0);" onclick="toggle()" title="Toggle Navigation Menu"><i
+                class="fa fa-bars"></i></a>
         <a href="index.html"><img id="homeImage" src="images/homelogo.png" class="w3-bar-block w3-hover-white"
                                   alt="HackGwinnett Logo"/></a>
         <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
         <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
         <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-        <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">GitHub</a>
+        <a href="https://github.com/hackgwinnett"
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">GitHub</a>
         <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
         <a href="bulletin.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
+        <a href="https://hackgwinnett.github.io/blog"
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
     </div>
 </div>
 
 <!-- Header -->
 <header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
     <h1 id="toolstitle">Bulletin</h1>
-    <h3 style="color: white; margin-top: 20px;">
+    <br>
+    <h3 id="message">
         Stay up to date with HackGwinnett's projects and events!
     </h3>
+    <br>
+    <div style="width: 350px; height: 7px; background-color: #2d2d2d; margin-left: auto; margin-right: auto;"></div>
+    <br>
 </header>
 
-<!-- Main Content -->
-<div id="tools-content" class="w3-container w3-center" style="padding:40px;">
+<!-- Content -->
+<div id="tools-content">
 
     <!-- HackGwinnett5 -->
-    <h1 class="desc">HackGwinnett5</h1>
-    <p><b>Date:</b> October 25, 2025 — 9:00 AM to 5:00 PM</p>
-    <a class="w3-button w3-green btn-custom" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">
-        Register for HackGwinnett5!
-    </a>
-    <a class="w3-button w3-blue btn-custom" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">
-        Register as a Volunteer for HackGwinnett5!
-    </a>
+    <h2>HackGwinnett5</h2>
+    <p><strong>Date:</strong> October 25, 2025 — 9:00 AM to 5:00 PM</p>
+    <a class="btn" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">Register for HackGwinnett5!</a>
+    <a class="btn" href="https://forms.gle/83XGi6zUNfQtLYva6" target="_blank">Register as a Volunteer for HackGwinnett5!</a>
 
     <!-- Workshops -->
-    <h1 class="desc">Workshops</h1>
-    <a class="w3-button w3-grey btn-custom" href="https://bit.ly/3Gs27F0" target="_blank">
-        View Workshop Recordings
-    </a>
+    <h3>Workshops</h3>
+    <a class="btn btn-secondary" href="https://bit.ly/3Gs27F0" target="_blank">View Workshop Recordings</a>
 
-    <!-- Past HackGwinnett -->
-    <h1 class="desc">Past HackGwinnett Projects</h1>
-    <a class="w3-button w3-orange btn-custom" href="https://hackgwinnett3.devpost.com/project-gallery" target="_blank">
-        HackGwinnett3 Project Gallery
-    </a>
-    <a class="w3-button w3-orange btn-custom" href="https://hackgwinnett.devpost.com/project-gallery" target="_blank">
-        HackGwinnett[0] Projects
-    </a>
-    <a class="w3-button w3-orange btn-custom" href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing" target="_blank">
-        HackGwinnett[0] Recap
-    </a>
+    <!-- Past Projects -->
+    <h3>Past HackGwinnett Projects</h3>
+    <a class="btn" href="https://hackgwinnett3.devpost.com/project-gallery" target="_blank">HackGwinnett3 Project Gallery</a>
+    <a class="btn" href="https://hackgwinnett.devpost.com/project-gallery" target="_blank">HackGwinnett[0] Projects</a>
+    <a class="btn" href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing" target="_blank">HackGwinnett[0] Recap</a>
 
     <!-- HackFest -->
-    <h1 class="desc">HackFest</h1>
-    <a class="w3-button w3-purple btn-custom"
-       onClick="window.open('https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true');">
-       View HackFest Poster
-    </a>
+    <h3>HackFest</h3>
+    <a class="btn" href="https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true" target="_blank">View HackFest Poster</a>
 
     <!-- Chapters -->
-    <h1 class="desc">Chapters</h1>
-    <a class="w3-button w3-teal btn-custom" href="https://bit.ly/3PwudVy" target="_blank">Start a Chapter</a>
-    <a class="w3-button w3-teal btn-custom" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing" target="_blank">Chapter Information</a>
+    <h3>Chapters</h3>
+    <a class="btn" href="https://bit.ly/3PwudVy" target="_blank">Start a Chapter</a>
+    <a class="btn" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing" target="_blank">Chapter Information</a>
+
 </div>
 
 <!-- Footer -->
@@ -121,7 +146,7 @@
 
 <script>
     function toggle() {
-        let x = document.getElementById("navDem");
+        let x = document.getElementById("navDemo");
         if (x.className.indexOf("w3-show") === -1) {
             x.className += " w3-show";
         } else {
