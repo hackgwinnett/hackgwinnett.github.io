@@ -15,7 +15,6 @@
     body, h1, h2, h3, h4, h5, h6 {
       font-family: "Lato", sans-serif;
     }
-
     .w3-bar, h1, button {
       font-family: "Montserrat", sans-serif;
     }
@@ -23,47 +22,61 @@
     #contactTitle {
       color: #2d2d2d;
       font-weight: bolder;
-      font-size: 55px;
-      margin-bottom: 10px;
+      font-size: 45px;
+      margin-bottom: 5px;
     }
 
     #divider {
-      width: 350px;
-      height: 7px;
+      width: 80px;
+      height: 4px;
       background-color: #2d2d2d;
-      margin: 20px auto;
+      margin: 10px auto 25px;
+      border-radius: 2px;
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
     }
 
     input, textarea {
-      width: 600px;
-      max-width: 90%;
-      padding: 10px;
+      width: 100%;
+      padding: 12px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 16px;
+      font-family: "Lato", sans-serif;
+      box-sizing: border-box;
     }
 
     textarea {
-      min-height: 200px;
+      min-height: 180px;
       resize: vertical;
     }
 
     .btn {
       display: inline-block;
       padding: 12px 25px;
-      border-radius: 6px;
+      border-radius: 8px;
       background-color: #2e7d32;
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: background-color 0.2s;
       border: none;
       font-size: 16px;
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
 
     .btn:hover {
       background-color: #256528;
+      transform: translateY(-2px);
     }
 
     #footer {
@@ -71,7 +84,7 @@
     }
 
     header {
-      padding: 120px 16px;
+      padding: 100px 16px;
     }
   </style>
 </head>
@@ -96,16 +109,16 @@
 
   <!-- Header -->
   <header class="w3-container w3-green w3-center">
-    <form style="margin-top:60px;">
-      <h1 id="contactTitle">Contact</h1>
+    <div class="contact-card">
+      <h1 id="contactTitle" class="w3-center">Contact</h1>
       <div id="divider"></div>
 
       <input id="subject" placeholder="Subject" />
-      <br>
       <textarea id="body" placeholder="Body"></textarea>
-      <br>
-      <button type="button" class="btn" onclick="sendEmail()">Send Email</button>
-    </form>
+      <div class="w3-center">
+        <button type="button" class="btn" onclick="sendEmail()">Send Email</button>
+      </div>
+    </div>
   </header>
 
   <!-- Footer -->
