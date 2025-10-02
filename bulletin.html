@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Tools</title>
+    <title>Bulletin | HackGwinnett</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,176 +11,117 @@
     <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/hackgwinnett.css">
+
     <style>
         body, h1, h2, h3, h4, h5, h6 {
             font-family: "Lato", sans-serif
         }
-
         .w3-bar, h1, button {
             font-family: "Montserrat", sans-serif
         }
-
-        textarea {
-            width: 600px;
-            height: 250px;
-            border: none;
-        }
-
-        input {
-            border: none;
-            width: 600px;
-        }
-
         #toolstitle {
             color: rgb(45, 45, 45);
             font-weight: bolder;
             font-size: 55px;
         }
-
-        #message {
-            color: rgb(255, 255, 255);
-        }
-
         #footer {
             background-color: rgb(180, 200, 180);
         }
-
-        #c {
-            text-align: center;
-        }
-
-        #tools-content {
-            text-align: center;
-        }
-
-        h3 {
-            color: rgb(45, 45, 45);
-        }
-
-        p {
-            font-size: 17px;
-        }
-
         .desc {
             color: rgb(45, 45, 45);
-            font-size: 22px;
+            font-size: 26px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
-
-        #message {
-            color: rgb(45, 45, 45)
+        .btn-custom {
+            margin: 8px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 10px;
         }
-
     </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-green w3-card w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
-           href="javascript:void(0);" onclick="toggle()" title="Toggle Navigation Menu"><i
-                class="fa fa-bars"></i></a>
+           href="javascript:void(0);" onclick="toggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="index.html"><img id="homeImage" src="images/homelogo.png" class="w3-bar-block w3-hover-white"
-                                  alt="HackGwinnett 4 Logo"/></a>
+                                  alt="HackGwinnett Logo"/></a>
         <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
         <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
         <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-        <a href="https://github.com/hackgwinnett"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">GitHub</a>
+        <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">GitHub</a>
         <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
         <a href="bulletin.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
-    </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDem" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="q&a.html" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-        <a href="location.html" class="w3-bar-item w3-button w3-padding-large">Location</a>
-        <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-        <a href="https://github.com/hackgwinnett" class="w3-bar-item w3-button w3-padding-large">Github</a>
-        <a href="git.html" class="w3-bar-item w3-button w3-padding-large">Tools</a>
-        <a href="bulletin.html" class="w3-bar-item w3-button w3-padding-large">Archive</a>
-        <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-padding-large">Blog</a>
+        <a href="https://hackgwinnett.github.io/blog" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
     </div>
 </div>
 
 <!-- Header -->
 <header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
     <h1 id="toolstitle">Bulletin</h1>
-    <br>
-    <h3 id="message">
-        Check out the media linked below to view HackGwinnett's projects and events!<br>
-
+    <h3 style="color: white; margin-top: 20px;">
+        Stay up to date with HackGwinnett's projects and events!
     </h3>
-    <br>
-    <div style="width: 350px; height: 7px; background-color: rgb(45, 45, 45); margin-left: auto; margin-right: auto;"></div>
-    <br>
-    <div id="tools-content">
-
-        <h1 class="desc">HackGwinnett4</h1>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large"
-           href="https://forms.gle/Z3W5Mt3XPV7gti3E7">
-            Register for HackGwinnett4!
-        </a>
-
-        <a class="w3-button w3-round-large w3-padding-medium w3-large"
-           href="https://forms.gle/rCYbtFsDr1xpCAvH9">
-            Register as a Volunteer for HackGwinnett4!
-        </a>
-
-        <br>
-        <br>
-
-        <h1 class="desc">Workshops</h1>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3Gs27F0">Recordings</a>
-        <br>
-        <br>
-
-
-        <h1 class="desc">HackGwinnett[0]</h1>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large"
-           href="https://hackgwinnett.devpost.com/project-gallery">HackGwinnett[0] Projects</a>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large"
-           href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing">HackGwinnett[0]
-            Recap
-        </a>
-        <br>
-        <br>
-
-        <h1 class="desc">HackFest</h1>
-        <a href="#" class="w3-button w3-round-large w3-padding-medium w3-large"
-           onClick="newWindow = window.open('https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true');">Poster</a>
-
-
-        <br>
-        <br>
-
-        <h1 class="desc">Chapters</h1>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large" href="https://bit.ly/3PwudVy">Application</a>
-        <a class="w3-button w3-round-large w3-padding-medium w3-large"
-           href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing">Information</a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
 </header>
 
-<!-- Footer -->
+<!-- Main Content -->
+<div id="tools-content" class="w3-container w3-center" style="padding:40px;">
 
+    <!-- HackGwinnett5 -->
+    <h1 class="desc">HackGwinnett5</h1>
+    <p><b>Date:</b> October 25, 2025 — 9:00 AM to 5:00 PM</p>
+    <a class="w3-button w3-green btn-custom" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">
+        Register for HackGwinnett5!
+    </a>
+    <a class="w3-button w3-blue btn-custom" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">
+        Register as a Volunteer for HackGwinnett5!
+    </a>
+
+    <!-- Workshops -->
+    <h1 class="desc">Workshops</h1>
+    <a class="w3-button w3-grey btn-custom" href="https://bit.ly/3Gs27F0" target="_blank">
+        View Workshop Recordings
+    </a>
+
+    <!-- Past HackGwinnett -->
+    <h1 class="desc">Past HackGwinnett Projects</h1>
+    <a class="w3-button w3-orange btn-custom" href="https://hackgwinnett3.devpost.com/project-gallery" target="_blank">
+        HackGwinnett3 Project Gallery
+    </a>
+    <a class="w3-button w3-orange btn-custom" href="https://hackgwinnett.devpost.com/project-gallery" target="_blank">
+        HackGwinnett[0] Projects
+    </a>
+    <a class="w3-button w3-orange btn-custom" href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing" target="_blank">
+        HackGwinnett[0] Recap
+    </a>
+
+    <!-- HackFest -->
+    <h1 class="desc">HackFest</h1>
+    <a class="w3-button w3-purple btn-custom"
+       onClick="window.open('https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true');">
+       View HackFest Poster
+    </a>
+
+    <!-- Chapters -->
+    <h1 class="desc">Chapters</h1>
+    <a class="w3-button w3-teal btn-custom" href="https://bit.ly/3PwudVy" target="_blank">Start a Chapter</a>
+    <a class="w3-button w3-teal btn-custom" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing" target="_blank">Chapter Information</a>
+</div>
+
+<!-- Footer -->
 <div id="footer" class="w3-xlarge w3-padding-32 w3-center">
     <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
 </div>
 
-
 <script>
     function toggle() {
-        let x = document.getElementById("navDemo");
+        let x = document.getElementById("navDem");
         if (x.className.indexOf("w3-show") === -1) {
             x.className += " w3-show";
         } else {
