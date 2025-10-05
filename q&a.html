@@ -42,40 +42,58 @@
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar (matches home/contact) -->
+    <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
           <div class="flex items-center">
             <a href="index.html" aria-label="HackGwinnett home">
               <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" />
             </a>
           </div>
+
+          <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a href="q&a.html" class="bg-green-700/90 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+            <a href="q&a.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
             <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
-            <a href="contact.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <a href="contact.html" class="bg-green-700/90 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
             <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
             <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
             <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
             <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
           </div>
+
+          <!-- Mobile Menu Button -->
           <div class="md:hidden">
-            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-white focus:outline-none">
-              <i class="fas fa-bars fa-lg"></i>
+            <button
+              id="mobile-menu-button"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle menu"
+              class="text-white focus:outline-none p-2 rounded-md hover:bg-green-700 transition-colors"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
             </button>
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
-        <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
-        <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
-        <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
-        <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-green-600 border-t border-green-700 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="index.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Home</a>
+          <a href="q&a.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white bg-green-700/90 transition-all duration-200 hover:translate-x-1">FAQ</a>
+          <a href="location.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Location</a>
+          <a href="contact.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Contact</a>
+          <a href="https://github.com/hackgwinnett" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">GitHub</a>
+          <a href="git.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Tools</a>
+          <a href="bulletin.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Bulletin</a>
+          <a href="https://hackgwinnett.github.io/blog" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Blog</a>
+        </div>
       </div>
     </nav>
 
@@ -221,41 +239,58 @@
 
       const mobileBtn = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
       mobileBtn?.addEventListener("click", function () {
         const expanded = this.getAttribute("aria-expanded") === "true";
         this.setAttribute("aria-expanded", String(!expanded));
-        mobileMenu.classList.toggle("hidden");
+        
+        if (expanded) {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = "0px";
+          }, 10);
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.style.maxHeight = "";
+          }, 300);
+        } else {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.style.maxHeight = "0px";
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          }, 10);
+          
+          const items = document.querySelectorAll(".mobile-menu-item");
+          items.forEach((item, index) => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(-10px)";
+            setTimeout(() => {
+              item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }, 100 + (index * 50));
+          });
+        }
+        
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
       });
 
-      function filterFAQs() {
-        const q = (document.getElementById("faqSearch").value || "").toLowerCase().trim();
-        const items = document.querySelectorAll(".faq-item");
-        items.forEach(d => {
-          const heading = d.querySelector("h3");
-          const content = d.querySelector("div");
-          heading.innerHTML = heading.textContent;
-          content.innerHTML = content.textContent;
-
-          const hay = (heading.textContent + " " + content.textContent).toLowerCase();
-          const show = q === "" || hay.includes(q);
-          d.style.display = show ? "" : "none";
-
-          if (q && show) {
-            const hi = (el) => {
-              const txt = el.textContent;
-              const idx = txt.toLowerCase().indexOf(q);
-              if (idx >= 0) {
-                el.innerHTML =
-                  txt.substring(0, idx) +
-                  "<mark>" + txt.substring(idx, idx + q.length) + "</mark>" +
-                  txt.substring(idx + q.length);
-              }
-            };
-            hi(heading);
-            hi(content);
-          }
-        });
-      }
+        function filterFAQs() {
+          const query = document.getElementById("faqSearch").value.toLowerCase();
+          const items = document.querySelectorAll(".faq-item");
+          items.forEach(item => {
+            const question = item.querySelector("summary").innerText.toLowerCase();
+            const answer = item.querySelector("div").innerText.toLowerCase();
+            if (question.includes(query) || answer.includes(query)) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        }
     </script>
   </body>
 </html>
