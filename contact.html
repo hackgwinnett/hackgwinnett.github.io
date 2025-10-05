@@ -240,7 +240,6 @@
         this.setAttribute("aria-expanded", String(!expanded));
         
         if (expanded) {
-          // Closing animation
           mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
           setTimeout(() => {
             mobileMenu.style.maxHeight = "0px";
@@ -250,14 +249,12 @@
             mobileMenu.style.maxHeight = "";
           }, 300);
         } else {
-          // Opening animation
           mobileMenu.classList.remove("hidden");
           mobileMenu.style.maxHeight = "0px";
           setTimeout(() => {
             mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
           }, 10);
           
-          // Stagger fade-in for menu items
           const items = document.querySelectorAll(".mobile-menu-item");
           items.forEach((item, index) => {
             item.style.opacity = "0";
@@ -293,7 +290,7 @@
         feedback.classList.remove("sr-only");
         feedback.classList.remove("text-red-600");
         feedback.classList.add("text-emerald-700");
-        feedback.textContent = "Thanks — your message was recorded. We will reply to the email you provided.";
+        feedback.textContent = "Thanks! your message was recorded. We will reply to the email you provided.";
 
         setTimeout(() => {
           form.reset();
