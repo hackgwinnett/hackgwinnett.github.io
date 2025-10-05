@@ -1,229 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Contact | HackGwinnett</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-<head>
-  <title>Contact | HackGwinnett</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/hackgwinnett.css">
-  <style>
-    body, h1, h2, h3, h4, h5, h6 {
-      font-family: "Lato", sans-serif;
-    }
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    .w3-bar, h1, button {
-      font-family: "Montserrat", sans-serif;
-    }
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Inter", sans-serif;
+      }
 
-    #contactTitle {
-      color: #2d2d2d;
-      font-weight: bolder;
-      font-size: 55px;
-      margin-bottom: 10px;
-    }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+        border-color: #10b981;
+      }
 
-    #divider {
-      width: 350px;
-      height: 7px;
-      background-color: #2d2d2d;
-      margin: 20px auto;
-    }
+      .icon-circle {
+        width: 44px;
+        height: 44px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 9999px;
+        background: rgba(16,185,129,0.12);
+        color: #065f46;
+      }
+    </style>
+  </head>
 
-    input, textarea {
-      width: 600px;
-      max-width: 90%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    textarea {
-      min-height: 200px;
-      resize: vertical;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 6px;
-      background-color: #2e7d32;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.2s;
-      border: none;
-      font-size: 16px;
-    }
-
-    .btn:hover {
-      background-color: #256528;
-    }
-
-    #footer {
-      background-color: #b4c8b4;
-    }
-
-    header {
-      padding: 120px 16px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Navbar -->
-    <body class="bg-white text-gray-800">
+  <body class="bg-white text-gray-800">
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center">
-            <a href="index.html">
-              <img
-                src="images/homelogo.png"
-                alt="HackGwinnett Logo"
-                class="h-8 w-auto"
-              />
+            <a href="index.html" aria-label="HackGwinnett home">
+              <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" />
             </a>
           </div>
+
           <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a
-              href="q&a.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >FAQ</a
-            >
-            <a
-              href="location.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Location</a
-            >
-            <a
-              href="contact.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Contact</a
-            >
-            <a
-              href="https://github.com/hackgwinnett"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >GitHub</a
-            >
-            <a
-              href="git.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Tools</a
-            >
-            <a
-              href="bulletin.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Bulletin</a
-            >
-            <a
-              href="https://hackgwinnett.github.io/blog"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Blog</a
-            >
+            <a href="q&a.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+            <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
+            <a href="contact.html" class="bg-green-700/90 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
+            <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
+            <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
+            <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
           </div>
+
           <!-- Mobile Menu Button -->
           <div class="md:hidden">
-            <button
-              id="mobile-menu-button"
-              class="text-white focus:outline-none"
-            >
+            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-white focus:outline-none">
               <i class="fas fa-bars fa-lg"></i>
             </button>
           </div>
         </div>
       </div>
+
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a
-          href="index.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Home</a
-        >
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >FAQ</a
-        >
-        <a
-          href="location.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Location</a
-        >
-        <a
-          href="contact.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Contact</a
-        >
-        <a
-          href="https://github.com/hackgwinnett"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >GitHub</a
-        >
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >Tools</a
-        >
-        <a
-          href="bulletin.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Bulletin</a
-        >
-        <a
-          href="https://hackgwinnett.github.io/blog"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Blog</a
-        >
+        <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
+        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
+        <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
+        <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
+        <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
+        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
+        <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
+        <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
       </div>
     </nav>
 
-  <!-- Header -->
-  <header class="w3-container w3-green w3-center">
-    <form style="margin-top:60px;">
-      <h1 id="contactTitle">Contact</h1>
-      <div id="divider"></div>
+    <!-- Page header / hero -->
+    <header class="bg-green-100 pt-28 pb-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <h1 id="contactTitle" class="text-4xl md:text-5xl font-extrabold text-gray-900">Contact</h1>
+          <div class="mx-auto mt-4 w-36 h-1 rounded bg-gray-800"></div>
+          <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
+            Have a question about HackGwinnett or want to volunteer? Send us a message — we typically reply within a few days.
+          </p>
+        </div>
+      </div>
+    </header>
 
-      <input id="subject" placeholder="Subject" />
-      <br>
-      <textarea id="body" placeholder="Body"></textarea>
-      <br>
-      <button type="button" class="btn" onclick="sendEmail()">Send Email</button>
-    </form>
-  </header>
+    <!-- Main content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left: Contact card + details -->
+        <div class="lg:col-span-1 space-y-6">
+          <div class="bg-white rounded-2xl shadow-md p-6" data-aos="fade-right">
+            <div class="flex items-center gap-4">
+              <div class="icon-circle">
+                <i class="fas fa-at"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold">General Inquiries</h3>
+                <p class="text-sm text-gray-600 mt-1">hackgwinnett@gmail.com</p>
+              </div>
+            </div>
 
-  <!-- Footer -->
-  <div id="footer" class="w3-xlarge w3-padding-32 w3-center">
-    <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
-  </div>
+            <hr class="my-6" />
 
-  <script>
-    function toggle() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
+            <div class="flex items-start gap-4">
+              <div class="icon-circle"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4 class="font-medium">Volunteer / Partnership</h4>
+                <p class="text-sm text-gray-600 mt-1">krishpatelbvvk@gmail.com</p>
+              </div>
+            </div>
+
+            <hr class="my-6" />
+
+            <div class="flex items-start gap-4">
+              <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 class="font-medium">Location</h4>
+                <p class="text-sm text-gray-600 mt-1">GSMST, Gwinnett County, GA — event location</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex gap-3">
+              <a href="https://www.instagram.com/hackgwinnett/" target="_blank" aria-label="Instagram" class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-50">
+                <i class="fab fa-instagram"></i> <span class="text-sm">Instagram</span>
+              </a>
+              <a href="https://discord.gg/JEK3cUR8" target="_blank" aria-label="Discord" class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-50">
+                <i class="fab fa-discord"></i> <span class="text-sm">Discord</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Office hours / quick FAQ -->
+          <div class="bg-white rounded-2xl shadow-md p-6" data-aos="fade-right" data-aos-delay="100">
+            <h4 class="font-semibold mb-3">Office Hours</h4>
+            <p class="text-sm text-gray-600">Mon–Fri: 4:00 PM — 8:00 PM (school hours vary)</p>
+            <p class="text-sm text-gray-600 mt-3">For event-specific questions, please include the event date in your message.</p>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="lg:col-span-2" data-aos="fade-left">
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <form id="contactForm" class="space-y-5" onsubmit="submitForm(event)" novalidate>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700">Your name</label>
+                  <input id="name" name="name" type="text" required placeholder="Jane Doe" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                  <input id="email" name="email" type="email" required placeholder="you@example.com" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                <input id="subject" name="subject" type="text" required placeholder="Event question, volunteering, sponsorship..." class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell us more (include date/location if applicable)" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 min-h-[160px]"></textarea>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <input id="subscribe" name="subscribe" type="checkbox" class="h-4 w-4 text-emerald-600 rounded" />
+                  <label for="subscribe" class="text-sm text-gray-600">Subscribe to updates</label>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <button type="submit" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-md font-medium">
+                    <i class="fas fa-paper-plane"></i> Send message
+                  </button>
+
+                  <button type="button" onclick="openMailto()" class="inline-flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-md text-sm hover:bg-gray-50">
+                    <i class="fas fa-envelope"></i> Send via Email
+                  </button>
+                </div>
+              </div>
+
+              <div id="formFeedback" class="sr-only" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white text-center text-sm py-8">
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
+        <a href="location.html" class="border-r border-white px-3">Location</a>
+        <a href="https://github.com/hackgwinnett" target="_blank" class="border-r border-white px-3">GitHub</a>
+        <a href="contact.html" class="border-r border-white px-3">Contact</a>
+        <a href="git.html" class="border-r border-white px-3">Tools</a>
+        <a href="bulletin.html" class="px-3">Archive</a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true });
+
+      const mobileBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn?.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      function submitForm(e) {
+        e.preventDefault();
+        const form = document.getElementById("contactForm");
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim();
+        const message = form.message.value.trim();
+        const feedback = document.getElementById("formFeedback");
+
+        if (!name || !email || !subject || !message) {
+          feedback.classList.remove("sr-only");
+          feedback.classList.add("text-red-600");
+          feedback.textContent = "Please fill out all required fields.";
+          return;
+        }
+
+        feedback.classList.remove("sr-only");
+        feedback.classList.remove("text-red-600");
+        feedback.classList.add("text-emerald-700");
+        feedback.textContent = "Thanks — your message was recorded. We will reply to the email you provided.";
+
+        setTimeout(() => {
+          form.reset();
+          feedback.classList.add("sr-only");
+          feedback.classList.remove("text-emerald-700");
+        }, 3000);
       }
-    }
 
-    function sendEmail() {
-      var subject = document.getElementById("subject").value;
-      var body = document.getElementById("body").value;
-      // Send to both addresses
-      window.open("mailto:hackgwinnett@gmail.com,krishpatelbvvk@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body));
-    }
-  </script>
-
-</body>
+      function openMailto() {
+        const subject = encodeURIComponent(document.getElementById("subject").value || "Contact from website");
+        const message = encodeURIComponent(document.getElementById("message").value || "");
+        const body = encodeURIComponent(
+          "Name: " + (document.getElementById("name").value || "") + "\n\n" + message
+        );
+        window.open(
+          "mailto:hackgwinnett@gmail.com,krishpatelbvvk@gmail.com?subject=" + subject + "&body=" + body,
+          "_self"
+        );
+      }
+    </script>
+  </body>
 </html>
