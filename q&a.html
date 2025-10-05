@@ -1,149 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Q&A</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet">
-  <!-- Font Awesome (Updated to version 6) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ | HackGwinnett</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <a href="index.html">
-            <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto">
-          </a>
-        </div>
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-4 montserrat text-white">
-          <a href="q&a.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-          <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
-          <a href="contact.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-          <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
-          <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
-          <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
-          <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-white focus:outline-none">
-            <i class="fas fa-bars fa-lg"></i>
-          </button>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Inter", sans-serif;
+      }
+      .faq-item[open] .chev {
+        transform: rotate(180deg);
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary {
+        list-style: none;
+      }
+      .faq-item mark {
+        background: rgba(16,185,129,.15);
+        padding: .1rem .2rem;
+        border-radius: .25rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar (matches home/contact) -->
+    <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a href="index.html" aria-label="HackGwinnett home">
+              <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" />
+            </a>
+          </div>
+          <div class="hidden md:flex space-x-4 montserrat text-white">
+            <a href="q&a.html" class="bg-green-700/90 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+            <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
+            <a href="contact.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
+            <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
+            <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
+            <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-white focus:outline-none">
+              <i class="fas fa-bars fa-lg"></i>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-      <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
-      <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
-      <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
-      <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
-      <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
-      <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
-      <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
-      <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
-    </div>
-  </nav>
+      <div id="mobile-menu" class="hidden md:hidden bg-green-600">
+        <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
+        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
+        <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
+        <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
+        <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
+        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
+        <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
+        <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
+      </div>
+    </nav>
 
-  <!-- Main Content -->
-  <main class="my-20 px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <header class="text-center mb-12">
-      <h1 id="title" class="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h1>
+    <!-- Hero -->
+    <header class="bg-green-100 pt-28 pb-10">
+      <div class="max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h1 id="title" class="text-4xl md:text-5xl font-extrabold text-gray-900">Frequently Asked Questions</h1>
+        <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
+          Got questions about HackGwinnett? Start here. Can’t find what you need? <a href="contact.html" class="underline decoration-emerald-600 decoration-2 underline-offset-4">Contact us</a>.
+        </p>
+      </div>
     </header>
 
-    <!-- FAQ Section -->
-    <section class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">What is a hackathon?</h3>
-          <p class="text-gray-700">
-            A hackathon is a competition where participants come together in a short time (1 day) to develop a project related to the theme of the event. It's a fun and competitive way to learn computer science concepts, software development, and problem-solving!
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Who can attend?</h3>
-          <p class="text-gray-700">
-            All middle and high school students in Georgia are welcome to attend!
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">How much does it cost?</h3>
-          <p class="text-gray-700">
-            Admission is free, but participants will need to sign up to secure their spot before the event.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">What if I don’t know how to code?</h3>
-          <p class="text-gray-700">
-            That's okay! Hackathons are a great way to learn, meet new people, and gain experience. We also plan to offer educational workshops to get beginners up to speed, as well as discuss more complex concepts in computer science.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Will there be prizes?</h3>
-          <p class="text-gray-700">
-            Yes! We will have traditional first, second, and third place prizes as well as prizes for the most creative projects, best solo projects, and more.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">How do teams work?</h3>
-          <p class="text-gray-700">
-            Participants can choose to work in a team of up to three people, but solo projects are welcome too!
-          </p>
+    <!-- Content -->
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <!-- Search -->
+      <div class="max-w-3xl mx-auto mb-6" data-aos="fade-up" data-aos-delay="100">
+        <label for="faqSearch" class="sr-only">Search FAQs</label>
+        <div class="relative">
+          <input
+            id="faqSearch"
+            type="text"
+            placeholder="Search FAQs (e.g., teams, prizes, cost)"
+            class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 pr-10 shadow-sm focus:outline-none focus:ring-4 focus:ring-emerald-200"
+            oninput="filterFAQs()"
+          />
+          <i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
         </div>
       </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="bg-green-600 text-white text-center text-sm py-8">
-    <div class="flex flex-wrap justify-center">
-      <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
-      <a href="location.html" class="border-r border-white px-3">Location</a>
-      <a
-        href="https://github.com/hackgwinnett"
-        target="_blank"
-        class="border-r border-white px-3"
-        >GitHub</a
-      >
-      <a href="contact.html" class="border-r border-white px-3">Contact</a>
-      <a href="git.html" class="border-r border-white px-3">Tools</a>
-      <a href="bulletin.html" class="px-3">Archive</a>
-    </div>
-  </footer>
+      <!-- FAQ list -->
+      <section class="max-w-3xl mx-auto bg-white shadow-md rounded-2xl p-2 sm:p-4" data-aos="fade-up" data-aos-delay="150">
+        <!-- Item -->
+        <details class="faq-item group border-b last:border-none border-gray-100 p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              What is a hackathon?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            A hackathon is a competition where participants come together in a short time (1 day) to develop a project related to the theme of the event.
+            It's a fun and competitive way to learn computer science, software development, and problem-solving!
+          </div>
+        </details>
 
-  <!-- Scripts -->
-  <script>
-    // Toggle the mobile menu
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
+        <details class="faq-item group border-b last:border-none border-gray-100 p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              Who can attend?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            All middle and high school students in Georgia are welcome to attend!
+          </div>
+        </details>
 
-    // Event listener for mobile menu button
-    document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
-  </script>
-</body>
+        <details class="faq-item group border-b last:border-none border-gray-100 p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              How much does it cost?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            Admission is free, but participants should sign up to secure their spot before the event.
+          </div>
+        </details>
+
+        <details class="faq-item group border-b last:border-none border-gray-100 p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              What if I don’t know how to code?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            That's okay! Hackathons are a great way to learn, meet new people, and gain experience. We’ll offer beginner-friendly workshops
+            and also cover more advanced concepts for those who want a challenge.
+          </div>
+        </details>
+
+        <details class="faq-item group border-b last:border-none border-gray-100 p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              Will there be prizes?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            Yes! We’ll have 1st/2nd/3rd place prizes plus special awards (e.g., most creative, best solo project, and more).
+          </div>
+        </details>
+
+        <details class="faq-item group p-4 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer select-none">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+              How do teams work?
+            </h3>
+            <i class="fa-solid fa-chevron-down chev transition-transform duration-200 text-gray-500"></i>
+          </summary>
+          <div class="mt-3 text-gray-700 leading-relaxed">
+            You can work solo or in a team of up to three people—your choice!
+          </div>
+        </details>
+      </section>
+
+      <!-- CTA -->
+      <div class="max-w-3xl mx-auto text-center mt-10" data-aos="fade-up" data-aos-delay="250">
+        <a
+          href="https://forms.gle/gVvQxwVunYht2TCK7"
+          target="_blank"
+          class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-medium shadow-sm"
+        >
+          <i class="fa-solid fa-clipboard-check"></i> Register Now
+        </a>
+        <a
+          href="contact.html"
+          class="ml-3 inline-flex items-center gap-2 border border-gray-200 hover:bg-gray-50 px-6 py-3 rounded-xl font-medium"
+        >
+          <i class="fa-solid fa-envelope"></i> Still have questions?
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white text-center text-sm py-8">
+      <div class="flex flex-wrap justify-center">
+        <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
+        <a href="location.html" class="border-r border-white px-3">Location</a>
+        <a href="https://github.com/hackgwinnett" target="_blank" class="border-r border-white px-3">GitHub</a>
+        <a href="contact.html" class="border-r border-white px-3">Contact</a>
+        <a href="git.html" class="border-r border-white px-3">Tools</a>
+        <a href="bulletin.html" class="px-3">Archive</a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true });
+
+      const mobileBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn?.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      function filterFAQs() {
+        const q = (document.getElementById("faqSearch").value || "").toLowerCase().trim();
+        const items = document.querySelectorAll(".faq-item");
+        items.forEach(d => {
+          const heading = d.querySelector("h3");
+          const content = d.querySelector("div");
+          heading.innerHTML = heading.textContent;
+          content.innerHTML = content.textContent;
+
+          const hay = (heading.textContent + " " + content.textContent).toLowerCase();
+          const show = q === "" || hay.includes(q);
+          d.style.display = show ? "" : "none";
+
+          if (q && show) {
+            const hi = (el) => {
+              const txt = el.textContent;
+              const idx = txt.toLowerCase().indexOf(q);
+              if (idx >= 0) {
+                el.innerHTML =
+                  txt.substring(0, idx) +
+                  "<mark>" + txt.substring(idx, idx + q.length) + "</mark>" +
+                  txt.substring(idx + q.length);
+              }
+            };
+            hi(heading);
+            hi(content);
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
