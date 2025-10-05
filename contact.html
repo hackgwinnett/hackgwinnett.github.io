@@ -80,25 +80,30 @@
               id="mobile-menu-button"
               aria-expanded="false"
               aria-controls="mobile-menu"
-              aria-label="Open menu"
-              class="text-white focus:outline-none p-2 rounded-lg hover:bg-green-700/40"
+              aria-label="Toggle menu"
+              class="text-white focus:outline-none p-2 rounded-md hover:bg-green-700 transition-colors"
             >
-              <i class="fas fa-bars fa-lg"></i>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
             </button>
           </div>
         </div>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a href="index.html" class="block px-4 py-2 text-white hover:bg-green-700">Home</a>
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700">FAQ</a>
-        <a href="location.html" class="block px-4 py-2 text-white hover:bg-green-700">Location</a>
-        <a href="contact.html" class="block px-4 py-2 text-white hover:bg-green-700">Contact</a>
-        <a href="https://github.com/hackgwinnett" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">GitHub</a>
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700">Tools</a>
-        <a href="bulletin.html" class="block px-4 py-2 text-white hover:bg-green-700">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog" target="_blank" class="block px-4 py-2 text-white hover:bg-green-700">Blog</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-green-600 border-t border-green-700 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="index.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Home</a>
+          <a href="q&a.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">FAQ</a>
+          <a href="location.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Location</a>
+          <a href="contact.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white bg-green-700/90 transition-all duration-200 hover:translate-x-1">Contact</a>
+          <a href="https://github.com/hackgwinnett" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">GitHub</a>
+          <a href="git.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Tools</a>
+          <a href="bulletin.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Bulletin</a>
+          <a href="https://hackgwinnett.github.io/blog" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Blog</a>
+        </div>
       </div>
     </nav>
 
@@ -227,10 +232,46 @@
 
       const mobileBtn = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
       mobileBtn?.addEventListener("click", function () {
         const expanded = this.getAttribute("aria-expanded") === "true";
         this.setAttribute("aria-expanded", String(!expanded));
-        mobileMenu.classList.toggle("hidden");
+        
+        if (expanded) {
+          // Closing animation
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = "0px";
+          }, 10);
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.style.maxHeight = "";
+          }, 300);
+        } else {
+          // Opening animation
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.style.maxHeight = "0px";
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          }, 10);
+          
+          // Stagger fade-in for menu items
+          const items = document.querySelectorAll(".mobile-menu-item");
+          items.forEach((item, index) => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(-10px)";
+            setTimeout(() => {
+              item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }, 100 + (index * 50));
+          });
+        }
+        
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
       });
 
       function submitForm(e) {
