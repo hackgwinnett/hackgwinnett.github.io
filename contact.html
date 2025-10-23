@@ -1,315 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Contact | HackGwinnett</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Contact - HackGwinnett</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#f0fdf4', 100: '#dcfce7', 600: '#16a34a', 700: '#15803d', 800: '#166534' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg { background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 50%, #a7f3d0 100%); }
+    .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .mobile-menu { transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.2, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+    .backdrop { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .backdrop.open { opacity: 1; pointer-events: auto; }
+    
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    
+    .card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+    
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #16a34a; color: white; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: none; cursor: pointer; }
+    .btn-primary:hover:not(:disabled) { background: #15803d; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(22,163,74,0.3); }
+    .btn-primary:disabled { background: #9ca3af; cursor: not-allowed; transform: none; }
+    
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: white; color: #16a34a; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: 2px solid #16a34a; cursor: pointer; }
+    .btn-secondary:hover { background: #dcfce7; transform: translateY(-2px); }
+    
+    input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1); border-color: #16a34a; }
+    
+    .icon-circle { width: 56px; height: 56px; display: inline-grid; place-items: center; border-radius: 9999px; background: rgba(22, 163, 74, 0.1); color: #15803d; font-size: 24px; flex-shrink: 0; }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Inter", sans-serif;
-      }
-
-      input:focus,
-      textarea:focus {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
-        border-color: #10b981;
-      }
-
-      .icon-circle {
-        width: 44px;
-        height: 44px;
-        display: inline-grid;
-        place-items: center;
-        border-radius: 9999px;
-        background: rgba(16,185,129,0.12);
-        color: #065f46;
-      }
-    </style>
-  </head>
-
-  <body class="bg-white text-gray-800">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <a href="index.html" aria-label="HackGwinnett home">
-              <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" />
-            </a>
-          </div>
-
-          <!-- Desktop Menu -->
-          <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a href="q&a.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-            <a href="location.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Location</a>
-            <a href="contact.html" class="bg-green-700/90 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-            <a href="https://github.com/hackgwinnett" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">GitHub</a>
-            <a href="git.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Tools</a>
-            <a href="bulletin.html" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Bulletin</a>
-            <a href="https://hackgwinnett.github.io/blog" target="_blank" class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-button"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Toggle menu"
-              class="text-white focus:outline-none p-2 rounded-md hover:bg-green-700 transition-colors"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-600 border-t border-green-700 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="index.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Home</a>
-          <a href="q&a.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">FAQ</a>
-          <a href="location.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Location</a>
-          <a href="contact.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white bg-green-700/90 transition-all duration-200 hover:translate-x-1">Contact</a>
-          <a href="https://github.com/hackgwinnett" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">GitHub</a>
-          <a href="git.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Tools</a>
-          <a href="bulletin.html" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Bulletin</a>
-          <a href="https://hackgwinnett.github.io/blog" target="_blank" class="mobile-menu-item block px-3 py-2 rounded-md text-white hover:bg-green-700 transition-all duration-200 hover:translate-x-1">Blog</a>
-        </div>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-primary-600 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center" aria-label="HackGwinnett Home">
+          <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" decoding="async">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-1" id="desktop-nav"></div>
+        
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Open menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
     </nav>
+  </header>
 
-    <!-- Page header / hero -->
-    <header class="bg-green-100 pt-28 pb-8">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-          <h1 id="contactTitle" class="text-4xl md:text-5xl font-extrabold text-gray-900">Contact</h1>
-          <div class="mx-auto mt-4 w-36 h-1 rounded bg-gray-800"></div>
-          <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
-            Have a question about HackGwinnett? Send us a message! We typically reply within a few days.
-          </p>
-        </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-backdrop" class="backdrop fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+  <aside id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 md:hidden shadow-2xl" style="padding-top: max(env(safe-area-inset-top), 16px);">
+    <div class="flex items-center justify-between p-4 border-b">
+      <a href="index.html" class="flex items-center">
+        <img src="images/homelogo.png" alt="HackGwinnett" class="h-8 w-auto" decoding="async">
+      </a>
+      <button id="mobile-close" class="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4" id="mobile-nav"></nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <main class="pt-16">
+    <section class="gradient-bg py-24 sm:py-32 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 fade-in">Get In Touch</h1>
+        <p class="text-xl sm:text-2xl text-gray-700 fade-in stagger-1 max-w-3xl mx-auto">
+          Have questions about HackGwinnett? We'd love to hear from you! Send us a message and we'll respond as soon as possible.
+        </p>
       </div>
-    </header>
+    </section>
 
-    <!-- Main content -->
-    <main class="max-w-6xl mx-auto px-4 py-12">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Left: Contact card + details -->
-        <div class="lg:col-span-1 space-y-6">
-          <div class="bg-white rounded-2xl shadow-md p-6" data-aos="fade-right">
-            <div class="flex items-center gap-4">
-              <div class="icon-circle">
-                <i class="fas fa-at"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold">General Inquiries</h3>
-                <p class="text-sm text-gray-600 mt-1">hackgwinnett@gmail.com</p>
-              </div>
-            </div>
-
-            <hr class="my-6" />
-
-            <div class="flex items-start gap-4">
-              <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <h4 class="font-medium">Location</h4>
-                <p class="text-sm text-gray-600 mt-1">GSMST, Gwinnett County, GA</p>
-              </div>
-            </div>
-
-            <div class="mt-6 flex gap-3">
-              <a href="https://www.instagram.com/hackgwinnett/" target="_blank" aria-label="Instagram" class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-50">
-                <i class="fab fa-instagram"></i> <span class="text-sm">Instagram</span>
-              </a>
-              <a href="https://discord.gg/JEK3cUR8" target="_blank" aria-label="Discord" class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-50">
-                <i class="fab fa-discord"></i> <span class="text-sm">Discord</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Minor Details -->
-          <div class="bg-white rounded-2xl shadow-md p-6" data-aos="fade-right" data-aos-delay="100">
-            <h4 class="font-semibold mb-3">Important Information</h4>
-            <p class="text-sm text-gray-600">October 25th: 9:00AM-5:00PM</p>
-            <p class="text-sm text-gray-600 mt-3">For event-specific questions, please include the event date in your message.</p>
-          </div>
-        </div>
-
-        <!-- Right: Form -->
-        <div class="lg:col-span-2" data-aos="fade-left">
-          <div class="bg-white rounded-2xl shadow-lg p-8">
-            <form id="contactForm" class="space-y-5" onsubmit="submitForm(event)" novalidate>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label for="name" class="block text-sm font-medium text-gray-700">Your name</label>
-                  <input id="name" name="name" type="text" required placeholder="Enter Here" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                  <input id="email" name="email" type="email" required placeholder="Enter Here" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
-                </div>
-              </div>
-
-              <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                <input id="subject" name="subject" type="text" required placeholder="Event question, volunteering, sponsorship..." class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2" />
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" required placeholder="Tell us more (include date/location if applicable)" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 min-h-[160px]"></textarea>
-              </div>
-
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <input id="subscribe" name="subscribe" type="checkbox" class="h-4 w-4 text-emerald-600 rounded" />
-                  <label for="subscribe" class="text-sm text-gray-600">Subscribe to updates</label>
-                </div>
-
-                <div class="flex items-center gap-3">
-                  <button type="submit" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-md font-medium">
-                    <i class="fas fa-paper-plane"></i> Send message
-                  </button>
-
-                  <button type="button" onclick="openMailto()" class="inline-flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-md text-sm hover:bg-gray-50">
-                    <i class="fas fa-envelope"></i> Send via Email
-                  </button>
-                </div>
-              </div>
-
-              <div id="formFeedback" class="sr-only" role="status" aria-live="polite"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-green-600 text-white text-center text-sm py-8">
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
-        <a href="location.html" class="border-r border-white px-3">Location</a>
-        <a href="https://github.com/hackgwinnett" target="_blank" class="border-r border-white px-3">GitHub</a>
-        <a href="contact.html" class="border-r border-white px-3">Contact</a>
-        <a href="git.html" class="border-r border-white px-3">Tools</a>
-        <a href="bulletin.html" class="px-3">Bulletin</a>
-      </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ once: true });
-
-      const mobileBtn = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-      const closeIcon = document.getElementById("close-icon");
-
-      mobileBtn?.addEventListener("click", function () {
-        const expanded = this.getAttribute("aria-expanded") === "true";
-        this.setAttribute("aria-expanded", String(!expanded));
-        
-        if (expanded) {
-          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-          setTimeout(() => {
-            mobileMenu.style.maxHeight = "0px";
-          }, 10);
-          setTimeout(() => {
-            mobileMenu.classList.add("hidden");
-            mobileMenu.style.maxHeight = "";
-          }, 300);
-        } else {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.style.maxHeight = "0px";
-          setTimeout(() => {
-            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-          }, 10);
+    <!-- Contact Section -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-12">
           
-          const items = document.querySelectorAll(".mobile-menu-item");
-          items.forEach((item, index) => {
-            item.style.opacity = "0";
-            item.style.transform = "translateY(-10px)";
-            setTimeout(() => {
-              item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-              item.style.opacity = "1";
-              item.style.transform = "translateY(0)";
-            }, 100 + (index * 50));
-          });
-        }
+          <!-- Left: Contact Info Cards -->
+          <div class="lg:col-span-1 space-y-6">
+            <div class="card">
+              <div class="icon-circle mb-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
+              <p class="text-gray-600 mb-4">Send us an email and we'll get back to you within 1-2 business days.</p>
+              <a href="mailto:hackgwinnett@gmail.com" class="text-primary-600 hover:text-primary-700 font-semibold break-all">
+                hackgwinnett@gmail.com
+              </a>
+            </div>
+
+            <div class="card">
+              <div class="icon-circle mb-4">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Location</h3>
+              <p class="text-gray-600">
+                Gwinnett School of Mathematics,<br>
+                Science, and Technology<br>
+                Lawrenceville, GA
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="icon-circle mb-4">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Event Details</h3>
+              <p class="text-gray-600">
+                <strong>HackGwinnett 5</strong><br>
+                October 25, 2025<br>
+                9:00 AM - 5:00 PM
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">Connect With Us</h3>
+              <div class="flex gap-3">
+                <a href="https://www.instagram.com/hackgwinnett/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                  <i class="fab fa-instagram"></i>
+                  <span class="text-sm font-medium">Instagram</span>
+                </a>
+                <a href="https://discord.gg/JEK3cUR8" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                  <i class="fab fa-discord"></i>
+                  <span class="text-sm font-medium">Discord</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="lg:col-span-2">
+            <div class="card">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              
+              <form id="contactForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                      Your Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                      placeholder="John Doe"
+                    >
+                  </div>
+
+                  <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                      placeholder="john@example.com"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Subject <span class="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject" 
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                    placeholder="What's this about?"
+                  >
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Message <span class="text-red-500">*</span>
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    required
+                    rows="6"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition resize-none"
+                    placeholder="Tell us more about your inquiry..."
+                  ></textarea>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <input 
+                    type="checkbox" 
+                    id="subscribe" 
+                    name="subscribe" 
+                    value="yes"
+                    class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  >
+                  <label for="subscribe" class="text-sm text-gray-600">
+                    Subscribe to HackGwinnett updates and news
+                  </label>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <button type="submit" class="btn-primary" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Message</span>
+                  </button>
+
+                  <button type="button" onclick="openMailto()" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    <span>Open Email Client</span>
+                  </button>
+                </div>
+
+                <div id="formStatus" class="hidden p-4 rounded-lg"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary-600 py-8 px-4 text-center text-white">
+    <div class="flex flex-wrap justify-center gap-4" id="footer-nav"></div>
+  </footer>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+
+    const NAV = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Bulletin' },
+      { href: 'https://hackgwinnett.github.io/blog', label: 'Blog', external: true },
+    ];
+
+    const FOOTER = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Archive' },
+    ];
+
+    const createLink = (item, classes = '') => {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      a.className = classes;
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+      return a;
+    };
+
+    // Build navigation
+    const desktopNav = document.getElementById('desktop-nav');
+    NAV.forEach(item => desktopNav.appendChild(createLink(item, 'px-3 py-2 text-sm font-medium text-white hover:bg-primary-700 rounded-lg transition')));
+
+    const mobileNav = document.getElementById('mobile-nav');
+    NAV.forEach(item => {
+      const link = createLink(item, 'block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition');
+      mobileNav.appendChild(link);
+    });
+
+    const footerNav = document.getElementById('footer-nav');
+    FOOTER.forEach((item, i) => {
+      const link = createLink(item, 'px-3 hover:underline');
+      if (i < FOOTER.length - 1) {
+        link.classList.add('border-r', 'border-white');
+      }
+      footerNav.appendChild(link);
+    });
+
+    // Mobile menu functionality
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileClose = document.getElementById('mobile-close');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      iconMenu.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    mobileClose.addEventListener('click', closeMenu);
+    mobileBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+
+    // Form handling using Web3Forms (free and simple)
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+      
+      const formData = new FormData();
+      formData.append('access_key', 'f6b37f6a-c5b4-4f37-a06e-07195a10a55a'); // Get free key from https://web3forms.com
+      formData.append('name', document.getElementById('name').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('subject', document.getElementById('subject').value);
+      formData.append('message', document.getElementById('message').value);
+      formData.append('subscribe', document.getElementById('subscribe').checked ? 'Yes' : 'No');
+      
+      // Send to multiple recipients
+      formData.append('cc', 'hackgwinnett@gmail.com,nuj2210@gmail.com,krishpatelbvk@gmail.com');
+      
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
         
-        menuIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("hidden");
-      });
-
-      function submitForm(e) {
-        e.preventDefault();
-        const form = document.getElementById("contactForm");
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const subject = form.subject.value.trim();
-        const message = form.message.value.trim();
-        const feedback = document.getElementById("formFeedback");
-
-        if (!name || !email || !subject || !message) {
-          feedback.classList.remove("sr-only");
-          feedback.classList.add("text-red-600");
-          feedback.textContent = "Please fill out all required fields.";
-          return;
-        }
-
-        feedback.classList.remove("sr-only");
-        feedback.classList.remove("text-red-600");
-        feedback.classList.add("text-emerald-700");
-        feedback.textContent = "Thanks! your message was recorded. We will reply to the email you provided.";
-
-        setTimeout(() => {
+        const data = await response.json();
+        
+        if (data.success) {
+          formStatus.className = 'block p-4 rounded-lg bg-green-100 text-green-800 border border-green-200';
+          formStatus.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Thank you! Your message has been sent successfully. We\'ll get back to you soon!';
           form.reset();
-          feedback.classList.add("sr-only");
-          feedback.classList.remove("text-emerald-700");
-        }, 3000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        formStatus.className = 'block p-4 rounded-lg bg-yellow-100 text-yellow-800 border border-yellow-200';
+        formStatus.innerHTML = '<i class="fas fa-info-circle mr-2"></i>Please use the "Open Email Client" button below to send your message directly.';
+        
+        // Auto-open mailto as fallback
+        setTimeout(() => {
+          openMailto();
+        }, 2000);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
+        
+        setTimeout(() => {
+          formStatus.className = 'hidden';
+        }, 8000);
       }
+    });
 
-      function openMailto() {
-        const subject = encodeURIComponent(document.getElementById("subject").value || "Contact from website");
-        const message = encodeURIComponent(document.getElementById("message").value || "");
-        const body = encodeURIComponent(
-          "Name: " + (document.getElementById("name").value || "") + "\n\n" + message
-        );
-        window.open(
-          "mailto:hackgwinnett@gmail.com,krishpatelbvvk@gmail.com?subject=" + subject + "&body=" + body,
-          "_self"
-        );
-      }
-    </script>
-  </body>
+    function openMailto() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value || 'Contact from HackGwinnett Website';
+      const message = document.getElementById('message').value;
+      
+      const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+      const mailtoLink = `mailto:hackgwinnett@gmail.com,nuj2210@gmail.com,krishpatelbvk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoLink;
+    }
+  </script>
+</body>
 </html>
