@@ -1,436 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>HackGwinnett</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>HackGwinnett</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#f0fdf4', 100: '#dcfce7', 600: '#16a34a', 700: '#15803d', 800: '#166534' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg { background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 50%, #a7f3d0 100%); }
+    .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .mobile-menu { transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.2, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+    .backdrop { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .backdrop.open { opacity: 1; pointer-events: auto; }
+    
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    
+    .card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    
+    .btn-primary { display: inline-block; padding: 12px 32px; background: #16a34a; color: white; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: 2px solid transparent; }
+    .btn-primary:hover { background: #15803d; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(22,163,74,0.3); }
+    
+    .btn-secondary { display: inline-block; padding: 12px 32px; background: white; color: #16a34a; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: 2px solid #16a34a; }
+    .btn-secondary:hover { background: #dcfce7; transform: translateY(-2px); }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- Font Awesome (optional, can be replaced with Heroicons or other modern icons) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- AOS (Animate On Scroll) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom Font Family -->
-    <style>
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Inter", sans-serif;
-      }
-    </style>
-  </head>
-
-  <body class="bg-white text-gray-800">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <a href="index.html">
-              <img
-                src="images/homelogo.png"
-                alt="HackGwinnett Logo"
-                class="h-8 w-auto"
-              />
-            </a>
-          </div>
-          <!-- Desktop Menu -->
-          <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a
-              href="q&a.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >FAQ</a
-            >
-            <a
-              href="location.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Location</a
-            >
-            <a
-              href="contact.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Contact</a
-            >
-            <a
-              href="https://github.com/hackgwinnett"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >GitHub</a
-            >
-            <a
-              href="git.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Tools</a
-            >
-            <a
-              href="bulletin.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Bulletin</a
-            >
-            <a
-              href="https://hackgwinnett.github.io/blog"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Blog</a
-            >
-          </div>
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-button"
-              class="text-white focus:outline-none"
-            >
-              <i class="fas fa-bars fa-lg"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a
-          href="index.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Home</a
-        >
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >FAQ</a
-        >
-        <a
-          href="location.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Location</a
-        >
-        <a
-          href="contact.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Contact</a
-        >
-        <a
-          href="https://github.com/hackgwinnett"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >GitHub</a
-        >
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >Tools</a
-        >
-        <a
-          href="bulletin.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Bulletin</a
-        >
-        <a
-          href="https://hackgwinnett.github.io/blog"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Blog</a
-        >
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-primary-600 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center" aria-label="HackGwinnett Home">
+          <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" decoding="async">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-1" id="desktop-nav"></div>
+        
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Open menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
     </nav>
+  </header>
 
-    <!-- Header -->
-    <header
-      class="flex flex-col items-center justify-center bg-green-100 py-28 pt-32"
-    >
-      <h1
-        id="homeTitle"
-        data-aos="fade-up"
-        data-aos-delay="300"
-        class="text-4xl md:text-6xl font-black mb-4"
-      >
-        HackGwinnett
-      </h1>
-      <h4
-        data-aos="fade-down"
-        data-aos-delay="500"
-        class="text-xl md:text-2xl mb-8 text-center"
-      >
-        HackGwinnett5:<br>
-        October 25, 2025 — 9:00 AM to 5:00 PM
-      </h4>
+  <!-- Mobile Menu -->
+  <div id="mobile-backdrop" class="backdrop fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+  <aside id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 md:hidden shadow-2xl" style="padding-top: max(env(safe-area-inset-top), 16px);">
+    <div class="flex items-center justify-between p-4 border-b">
+      <a href="index.html" class="flex items-center">
+        <img src="images/homelogo.png" alt="HackGwinnett" class="h-8 w-auto" decoding="async">
+      </a>
+      <button id="mobile-close" class="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4" id="mobile-nav"></nav>
+    <div class="p-4">
+      <a href="https://forms.gle/gVvQxwVunYht2TCK7" target="_blank" class="btn-primary block text-center">Register Now</a>
+    </div>
+  </aside>
 
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <a
-          href="https://discord.gg/JEK3cUR8"
-          target="_blank"
-          class="relative block text-sm font-medium text-emerald-600 focus:outline-none focus:ring"
-        >
-          <span class="absolute inset-0 border border-current"></span>
-          <span
-            class="block border border-current bg-white px-12 py-3 transition-transform transform hover:-translate-x-1 hover:-translate-y-1 text-center"
-          >
-            Join our Discord!
-          </span>
-        </a>
-        <a
-          href="https://forms.gle/gVvQxwVunYht2TCK7"
-          target="_blank"
-          class="relative block text-sm font-medium text-white bg-emerald-600 border border-emerald-600 px-12 py-3 transition-transform transform hover:-translate-x-1 hover:-translate-y-1 text-center"
-        >
-          Register Now!
-        </a>
-        <a
-          href="https://hackgwinnett-iv.devpost.com/project-gallery"
-          target="_blank"
-          class="relative block text-sm font-medium text-emerald-600 focus:outline-none focus:ring"
-        >
-          <span class="absolute inset-0 border border-current"></span>
-          <span
-            class="block border border-current bg-white px-12 py-3 transition-transform transform hover:-translate-x-1 hover:-translate-y-1 text-center"
-          >
-            HG IV Gallery!
-          </span>
-        </a>
-        <a
-          href="https://forms.gle/kZ5uF6wYL7CGL5WF9"
-          target="_blank"
-          class="relative block text-sm font-medium text-white bg-emerald-600 border border-emerald-600 px-12 py-3 transition-transform transform hover:-translate-x-1 hover:-translate-y-1 text-center"
-        >
-          Volunteer Sign-Up!
-        </a>
+  <!-- Hero Section -->
+  <main class="pt-16">
+    <section class="gradient-bg py-24 sm:py-32 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 fade-in">HackGwinnett</h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-12 fade-in stagger-1">
+          HackGwinnett5:<br>
+          October 25, 2025 — 9:00 AM to 5:00 PM
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto fade-in stagger-2">
+          <a href="https://discord.gg/JEK3cUR8" target="_blank" class="btn-secondary hover-lift">Join our Discord!</a>
+          <a href="https://forms.gle/gVvQxwVunYht2TCK7" target="_blank" class="btn-primary hover-lift">Register Now!</a>
+          <a href="https://hackgwinnett-iv.devpost.com/project-gallery" target="_blank" class="btn-secondary hover-lift">HG IV Gallery!</a>
+          <a href="https://forms.gle/kZ5uF6wYL7CGL5WF9" target="_blank" class="btn-primary hover-lift">Volunteer Sign-Up!</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- First Section -->
-    <section class="bg-slate-50 py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-wrap items-center justify-center">
-          <div class="w-full md:w-1/2 px-4" data-aos="fade-up-right">
-            <h2 id="what" class="text-3xl md:text-4xl font-bold mb-4">
-              Hack-a-What?
-            </h2>
-            <div class="space-y-4 text-lg">
-              <p>
-                HackGwinnett is MetroAtlanta's premier high school computer
-                science organization. It features mentors, workshops, and
-                prizes, and strives to build an inclusive environment for
-                individuals interested in technology. They run Panel Series and
-                HackFest events for younger kids interested in technology.
-              </p>
-              <p>
-                HackGwinnett's signature event is its annual hackathon, free of
-                cost, hosted at GSMST for middle school and high school students
-                all over GA. Here, students gather to create innovative
-                solutions to real-world problems within a short time constraint.
-              </p>
-              <p>
-                Be on the lookout for HackGwinnett's fifth hackathon on October
-                25th to build awesome projects, participate in enriching
-                workshops, and make new friends!
-              </p>
+    <!-- What Section -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 id="what" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Hack-a-What?</h2>
+            <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+              <p>HackGwinnett is MetroAtlanta's premier high school computer science organization. It features mentors, workshops, and prizes, and strives to build an inclusive environment for individuals interested in technology. They run Panel Series and HackFest events for younger kids interested in technology.</p>
+              <p>HackGwinnett's signature event is its annual hackathon, free of cost, hosted at GSMST for middle school and high school students all over GA. Here, students gather to create innovative solutions to real-world problems within a short time constraint.</p>
+              <p>Be on the lookout for HackGwinnett's fifth hackathon on October 25th to build awesome projects, participate in enriching workshops, and make new friends!</p>
             </div>
           </div>
-          <div
-            class="w-full md:w-1/2 px-4 flex justify-center"
-            data-aos="fade-up-left"
-          >
-            <img
-              src="images/vec.png"
-              alt="Drone"
-              class="max-w-full h-auto rounded-lg shadow-lg"
-            />
+          <div class="flex justify-center">
+            <img src="images/vec.png" alt="Drone" class="w-full max-w-md rounded-2xl shadow-2xl hover-lift" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
 
     <!-- Sponsors Section -->
-    <section class="bg-green-100 py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center">
-          <h2
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            class="text-3xl md:text-4xl font-bold mb-8"
-          >
-            Sponsors
-          </h2>
-          <div
-            data-aos="fade-left"
-            class="mx-auto flex items-center flex-col max-w-sm my-4"
-          >
-            <a href="https://www.statefarm.com/" class="-mb-4">
-              <img
-                src="images/state-farm.png"
-                alt="State Farm's Logo"
-                class="mx-auto h-24 object-contain"
-              />
-            </a>
-            <h4 class="mt-2 text-lg">Prizes Sponsored by State Farm</h4>
+    <section class="gradient-bg py-20 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12">Sponsors</h2>
+        
+        <div class="card max-w-md mx-auto mb-12">
+          <a href="https://www.statefarm.com/" class="block">
+            <img src="images/state-farm.png" alt="State Farm's Logo" class="h-24 mx-auto object-contain mb-4" loading="lazy" decoding="async">
+            <h3 class="text-lg font-semibold text-gray-800">Prizes Sponsored by State Farm</h3>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+          <a href="https://www.repl.it" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/replit3.png" alt="Replit" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://bit.ly/3n4Q5eS" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/slingshot-dark.png" alt="Slingshot" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://www.inspiritai.com/" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/inspirit2.png" alt="InspiritAI" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://www.taskade.com" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/taskade.png" alt="Taskade" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://www.egghead.io" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/egghead.png" alt="Egghead" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://hackclub.com/" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/hackclub2.png" alt="Hack Club" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <a href="https://www.interviewcake.com/" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/interviewcake.png" alt="Interview Cake" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
+          <div class="card flex items-center justify-center p-6">
+            <img src="images/bars2.png" alt="OneSource" class="h-12 object-contain" loading="lazy" decoding="async">
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-            <!-- Replit -->
-            <a
-              href="https://www.repl.it"
-              data-aos="fade-right"
-              class="flex justify-center"
-            >
-              <img
-                src="images/replit3.png"
-                alt="Replit"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- Slingshot -->
-            <a
-              href="https://bit.ly/3n4Q5eS"
-              data-aos="fade-left"
-              class="flex justify-center"
-            >
-              <img
-                src="images/slingshot-dark.png"
-                alt="Slingshot"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- InspiritAI -->
-            <a
-              href="https://www.inspiritai.com/"
-              data-aos="fade-right"
-              class="flex justify-center"
-            >
-              <img
-                src="images/inspirit2.png"
-                alt="InspiritAI"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- Taskade -->
-            <a
-              href="https://www.taskade.com"
-              data-aos="fade-left"
-              class="flex justify-center"
-            >
-              <img
-                src="images/taskade.png"
-                alt="Taskade"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- Egghead -->
-            <a
-              href="https://www.egghead.io"
-              data-aos="fade-right"
-              class="flex justify-center"
-            >
-              <img
-                src="images/egghead.png"
-                alt="Egghead"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- Hack Club -->
-            <a
-              href="https://hackclub.com/"
-              data-aos="fade-left"
-              class="flex justify-center"
-            >
-              <img
-                src="images/hackclub2.png"
-                alt="Hack Club"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- Interview Cake -->
-            <a
-              href="https://www.interviewcake.com/"
-              data-aos="fade-right"
-              class="flex justify-center"
-            >
-              <img
-                src="images/interviewcake.png"
-                alt="Interview Cake"
-                class="h-16 object-contain"
-              />
-            </a>
-            <!-- One Source -->
-            <div data-aos="fade-left" class="flex justify-center">
-              <img
-                src="images/bars2.png"
-                alt="OneSource"
-                class="h-16 object-contain"
-              />
-            </div>
-            <!-- MIE Coach -->
-            <div data-aos="flip-down" class="flex justify-center">
-              <img
-                src="images/mie-logo.png"
-                alt="MIE Coach"
-                class="h-16 object-contain"
-              />
-            </div>
-            <!-- GSMST -->
-            <a
-              href="https://www.gcpsk12.org/GSMST"
-              data-aos="flip-down"
-              class="flex justify-center"
-            >
-              <img
-                src="images/gsmst.png"
-                alt="GSMST"
-                class="h-16 object-contain"
-              />
-            </a>
+          <div class="card flex items-center justify-center p-6">
+            <img src="images/mie-logo.png" alt="MIE Coach" class="h-12 object-contain" loading="lazy" decoding="async">
           </div>
+          <a href="https://www.gcpsk12.org/GSMST" class="card flex items-center justify-center p-6 hover-lift">
+            <img src="images/gsmst.png" alt="GSMST" class="h-12 object-contain" loading="lazy" decoding="async">
+          </a>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-green-600 text-white text-center text-sm py-8">
-      <div class="flex flex-wrap justify-center">
-        <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
-        <a href="location.html" class="border-r border-white px-3">Location</a>
-        <a
-          href="https://github.com/hackgwinnett"
-          target="_blank"
-          class="border-r border-white px-3"
-          >GitHub</a
-        >
-        <a href="contact.html" class="border-r border-white px-3">Contact</a>
-        <a href="git.html" class="border-r border-white px-3">Tools</a>
-        <a href="bulletin.html" class="px-3">Archive</a>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-primary-600 py-8 px-4 text-center text-white">
+    <div class="flex flex-wrap justify-center gap-4" id="footer-nav"></div>
+  </footer>
 
-    <!-- Scripts -->
-    <script>
-      // Toggle the mobile menu
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("hidden");
+  <script>
+    const NAV = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Bulletin' },
+      { href: 'https://hackgwinnett.github.io/blog', label: 'Blog', external: true },
+    ];
+
+    const FOOTER = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Archive' },
+    ];
+
+    const createLink = (item, classes = '') => {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      a.className = classes;
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
       }
-    </script>
-    <!-- AOS (Animate On Scroll) JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true,
-      });
-    </script>
-  </body>
+      return a;
+    };
+
+    // Build navigation
+    const desktopNav = document.getElementById('desktop-nav');
+    NAV.forEach(item => desktopNav.appendChild(createLink(item, 'px-3 py-2 text-sm font-medium text-white hover:bg-primary-700 rounded-lg transition')));
+
+    const mobileNav = document.getElementById('mobile-nav');
+    NAV.forEach(item => {
+      const link = createLink(item, 'block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition');
+      mobileNav.appendChild(link);
+    });
+
+    const footerNav = document.getElementById('footer-nav');
+    FOOTER.forEach((item, i) => {
+      const link = createLink(item, 'px-3 hover:underline');
+      if (i < FOOTER.length - 1) {
+        link.classList.add('border-r', 'border-white');
+      }
+      footerNav.appendChild(link);
+    });
+
+    // Mobile menu functionality
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileClose = document.getElementById('mobile-close');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      iconMenu.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    mobileClose.addEventListener('click', closeMenu);
+    mobileBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+  </script>
+</body>
 </html>
