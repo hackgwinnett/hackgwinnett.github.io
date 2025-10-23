@@ -1,172 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Location</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="css/hackgwinnett.css" />
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 bg-green-600 shadow-md z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <a href="index.html">
-              <img
-                src="images/homelogo.png"
-                alt="HackGwinnett Logo"
-                class="h-8 w-auto"
-              />
-            </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Location - HackGwinnett</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#f0fdf4', 100: '#dcfce7', 600: '#16a34a', 700: '#15803d', 800: '#166534' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg { background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 50%, #a7f3d0 100%); }
+    .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .mobile-menu { transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.2, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+    .backdrop { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .backdrop.open { opacity: 1; pointer-events: auto; }
+    
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    
+    .card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-primary-600 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center" aria-label="HackGwinnett Home">
+          <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" decoding="async">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-1" id="desktop-nav"></div>
+        
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Open menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-backdrop" class="backdrop fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+  <aside id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 md:hidden shadow-2xl" style="padding-top: max(env(safe-area-inset-top), 16px);">
+    <div class="flex items-center justify-between p-4 border-b">
+      <a href="index.html" class="flex items-center">
+        <img src="images/homelogo.png" alt="HackGwinnett" class="h-8 w-auto" decoding="async">
+      </a>
+      <button id="mobile-close" class="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4" id="mobile-nav"></nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <main class="pt-16">
+    <section class="gradient-bg py-24 sm:py-32 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 fade-in">Location</h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-4 fade-in stagger-1">
+          Gwinnett School of Mathematics, Science, and Technology
+        </p>
+        <p class="text-lg text-gray-600 fade-in stagger-2">
+          970 McElvaney Lane NW, Lawrenceville, GA 30044
+        </p>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="card">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Find Us Here</h2>
+          <div class="w-full rounded-xl overflow-hidden shadow-lg" style="height: 500px;">
+            <iframe
+              class="w-full h-full"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.5375651192303!2d-84.06237238478761!3d33.953020080632925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5bcf7c51d0e1b%3A0x666719f592cdc63d!2sGwinnett%20School%20of%20Mathematics%2C%20Science%2C%20and%20Technology!5e0!3m2!1sen!2sus!4v1612230349847!5m2!1sen!2sus"
+              frameborder="0"
+              style="border: 0;"
+              allowfullscreen
+              aria-hidden="false"
+              tabindex="0"
+              loading="lazy"
+            ></iframe>
           </div>
-          <!-- Desktop Menu -->
-          <div class="hidden md:flex space-x-4 montserrat text-white">
-            <a
-              href="q&a.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >FAQ</a
-            >
-            <a
-              href="location.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Location</a
-            >
-            <a
-              href="contact.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Contact</a
-            >
-            <a
-              href="https://github.com/hackgwinnett"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >GitHub</a
-            >
-            <a
-              href="git.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Tools</a
-            >
-            <a
-              href="bulletin.html"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Bulletin</a
-            >
-            <a
-              href="https://hackgwinnett.github.io/blog"
-              target="_blank"
-              class="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
-              >Blog</a
-            >
+        </div>
+
+        <!-- Additional Info Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="card text-center">
+            <div class="text-primary-600 mb-4">
+              <i class="fas fa-map-marker-alt text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Address</h3>
+            <p class="text-gray-600">970 McElvaney Lane NW<br>Lawrenceville, GA 30044</p>
           </div>
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-button"
-              class="text-white focus:outline-none"
-            >
-              <i class="fas fa-bars fa-lg"></i>
-            </button>
+
+          <div class="card text-center">
+            <div class="text-primary-600 mb-4">
+              <i class="fas fa-clock text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Event Time</h3>
+            <p class="text-gray-600">October 25, 2025<br>9:00 AM - 5:00 PM</p>
+          </div>
+
+          <div class="card text-center">
+            <div class="text-primary-600 mb-4">
+              <i class="fas fa-parking text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Parking</h3>
+            <p class="text-gray-600">Free parking available<br>in the school lot</p>
           </div>
         </div>
       </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-600">
-        <a
-          href="index.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Home</a
-        >
-        <a href="q&a.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >FAQ</a
-        >
-        <a
-          href="location.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Location</a
-        >
-        <a
-          href="contact.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Contact</a
-        >
-        <a
-          href="https://github.com/hackgwinnett"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >GitHub</a
-        >
-        <a href="git.html" class="block px-4 py-2 text-white hover:bg-green-700"
-          >Tools</a
-        >
-        <a
-          href="bulletin.html"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Bulletin</a
-        >
-        <a
-          href="https://hackgwinnett.github.io/blog"
-          target="_blank"
-          class="block px-4 py-2 text-white hover:bg-green-700"
-          >Blog</a
-        >
-      </div>
-    </nav>
+    </section>
+  </main>
 
-    <!-- Main Content -->
-  <main class="my-20 px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <header class="text-center mb-12">
-      <h1 id="title" class="text-4xl font-bold text-gray-800 mb-4">Location</h1>
-    </header>
+  <!-- Footer -->
+  <footer class="bg-primary-600 py-8 px-4 text-center text-white">
+    <div class="flex flex-wrap justify-center gap-4" id="footer-nav"></div>
+  </footer>
 
-    <!-- FAQ Section -->
-    <section class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
-      <div class="w-full h-96">
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.5375651192303!2d-84.06237238478761!3d33.953020080632925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5bcf7c51d0e1b%3A0x666719f592cdc63d!2sGwinnett%20School%20of%20Mathematics%2C%20Science%2C%20and%20Technology!5e0!3m2!1sen!2sus!4v1612230349847!5m2!1sen!2sus"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        class="w-full h-96"
-      ></iframe>
-      </div>
-    </main>
+  <script>
+    const NAV = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Bulletin' },
+      { href: 'https://hackgwinnett.github.io/blog', label: 'Blog', external: true },
+    ];
 
-    <!-- Footer -->
-    <footer class="bg-green-600 text-white text-center text-sm py-8">
-      <div class="flex flex-wrap justify-center">
-        <a href="q&a.html" class="border-r border-white px-3">FAQ</a>
-        <a href="location.html" class="border-r border-white px-3">Location</a>
-        <a
-          href="https://github.com/hackgwinnett"
-          target="_blank"
-          class="border-r border-white px-3"
-          >GitHub</a
-        >
-        <a href="contact.html" class="border-r border-white px-3">Contact</a>
-        <a href="git.html" class="border-r border-white px-3">Tools</a>
-        <a href="bulletin.html" class="px-3">Archive</a>
-      </div>
-    </footer>
+    const FOOTER = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Archive' },
+    ];
 
-    <script>
-      // Toggle the mobile menu
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("hidden");
+    const createLink = (item, classes = '') => {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      a.className = classes;
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
       }
-    </script>
-  </body>
+      return a;
+    };
+
+    // Build navigation
+    const desktopNav = document.getElementById('desktop-nav');
+    NAV.forEach(item => desktopNav.appendChild(createLink(item, 'px-3 py-2 text-sm font-medium text-white hover:bg-primary-700 rounded-lg transition')));
+
+    const mobileNav = document.getElementById('mobile-nav');
+    NAV.forEach(item => {
+      const link = createLink(item, 'block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition');
+      mobileNav.appendChild(link);
+    });
+
+    const footerNav = document.getElementById('footer-nav');
+    FOOTER.forEach((item, i) => {
+      const link = createLink(item, 'px-3 hover:underline');
+      if (i < FOOTER.length - 1) {
+        link.classList.add('border-r', 'border-white');
+      }
+      footerNav.appendChild(link);
+    });
+
+    // Mobile menu functionality
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileClose = document.getElementById('mobile-close');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      iconMenu.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    mobileClose.addEventListener('click', closeMenu);
+    mobileBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+  </script>
+</body>
 </html>
