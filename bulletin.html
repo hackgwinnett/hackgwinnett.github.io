@@ -1,159 +1,365 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Bulletin | HackGwinnett</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hackgwinnett.css">
-    <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Lato", sans-serif;
-        }
-
-        .w3-bar, h1, button {
-            font-family: "Montserrat", sans-serif;
-        }
-
-        #toolstitle {
-            color: #2d2d2d;
-            font-weight: bolder;
-            font-size: 55px;
-        }
-
-        #message {
-            color: #2d2d2d;
-        }
-
-        #footer {
-            background-color: #b4c8b4;
-        }
-
-        #c {
-            text-align: center;
-        }
-
-        #tools-content {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h3 {
-            color: #2d2d2d;
-            margin-top: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 8px;
-            border-radius: 6px;
-            background-color: #2e7d32; /* Consistent green */
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #256528;
-        }
-
-        .btn-secondary {
-            background-color: #555;
-        }
-
-        .btn-secondary:hover {
-            background-color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Bulletin - HackGwinnett</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6D30A6dbABGV2X9vI7PG0c1zvD/Vr1F/VsrX5ec+nSGkO0YH38X0HLm2dUSJ/BmVb/XECaeMyLAnGSnUv9r5A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#f0fdf4', 100: '#dcfce7', 600: '#16a34a', 700: '#15803d', 800: '#166534' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg { background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 50%, #a7f3d0 100%); }
+    .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    .mobile-menu { transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.2, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+    .backdrop { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .backdrop.open { opacity: 1; pointer-events: auto; }
+    
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    
+    .card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #16a34a; color: white; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #15803d; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(22,163,74,0.3); }
+    
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: white; color: #16a34a; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.2s ease; border: 2px solid #16a34a; cursor: pointer; }
+    .btn-secondary:hover { background: #dcfce7; transform: translateY(-2px); }
+    
+    .section-card { background: white; border-radius: 20px; padding: 32px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    
+    .icon-box { width: 64px; height: 64px; display: inline-grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; font-size: 28px; margin-bottom: 16px; }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-primary-600 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center" aria-label="HackGwinnett Home">
+          <img src="images/homelogo.png" alt="HackGwinnett Logo" class="h-8 w-auto" decoding="async">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-1" id="desktop-nav"></div>
+        
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-white" aria-label="Open menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-<!-- Navbar -->
-<div class="w3-top">
-    <div class="w3-bar w3-green w3-card w3-left-align w3-large">
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-green"
-           href="javascript:void(0);" onclick="toggle()" title="Toggle Navigation Menu"><i
-                class="fa fa-bars"></i></a>
-        <a href="index.html"><img id="homeImage" src="images/homelogo.png" class="w3-bar-block w3-hover-white"
-                                  alt="HackGwinnett Logo"/></a>
-        <a href="q&a.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
-        <a href="location.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Location</a>
-        <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-        <a href="https://github.com/hackgwinnett"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank">GitHub</a>
-        <a href="git.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tools</a>
-        <a href="bulletin.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Bulletin</a>
-        <a href="https://hackgwinnett.github.io/blog"
-           class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
+  <!-- Mobile Menu -->
+  <div id="mobile-backdrop" class="backdrop fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+  <aside id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 md:hidden shadow-2xl" style="padding-top: max(env(safe-area-inset-top), 16px);">
+    <div class="flex items-center justify-between p-4 border-b">
+      <a href="index.html" class="flex items-center">
+        <img src="images/homelogo.png" alt="HackGwinnett" class="h-8 w-auto" decoding="async">
+      </a>
+      <button id="mobile-close" class="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
-</div>
+    <nav class="p-4" id="mobile-nav"></nav>
+  </aside>
 
-<!-- Header -->
-<header id="c" class="w3-container w3-green w3-center" style="padding:128px 16px">
-    <h1 id="toolstitle">Bulletin</h1>
-    <br>
-    <h3 id="message">
-        Stay up to date with HackGwinnett's projects and events!
-    </h3>
-    <br>
-    <div style="width: 350px; height: 7px; background-color: #2d2d2d; margin-left: auto; margin-right: auto;"></div>
-    <br>
-</header>
+  <!-- Hero Section -->
+  <main class="pt-16">
+    <section class="gradient-bg py-24 sm:py-32 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 fade-in">
+          Bulletin
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 fade-in stagger-1 max-w-3xl mx-auto">
+          Stay up to date with HackGwinnett's projects, events, and announcements!
+        </p>
+      </div>
+    </section>
 
-<!-- Content -->
-<div id="tools-content">
+    <!-- Main Content -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto space-y-16">
 
-    <!-- HackGwinnett5 -->
-    <h2>HackGwinnett5</h2>
-    <p><strong>Date:</strong> October 25, 2025 — 9:00 AM to 5:00 PM</p>
-    <a class="btn" href="https://forms.gle/D9DfKUfHuipCao1o7" target="_blank">Register for HackGwinnett5!</a>
-    <a class="btn" href="https://forms.gle/83XGi6zUNfQtLYva6" target="_blank">Register as a Volunteer for HackGwinnett5!</a>
+        <!-- HackGwinnett 5 Section -->
+        <div class="section-card fade-in stagger-2">
+          <div class="text-center mb-8">
+            <div class="icon-box mx-auto">
+              <i class="fas fa-calendar-star"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">HackGwinnett 5</h2>
+            <p class="text-xl text-gray-600 mb-2">October 25, 2025</p>
+            <p class="text-lg text-gray-500">9:00 AM to 5:00 PM</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://forms.gle/gVvQxwVunYht2TCK7" target="_blank" class="btn-primary hover-lift">
+              <i class="fas fa-user-plus"></i>
+              <span>Register for HackGwinnett 5</span>
+            </a>
+            <a href="https://forms.gle/kZ5uF6wYL7CGL5WF9" target="_blank" class="btn-secondary hover-lift">
+              <i class="fas fa-hands-helping"></i>
+              <span>Volunteer Sign-Up</span>
+            </a>
+          </div>
+        </div>
 
-    <!-- Workshops -->
-    <h3>Workshops</h3>
-    <a class="btn btn-secondary" href="https://bit.ly/3Gs27F0" target="_blank">View Workshop Recordings</a>
+        <!-- Workshops Section -->
+        <div class="section-card fade-in stagger-3">
+          <div class="text-center mb-8">
+            <div class="icon-box mx-auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Workshops</h2>
+            <p class="text-lg text-gray-600">Learn from industry experts and experienced mentors</p>
+          </div>
+          <div class="flex justify-center">
+            <a href="https://bit.ly/3Gs27F0" target="_blank" class="btn-primary hover-lift">
+              <i class="fas fa-play-circle"></i>
+              <span>View Workshop Recordings</span>
+            </a>
+          </div>
+        </div>
 
-    <!-- Past Projects -->
-    <h3>Past HackGwinnett Projects</h3>
-    <a class="btn" href="https://hackgwinnett3.devpost.com/project-gallery" target="_blank">HackGwinnett3 Project Gallery</a>
-    <a class="btn" href="https://hackgwinnett.devpost.com/project-gallery" target="_blank">HackGwinnett[0] Projects</a>
-    <a class="btn" href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing" target="_blank">HackGwinnett[0] Recap</a>
+        <!-- Past Projects Section -->
+        <div class="section-card fade-in stagger-4">
+          <div class="text-center mb-8">
+            <div class="icon-box mx-auto">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Past HackGwinnett Projects</h2>
+            <p class="text-lg text-gray-600">Explore amazing projects from previous hackathons</p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="https://hackgwinnett-iv.devpost.com/project-gallery" target="_blank" class="card hover-lift">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fas fa-trophy text-3xl text-primary-600"></i>
+                <h3 class="text-xl font-bold text-gray-900">HackGwinnett IV</h3>
+              </div>
+              <p class="text-gray-600">View project gallery</p>
+            </a>
+            
+            <a href="https://hackgwinnett3.devpost.com/project-gallery" target="_blank" class="card hover-lift">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fas fa-code text-3xl text-primary-600"></i>
+                <h3 class="text-xl font-bold text-gray-900">HackGwinnett III</h3>
+              </div>
+              <p class="text-gray-600">View project gallery</p>
+            </a>
+            
+            <a href="https://hackgwinnett.devpost.com/project-gallery" target="_blank" class="card hover-lift">
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fas fa-rocket text-3xl text-primary-600"></i>
+                <h3 class="text-xl font-bold text-gray-900">HackGwinnett [0]</h3>
+              </div>
+              <p class="text-gray-600">View project gallery</p>
+            </a>
+          </div>
 
-    <!-- HackFest -->
-    <h3>HackFest</h3>
-    <a class="btn" href="https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true" target="_blank">View HackFest Poster</a>
+          <div class="mt-6 text-center">
+            <a href="https://drive.google.com/file/d/16cvXu48b4QJ-oqJz3Bo7dhZciKPCgB26/view?usp=sharing" target="_blank" class="btn-secondary hover-lift">
+              <i class="fas fa-video"></i>
+              <span>HackGwinnett [0] Recap Video</span>
+            </a>
+          </div>
+        </div>
 
-    <!-- Chapters -->
-    <h3>Chapters</h3>
-    <a class="btn" href="https://bit.ly/3PwudVy" target="_blank">Start a Chapter</a>
-    <a class="btn" href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing" target="_blank">Chapter Information</a>
+        <!-- HackFest Section -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="section-card fade-in">
+            <div class="text-center mb-6">
+              <div class="icon-box mx-auto">
+                <i class="fas fa-users"></i>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-3">HackFest</h2>
+              <p class="text-gray-600 mb-6">Our outreach program for younger students interested in technology</p>
+            </div>
+            <div class="flex justify-center">
+              <a href="https://github.com/hackgwinnett/hackgwinnett.github.io/blob/main/images/ad3.png?raw=true" target="_blank" class="btn-primary hover-lift">
+                <i class="fas fa-image"></i>
+                <span>View HackFest Poster</span>
+              </a>
+            </div>
+          </div>
 
-</div>
+          <!-- Chapters Section -->
+          <div class="section-card fade-in">
+            <div class="text-center mb-6">
+              <div class="icon-box mx-auto">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-3">Chapters</h2>
+              <p class="text-gray-600 mb-6">Bring HackGwinnett to your school or community</p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <a href="https://bit.ly/3PwudVy" target="_blank" class="btn-primary hover-lift">
+                <i class="fas fa-plus-circle"></i>
+                <span>Start a Chapter</span>
+              </a>
+              <a href="https://docs.google.com/document/d/1gFZTCHCK2itYwAZ9On1MbmMmq_WZdMFXUCeQlxkVxq4/edit?usp=sharing" target="_blank" class="btn-secondary hover-lift">
+                <i class="fas fa-info-circle"></i>
+                <span>Chapter Information</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-<!-- Footer -->
-<div id="footer" class="w3-xlarge w3-padding-32 w3-center">
-    <a target="_blank" href="https://www.instagram.com/hackgwinnett/" class="fa fa-instagram w3-hover-opacity"></a>
-</div>
+        <!-- Social Media Section -->
+        <div class="section-card text-center fade-in">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Connected</h2>
+          <p class="text-lg text-gray-600 mb-6">Follow us on social media for the latest updates</p>
+          <div class="flex justify-center gap-4">
+            <a href="https://www.instagram.com/hackgwinnett/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transition hover-lift">
+              <i class="fab fa-instagram text-xl"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://discord.gg/JEK3cUR8" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition hover-lift">
+              <i class="fab fa-discord text-xl"></i>
+              <span>Discord</span>
+            </a>
+          </div>
+        </div>
 
-<script>
-    function toggle() {
-        let x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") === -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer class="bg-primary-600 py-8 px-4 text-center text-white">
+    <div class="flex flex-wrap justify-center gap-4" id="footer-nav"></div>
+  </footer>
+
+  <script>
+    const NAV = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Bulletin' },
+      { href: 'https://hackgwinnett.github.io/blog', label: 'Blog', external: true },
+    ];
+
+    const FOOTER = [
+      { href: 'q&a.html', label: 'FAQ' },
+      { href: 'location.html', label: 'Location' },
+      { href: 'https://github.com/hackgwinnett', label: 'GitHub', external: true },
+      { href: 'contact.html', label: 'Contact' },
+      { href: 'git.html', label: 'Tools' },
+      { href: 'bulletin.html', label: 'Archive' },
+    ];
+
+    const createLink = (item, classes = '') => {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      a.className = classes;
+      if (item.external) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+      return a;
+    };
+
+    // Build navigation
+    const desktopNav = document.getElementById('desktop-nav');
+    NAV.forEach(item => desktopNav.appendChild(createLink(item, 'px-3 py-2 text-sm font-medium text-white hover:bg-primary-700 rounded-lg transition')));
+
+    const mobileNav = document.getElementById('mobile-nav');
+    NAV.forEach(item => {
+      const link = createLink(item, 'block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition');
+      mobileNav.appendChild(link);
+    });
+
+    const footerNav = document.getElementById('footer-nav');
+    FOOTER.forEach((item, i) => {
+      const link = createLink(item, 'px-3 hover:underline');
+      if (i < FOOTER.length - 1) {
+        link.classList.add('border-r', 'border-white');
+      }
+      footerNav.appendChild(link);
+    });
+
+    // Mobile menu functionality
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileClose = document.getElementById('mobile-close');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      iconMenu.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    mobileClose.addEventListener('click', closeMenu);
+    mobileBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+  </script>
 </body>
 </html>
