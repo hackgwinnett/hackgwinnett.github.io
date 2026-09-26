@@ -1,7 +1,7 @@
 export type Sponsor = {
   title: string;
   href: string;
-  src: string;
+  src?: string;
   /**
    * required so a new sponsor can't silently ship without a UTM decision: `false` for
    * vanity/short links (they already carry their own tracking), `true` otherwise
@@ -20,7 +20,7 @@ const sponsorList: { main: Array<Sponsor>; other: Array<Sponsor>; past: Array<Sp
   main: [
     { title: "State Farm", href: "https://st8.fm/hg", src: "statefarm.svg", utm: false },
     { title: "Amazon", href: "https://amazon.com/", src: "amazon.svg", utm: false },
-    { title: "OpenAI", href: "https://openai.com/", src: "oaiwordmark.svg", utm: false },
+    { title: "OpenAI", href: "https://openai.com/", /* src: "oaiwordmark.svg", */ utm: false },
   ],
 
   // other current sponsors (scroller / grid):
@@ -51,7 +51,7 @@ function withUtm(href: string): string {
 const sponsorify = (s: Sponsor): Sponsor => ({
   ...s,
   href: s.utm === false ? s.href : withUtm(s.href),
-  src: `/assets/images/sponsors/${s.src}`.toAsset(),
+  src: s.src && `/assets/images/sponsors/${s.src}`.toAsset(),
 });
 
 export const mainSponsors: Array<Sponsor> = sponsorList.main.map(sponsorify);

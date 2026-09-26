@@ -166,14 +166,25 @@ export const Sponsor = React.forwardRef<HTMLAnchorElement, SponsorProps>(
         )}
         {...props}
       >
-        <img
-          src={sponsor.src}
-          alt={sponsor.title}
-          className={cn(
-            "max-h-12 max-w-full object-contain transition sm:grayscale sm:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none",
-            classNames?.image,
-          )}
-        />
+        {sponsor.src ? (
+          <img
+            src={sponsor.src}
+            alt={sponsor.title}
+            className={cn(
+              "max-h-12 max-w-full object-contain select-none transition sm:grayscale sm:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100",
+              classNames?.image,
+            )}
+          />
+        ) : (
+          <span
+            className={cn(
+              "text-5xl font-semibold select-none transition sm:grayscale sm:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100",
+              classNames?.image,
+            )}
+          >
+            {sponsor.title}
+          </span>
+        )}
       </Link>
     );
   },
