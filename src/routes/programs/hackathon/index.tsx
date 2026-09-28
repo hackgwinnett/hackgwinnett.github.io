@@ -8,6 +8,7 @@ import { Separator } from "#/components/ui/separator";
 import { pages } from "cms/pages";
 import { md } from "#/lib/markdown";
 import { eventSchema } from "#/lib/seo";
+import { Button } from "#/components/ui/button";
 
 const eventId = "hackathon";
 
@@ -93,6 +94,16 @@ function RouteComponent() {
         left: {
           // /programs/hackathon#workshops brings you to this description
           start: <div id="workshops" />,
+          cta: (
+            <Button
+              variant="secondary"
+              size="lg"
+              render={<Link to="/go/$slug" params={{ slug: "volunteer" }} />}
+              nativeButton={false}
+            >
+              Volunteer for {events[eventId].shortName}
+            </Button>
+          ),
           end: (
             <>
               <Separator />

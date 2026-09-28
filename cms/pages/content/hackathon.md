@@ -1,6 +1,8 @@
 HackGwinnett's 6th annual hackathon is back and better than ever.
 
-Middle & high school students work solo or in teams to create a project based on a secret theme revealed on-site, competing for prizes (and glory). Students across Georgia are welcome to participate!
+Middle and high school students work solo or in teams to create a project based on a secret theme revealed on-site, competing for prizes and ultimate glory. Students across Georgia are welcome to participate!
+
+If you'd like to help out with the event (rather than compete), [consider volunteering](/go/volunteer). You are eligible to earn service hours for volunteering; check [the form](/go/volunteer) for more information.
 
 ---
 

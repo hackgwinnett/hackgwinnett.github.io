@@ -20,6 +20,8 @@ const eventList = {
       page: "/programs/hackathon/register",
       // closed: true, REGISTRATION... IS NOW... OPEN!
     },
+    volunteer:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfTV8Gh3-4WEkZlvdjhdP0qsVM7GTzhKC0AdbCCbrjNVsIzPQ/viewform",
   },
   hackfest: {
     name: "HackFest IV",
@@ -86,4 +88,6 @@ export interface HGEvent {
     /** An on-site sign-up page (e.g. /programs/hackathon/register) */
     page?: string;
   };
+  /** The volunteer registration link. Could be a Google Form, email compose link, etc. */
+  volunteer?: string;
 }

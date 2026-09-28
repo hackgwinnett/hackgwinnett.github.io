@@ -72,7 +72,7 @@ export function EventPage({
   /** photos from past years; omitted for events we haven't shot yet */
   gallery?: ProgramsGalleryImage[];
   additions?: {
-    left?: { start?: React.ReactNode; end?: React.ReactNode };
+    left?: { start?: React.ReactNode; cta?: React.ReactNode; end?: React.ReactNode };
     right?: { start?: React.ReactNode; end?: React.ReactNode };
   };
 }) {
@@ -177,28 +177,27 @@ export function EventPage({
             <h2 className="text-4xl">{event.name}</h2>
             <p>{event.description}</p>
           </div>
-          {event.registration?.closed ? (
-            <Alert>
-              <AlertTitle>Event registration is not open</AlertTitle>
-              <AlertDescription>
-                Sign-ups for {event.name} are closed at this time. Check back later!
-              </AlertDescription>
-            </Alert>
-          ) : event.registration ? (
-            <Button
-              // variant="secondary"
-              size="lg"
-              render={
-                <Link
-                  to={event.registration.page || event.registration.url}
-                  className="link icon-link"
-                />
-              }
-              nativeButton={false}
-            >
-              Register Now
-            </Button>
-          ) : null}
+
+          <div className="flex flex-col gap-2">
+            {event.registration?.closed ? (
+              <Alert>
+                <AlertTitle>Event registration is not open</AlertTitle>
+                <AlertDescription>
+                  Sign-ups for {event.name} are closed at this time. Check back later!
+                </AlertDescription>
+              </Alert>
+            ) : event.registration ? (
+              <Button
+                size="lg"
+                render={<Link to={event.registration.page || event.registration.url} />}
+                nativeButton={false}
+              >
+                Register Now
+              </Button>
+            ) : null}
+            {additions?.left?.cta}
+          </div>
+
           <ItemGroup>
             <Item variant="muted">
               <ItemMedia variant="icon">
