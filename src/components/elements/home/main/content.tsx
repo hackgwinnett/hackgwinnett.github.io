@@ -52,7 +52,7 @@ export function HomepageMainContent() {
 
       {/* Section 3 */}
       <section id="newslettercta" className="p-6 bg-accent">
-        <NewsletterCTA button="Sign me up, chief!" />
+        <NewsletterCTA button="Sign me up!" />
       </section>
     </div>
   );
