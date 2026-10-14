@@ -22,8 +22,8 @@ export function HomepageMainContent() {
           </p>
           <p>
             During our flagship hackathon, students (solo or in groups up to four) gather to create
-            innovative solutions to real-world problems within a short time constraint. Be on the
-            lookout for {brand.name}'s sixthh hackathon on October 31st to build awesome projects,
+            innovative solutions to real-world problems within a short timeframe. Be on the lookout
+            for {brand.name}'s sixth hackathon on October 31st to build awesome projects,
             participate in enriching workshops, and make new friends!
           </p>
         </div>
