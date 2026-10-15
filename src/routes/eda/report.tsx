@@ -35,9 +35,9 @@ export const Route = createFileRoute("/eda/report")({
   // fills the viewport itself, so the page container would only add overflow
   staticData: { title: "Report a problem", classNames: { container: false } },
   validateSearch: z.object({
-    from: z.optional(z.string()), // the route the user came from, if applicable
-    c: z.optional(z.number()),
-    t: z.optional(z.enum(Object.keys(templates) as Array<keyof typeof templates>)), // template
+    from: z.optional(z.string()), // the route the user came from (if applicable)
+    c: z.optional(z.number()), // error code (e.g. 404)
+    t: z.optional(z.enum(Object.keys(templates) as Array<keyof typeof templates>)), // template (for form, see templates ^^)
   }),
   beforeLoad: ({ search }) => {
     if (search.from === "/thecakeisalie") {
