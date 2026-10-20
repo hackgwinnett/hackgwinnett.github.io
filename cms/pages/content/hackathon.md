@@ -2,6 +2,8 @@ HackGwinnett's 6th annual hackathon is back and better than ever.
 
 Middle and high school students work solo or in teams to create a project based on a secret theme revealed on-site, competing for prizes and ultimate glory. Students across Georgia are welcome to participate!
 
+You don't need CS experience to participate—in fact, we have a great lineup of workshops at this year's hackathon to help beginner and advanced programmers gain experience in many CS skills (read more on that workshops below).
+
 If you'd like to help out with the event (rather than compete), [consider volunteering](/go/volunteer). You are eligible to earn service hours for volunteering; check [the form](/go/volunteer) for more information.
 
 ---
