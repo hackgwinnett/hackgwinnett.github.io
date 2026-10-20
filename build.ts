@@ -16,7 +16,7 @@ const CLIENT_DIR = `${DIST_DIR}/client`;
 const SERVER_DIR = `${DIST_DIR}/server`;
 const SHELL_FILE = `${CLIENT_DIR}/_shell.html`;
 
-const SITE_URL = "https://hackgwinnett.org";
+const SITE_URL = "https://hackgwinnett.github.io"; // https://hackgwinnett.org
 const POSTS_DIR = "cms/posts/content";
 const EXPECTED_ENV = ["PUBLIC_APPS_SCRIPT_NEWSLETTER_URL", "PUBLIC_GOATCOUNTER_URL"];
 const DEFAULT_REPO = "hackgwinnett/www";

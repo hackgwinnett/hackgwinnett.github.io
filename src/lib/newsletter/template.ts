@@ -267,7 +267,7 @@ ${articleButton}
   "
 >
   You're receiving this email because you
-  subscribed to the HackGwinnett newsletter.
+  subscribed to the HackGwinnett mailing list.
 </p>
 
 
@@ -352,7 +352,7 @@ ${articleButton}
     color:#a1a1aa;
   "
 >
-  © HackGwinnett
+  © ${new Date().getFullYear()} HackGwinnett
 </p>
 
 

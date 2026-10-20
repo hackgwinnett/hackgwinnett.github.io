@@ -1,4 +1,4 @@
-const SITE_URL = "https://hackgwinnett.org";
+const SITE_URL = "https://hackgwinnett.github.io"; // https://hackgwinnett.org
 
 // head()'s meta type in the installed router version is typed as raw <meta> props and
 // hasn't caught up to the "script:ld+json" entry its own runtime (Asset.js) already handles,

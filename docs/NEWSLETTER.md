@@ -1,5 +1,7 @@
 # Newsletter
 
+> Thanks, Claude!
+
 Two separate Apps Script web apps, both bound to the same Google Sheet (subscriber list), each
 scoped to one job:
 
@@ -145,22 +147,3 @@ used to be. `MailApp.getRemainingDailyQuota()` no longer applies — either drop
 replace it with a fixed `300` (or whatever your current Brevo plan allows) so the resumable-send
 logic still has a sane ceiling to stop at. **Verify a sender identity in Brevo first** (their
 dashboard walks you through it) — sends from an unverified `from` address get rejected.
-
-## What changed from the original version
-
-- **Brute-force lockout**: 5 failed secret attempts locks the endpoint for 15 minutes
-  (`checkAuth_` in `subscriptions.gs`, via `PropertiesService`). Previously there was no rate
-  limiting on a public, secret-gated endpoint.
-- **Send Log**: every send attempt (success or failure) appends a row to a new "Send Log" sheet
-  tab — timestamp, subject, sent/skipped/failed counts, raw result — so there's an audit trail
-  without needing a login system in front of the endpoint.
-- **Test sends**: `action=testSend` emails only one address (never touches the subscriber list),
-  used by the "send test to yourself" button.
-- **Resumable sends**: Apps Script kills executions after ~6 minutes. A subscriber list large
-  enough to hit that limit used to just die mid-send with no record of who was (or wasn't)
-  mailed. The server now stops with time to spare and returns `resumeFrom`; the sender page
-  automatically keeps calling until the whole list is done, showing progress as it goes.
-- **Retry + dedupe**: one retry on a transient `MailApp` failure before counting a recipient as
-  failed, and duplicate rows for the same email in the sheet are now sent to once, not twice.
-- **`/a/sender` is no longer shipped to production.** It used to be a real page on
-  `hackgwinnett.org` gated only by knowing the secret; now it doesn't exist outside `vp dev`.
