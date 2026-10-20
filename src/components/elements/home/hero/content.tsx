@@ -31,7 +31,7 @@ export function HomepageHero({ isScrolled }: { isScrolled: boolean }) {
           <ColorBadge
             render={<Link to="/posts/$postId" params={{ postId: "new-website-announcement" }} />}
           >
-            NEW: Introducing hackgwinnett.org v2
+            NEW: Our official T-shirts have arrived!
             <RiArrowRightDoubleLine />
           </ColorBadge>
           <h1 className="text-2xl sm:text-5xl md:text-6xl max-w-2xl font-mono leading-8 sm:leading-14 md:leading-17 select-none">
