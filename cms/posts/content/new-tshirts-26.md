@@ -5,7 +5,7 @@ cover:
   {
     src: "/assets/posts/covers/hqs-hg-playful-logo-cols.png",
     alt: "The shirt's lettermark",
-    height: 500,
+    height: 400,
   }
 date: 1792529894776
 tags: ["news"]
