@@ -73,7 +73,7 @@
     "concurrently": "^10.0.5",
     "oxc-transform-react": "^0.144.0",
     "typescript": "^7.0.2",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.9",
+    "vite": "catalog:",
     "vite-plus": "catalog:",
     "zod": "^4.5.4"
   },
