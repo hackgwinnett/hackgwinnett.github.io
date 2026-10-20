@@ -1,6 +1,6 @@
 ---
 title: "HackGwinnett T-shirts are here!"
-authors: ["hg"]
+authors: ["hackgwinnett"]
 cover:
   {
     src: "/assets/posts/covers/hqs-hg-playful-logo-cols.png",
