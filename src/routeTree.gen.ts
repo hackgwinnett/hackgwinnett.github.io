@@ -8,785 +8,802 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AliasesRouteRouteImport } from './routes/_aliases/route'
-import { Route as DeveloperRouteRouteImport } from './routes/developer/route'
-import { Route as PostsRouteRouteImport } from './routes/posts/route'
-import { Route as ProgramsRouteRouteImport } from './routes/programs/route'
-import { Route as ThecakeisalieRouteImport } from './routes/thecakeisalie'
-import { Route as ToolsRouteRouteImport } from './routes/tools/route'
-import { Route as AliasesAboutUsRouteImport } from './routes/_aliases/about-us'
-import { Route as AliasesContactRouteImport } from './routes/_aliases/contact'
-import { Route as AliasesFeedbackRouteImport } from './routes/_aliases/feedback'
-import { Route as AliasesHomeRouteImport } from './routes/_aliases/home'
-import { Route as AliasesRegisterRouteImport } from './routes/_aliases/register'
-import { Route as AliasesReportRouteImport } from './routes/_aliases/report'
-import { Route as AliasesSponsorRouteImport } from './routes/_aliases/sponsor'
-import { Route as AliasesTeamRouteImport } from './routes/_aliases/team'
-import { Route as ASenderRouteImport } from './routes/a/sender'
-import { Route as ASignatureRouteImport } from './routes/a/signature'
-import { Route as AboutIndexRouteImport } from './routes/about/index'
-import { Route as DeveloperIndexRouteImport } from './routes/developer/index'
-import { Route as DeveloperBsodRouteImport } from './routes/developer/bsod'
-import { Route as DeveloperCrumbtestRouteRouteImport } from './routes/developer/crumbtest/route'
-import { Route as EdaReportRouteImport } from './routes/eda/report'
-import { Route as EdaUnderConstructionRouteImport } from './routes/eda/under-construction'
-import { Route as GalleryIndexRouteImport } from './routes/gallery/index'
-import { Route as GoSlugRouteImport } from './routes/go.$slug'
-import { Route as PostsIndexRouteImport } from './routes/posts/index'
-import { Route as PostsPostIdRouteImport } from './routes/posts/$postId'
-import { Route as PostsAtChar123authorChar125RouteImport } from './routes/posts/@{$author}'
-import { Route as ProgramsIndexRouteImport } from './routes/programs/index'
-import { Route as ProgramsHackathonRouteRouteImport } from './routes/programs/hackathon/route'
-import { Route as SponsorsIndexRouteImport } from './routes/sponsors/index'
-import { Route as ToolsIndexRouteImport } from './routes/tools/index'
-import { Route as ToolsBirdieRouteImport } from './routes/tools/birdie'
-import { Route as ToolsBogeyRouteImport } from './routes/tools/bogey'
-import { Route as DeveloperCrumbtestBogeyRouteImport } from './routes/developer/crumbtest/bogey'
-import { Route as PostsTagTagRouteImport } from './routes/posts/tag.$tag'
-import { Route as ProgramsHackathonIndexRouteImport } from './routes/programs/hackathon/index'
-import { Route as ProgramsHackfestIndexRouteImport } from './routes/programs/hackfest/index'
-import { Route as ProgramsHackathonRegisterIndexRouteImport } from './routes/programs/hackathon/register/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as AliasesRouteRouteImport } from "./routes/_aliases/route";
+import { Route as DeveloperRouteRouteImport } from "./routes/developer/route";
+import { Route as PostsRouteRouteImport } from "./routes/posts/route";
+import { Route as ProgramsRouteRouteImport } from "./routes/programs/route";
+import { Route as ThecakeisalieRouteImport } from "./routes/thecakeisalie";
+import { Route as ToolsRouteRouteImport } from "./routes/tools/route";
+import { Route as AliasesAboutUsRouteImport } from "./routes/_aliases/about-us";
+import { Route as AliasesContactRouteImport } from "./routes/_aliases/contact";
+import { Route as AliasesFeedbackRouteImport } from "./routes/_aliases/feedback";
+import { Route as AliasesHomeRouteImport } from "./routes/_aliases/home";
+import { Route as AliasesRegisterRouteImport } from "./routes/_aliases/register";
+import { Route as AliasesReportRouteImport } from "./routes/_aliases/report";
+import { Route as AliasesSponsorRouteImport } from "./routes/_aliases/sponsor";
+import { Route as AliasesTeamRouteImport } from "./routes/_aliases/team";
+import { Route as ASenderRouteImport } from "./routes/a/sender";
+import { Route as ASignatureRouteImport } from "./routes/a/signature";
+import { Route as AboutIndexRouteImport } from "./routes/about/index";
+import { Route as DeveloperIndexRouteImport } from "./routes/developer/index";
+import { Route as DeveloperBsodRouteImport } from "./routes/developer/bsod";
+import { Route as DeveloperCrumbtestRouteRouteImport } from "./routes/developer/crumbtest/route";
+import { Route as EdaReportRouteImport } from "./routes/eda/report";
+import { Route as EdaUnderConstructionRouteImport } from "./routes/eda/under-construction";
+import { Route as GalleryIndexRouteImport } from "./routes/gallery/index";
+import { Route as GoSlugRouteImport } from "./routes/go.$slug";
+import { Route as PostsIndexRouteImport } from "./routes/posts/index";
+import { Route as PostsPostIdRouteImport } from "./routes/posts/$postId";
+import { Route as PostsAtChar123authorChar125RouteImport } from "./routes/posts/@{$author}";
+import { Route as ProgramsIndexRouteImport } from "./routes/programs/index";
+import { Route as ProgramsHackathonRouteRouteImport } from "./routes/programs/hackathon/route";
+import { Route as SponsorsIndexRouteImport } from "./routes/sponsors/index";
+import { Route as ToolsIndexRouteImport } from "./routes/tools/index";
+import { Route as ToolsBirdieRouteImport } from "./routes/tools/birdie";
+import { Route as ToolsBogeyRouteImport } from "./routes/tools/bogey";
+import { Route as DeveloperCrumbtestBogeyRouteImport } from "./routes/developer/crumbtest/bogey";
+import { Route as PostsTagTagRouteImport } from "./routes/posts/tag.$tag";
+import { Route as ProgramsHackathonIndexRouteImport } from "./routes/programs/hackathon/index";
+import { Route as ProgramsHackathonCountdownRouteImport } from "./routes/programs/hackathon/countdown";
+import { Route as ProgramsHackfestIndexRouteImport } from "./routes/programs/hackfest/index";
+import { Route as ProgramsHackathonRegisterIndexRouteImport } from "./routes/programs/hackathon/register/index";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AliasesRouteRoute = AliasesRouteRouteImport.update({
-  id: '/_aliases',
+  id: "/_aliases",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const DeveloperRouteRoute = DeveloperRouteRouteImport.update({
-  id: '/developer',
-  path: '/developer',
+  id: "/developer",
+  path: "/developer",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const PostsRouteRoute = PostsRouteRouteImport.update({
-  id: '/posts',
-  path: '/posts',
+  id: "/posts",
+  path: "/posts",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ProgramsRouteRoute = ProgramsRouteRouteImport.update({
-  id: '/programs',
-  path: '/programs',
+  id: "/programs",
+  path: "/programs",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ThecakeisalieRoute = ThecakeisalieRouteImport.update({
-  id: '/thecakeisalie',
-  path: '/thecakeisalie',
+  id: "/thecakeisalie",
+  path: "/thecakeisalie",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ToolsRouteRoute = ToolsRouteRouteImport.update({
-  id: '/tools',
-  path: '/tools',
+  id: "/tools",
+  path: "/tools",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AliasesAboutUsRoute = AliasesAboutUsRouteImport.update({
-  id: '/about-us',
-  path: '/about-us',
+  id: "/about-us",
+  path: "/about-us",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesContactRoute = AliasesContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+  id: "/contact",
+  path: "/contact",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesFeedbackRoute = AliasesFeedbackRouteImport.update({
-  id: '/feedback',
-  path: '/feedback',
+  id: "/feedback",
+  path: "/feedback",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesHomeRoute = AliasesHomeRouteImport.update({
-  id: '/home',
-  path: '/home',
+  id: "/home",
+  path: "/home",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesRegisterRoute = AliasesRegisterRouteImport.update({
-  id: '/register',
-  path: '/register',
+  id: "/register",
+  path: "/register",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesReportRoute = AliasesReportRouteImport.update({
-  id: '/report',
-  path: '/report',
+  id: "/report",
+  path: "/report",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesSponsorRoute = AliasesSponsorRouteImport.update({
-  id: '/sponsor',
-  path: '/sponsor',
+  id: "/sponsor",
+  path: "/sponsor",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const AliasesTeamRoute = AliasesTeamRouteImport.update({
-  id: '/team',
-  path: '/team',
+  id: "/team",
+  path: "/team",
   getParentRoute: () => AliasesRouteRoute,
-} as any)
+} as any);
 const ASenderRoute = ASenderRouteImport.update({
-  id: '/a/sender',
-  path: '/a/sender',
+  id: "/a/sender",
+  path: "/a/sender",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ASignatureRoute = ASignatureRouteImport.update({
-  id: '/a/signature',
-  path: '/a/signature',
+  id: "/a/signature",
+  path: "/a/signature",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AboutIndexRoute = AboutIndexRouteImport.update({
-  id: '/about/',
-  path: '/about/',
+  id: "/about/",
+  path: "/about/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const DeveloperIndexRoute = DeveloperIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => DeveloperRouteRoute,
-} as any)
+} as any);
 const DeveloperBsodRoute = DeveloperBsodRouteImport.update({
-  id: '/bsod',
-  path: '/bsod',
+  id: "/bsod",
+  path: "/bsod",
   getParentRoute: () => DeveloperRouteRoute,
-} as any)
+} as any);
 const DeveloperCrumbtestRouteRoute = DeveloperCrumbtestRouteRouteImport.update({
-  id: '/crumbtest',
-  path: '/crumbtest',
+  id: "/crumbtest",
+  path: "/crumbtest",
   getParentRoute: () => DeveloperRouteRoute,
-} as any)
+} as any);
 const EdaReportRoute = EdaReportRouteImport.update({
-  id: '/eda/report',
-  path: '/eda/report',
+  id: "/eda/report",
+  path: "/eda/report",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const EdaUnderConstructionRoute = EdaUnderConstructionRouteImport.update({
-  id: '/eda/under-construction',
-  path: '/eda/under-construction',
+  id: "/eda/under-construction",
+  path: "/eda/under-construction",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const GalleryIndexRoute = GalleryIndexRouteImport.update({
-  id: '/gallery/',
-  path: '/gallery/',
+  id: "/gallery/",
+  path: "/gallery/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const GoSlugRoute = GoSlugRouteImport.update({
-  id: '/go/$slug',
-  path: '/go/$slug',
+  id: "/go/$slug",
+  path: "/go/$slug",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const PostsIndexRoute = PostsIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => PostsRouteRoute,
-} as any)
+} as any);
 const PostsPostIdRoute = PostsPostIdRouteImport.update({
-  id: '/$postId',
-  path: '/$postId',
+  id: "/$postId",
+  path: "/$postId",
   getParentRoute: () => PostsRouteRoute,
-} as any)
-const PostsAtChar123authorChar125Route =
-  PostsAtChar123authorChar125RouteImport.update({
-    id: '/@{$author}',
-    path: '/@{$author}',
-    getParentRoute: () => PostsRouteRoute,
-  } as any)
+} as any);
+const PostsAtChar123authorChar125Route = PostsAtChar123authorChar125RouteImport.update({
+  id: "/@{$author}",
+  path: "/@{$author}",
+  getParentRoute: () => PostsRouteRoute,
+} as any);
 const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => ProgramsRouteRoute,
-} as any)
+} as any);
 const ProgramsHackathonRouteRoute = ProgramsHackathonRouteRouteImport.update({
-  id: '/hackathon',
-  path: '/hackathon',
+  id: "/hackathon",
+  path: "/hackathon",
   getParentRoute: () => ProgramsRouteRoute,
-} as any)
+} as any);
 const SponsorsIndexRoute = SponsorsIndexRouteImport.update({
-  id: '/sponsors/',
-  path: '/sponsors/',
+  id: "/sponsors/",
+  path: "/sponsors/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ToolsBirdieRoute = ToolsBirdieRouteImport.update({
-  id: '/birdie',
-  path: '/birdie',
+  id: "/birdie",
+  path: "/birdie",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ToolsBogeyRoute = ToolsBogeyRouteImport.update({
-  id: '/bogey',
-  path: '/bogey',
+  id: "/bogey",
+  path: "/bogey",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const DeveloperCrumbtestBogeyRoute = DeveloperCrumbtestBogeyRouteImport.update({
-  id: '/bogey',
-  path: '/bogey',
+  id: "/bogey",
+  path: "/bogey",
   getParentRoute: () => DeveloperCrumbtestRouteRoute,
-} as any)
+} as any);
 const PostsTagTagRoute = PostsTagTagRouteImport.update({
-  id: '/tag/$tag',
-  path: '/tag/$tag',
+  id: "/tag/$tag",
+  path: "/tag/$tag",
   getParentRoute: () => PostsRouteRoute,
-} as any)
+} as any);
 const ProgramsHackathonIndexRoute = ProgramsHackathonIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => ProgramsHackathonRouteRoute,
-} as any)
+} as any);
+const ProgramsHackathonCountdownRoute = ProgramsHackathonCountdownRouteImport.update({
+  id: "/countdown",
+  path: "/countdown",
+  getParentRoute: () => ProgramsHackathonRouteRoute,
+} as any);
 const ProgramsHackfestIndexRoute = ProgramsHackfestIndexRouteImport.update({
-  id: '/hackfest/',
-  path: '/hackfest/',
+  id: "/hackfest/",
+  path: "/hackfest/",
   getParentRoute: () => ProgramsRouteRoute,
-} as any)
-const ProgramsHackathonRegisterIndexRoute =
-  ProgramsHackathonRegisterIndexRouteImport.update({
-    id: '/register/',
-    path: '/register/',
-    getParentRoute: () => ProgramsHackathonRouteRoute,
-  } as any)
+} as any);
+const ProgramsHackathonRegisterIndexRoute = ProgramsHackathonRegisterIndexRouteImport.update({
+  id: "/register/",
+  path: "/register/",
+  getParentRoute: () => ProgramsHackathonRouteRoute,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/developer': typeof DeveloperRouteRouteWithChildren
-  '/posts': typeof PostsRouteRouteWithChildren
-  '/programs': typeof ProgramsRouteRouteWithChildren
-  '/tools': typeof ToolsRouteRouteWithChildren
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/developer/crumbtest': typeof DeveloperCrumbtestRouteRouteWithChildren
-  '/programs/hackathon': typeof ProgramsHackathonRouteRouteWithChildren
-  '/about-us': typeof AliasesAboutUsRoute
-  '/contact': typeof AliasesContactRoute
-  '/feedback': typeof AliasesFeedbackRoute
-  '/home': typeof AliasesHomeRoute
-  '/register': typeof AliasesRegisterRoute
-  '/report': typeof AliasesReportRoute
-  '/sponsor': typeof AliasesSponsorRoute
-  '/team': typeof AliasesTeamRoute
-  '/a/sender': typeof ASenderRoute
-  '/a/signature': typeof ASignatureRoute
-  '/developer/bsod': typeof DeveloperBsodRoute
-  '/eda/report': typeof EdaReportRoute
-  '/eda/under-construction': typeof EdaUnderConstructionRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/about/': typeof AboutIndexRoute
-  '/developer/': typeof DeveloperIndexRoute
-  '/gallery/': typeof GalleryIndexRoute
-  '/posts/': typeof PostsIndexRoute
-  '/programs/': typeof ProgramsIndexRoute
-  '/sponsors/': typeof SponsorsIndexRoute
-  '/tools/': typeof ToolsIndexRoute
-  '/developer/crumbtest/bogey': typeof DeveloperCrumbtestBogeyRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
-  '/programs/hackathon/': typeof ProgramsHackathonIndexRoute
-  '/programs/hackfest/': typeof ProgramsHackfestIndexRoute
-  '/programs/hackathon/register/': typeof ProgramsHackathonRegisterIndexRoute
+  "/": typeof IndexRoute;
+  "/developer": typeof DeveloperRouteRouteWithChildren;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/programs": typeof ProgramsRouteRouteWithChildren;
+  "/tools": typeof ToolsRouteRouteWithChildren;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/developer/crumbtest": typeof DeveloperCrumbtestRouteRouteWithChildren;
+  "/programs/hackathon": typeof ProgramsHackathonRouteRouteWithChildren;
+  "/about-us": typeof AliasesAboutUsRoute;
+  "/contact": typeof AliasesContactRoute;
+  "/feedback": typeof AliasesFeedbackRoute;
+  "/home": typeof AliasesHomeRoute;
+  "/register": typeof AliasesRegisterRoute;
+  "/report": typeof AliasesReportRoute;
+  "/sponsor": typeof AliasesSponsorRoute;
+  "/team": typeof AliasesTeamRoute;
+  "/a/sender": typeof ASenderRoute;
+  "/a/signature": typeof ASignatureRoute;
+  "/developer/bsod": typeof DeveloperBsodRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/eda/under-construction": typeof EdaUnderConstructionRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/about/": typeof AboutIndexRoute;
+  "/developer/": typeof DeveloperIndexRoute;
+  "/gallery/": typeof GalleryIndexRoute;
+  "/posts/": typeof PostsIndexRoute;
+  "/programs/": typeof ProgramsIndexRoute;
+  "/sponsors/": typeof SponsorsIndexRoute;
+  "/tools/": typeof ToolsIndexRoute;
+  "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
+  "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
+  "/programs/hackathon/register/": typeof ProgramsHackathonRegisterIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/developer/crumbtest': typeof DeveloperCrumbtestRouteRouteWithChildren
-  '/about-us': typeof AliasesAboutUsRoute
-  '/contact': typeof AliasesContactRoute
-  '/feedback': typeof AliasesFeedbackRoute
-  '/home': typeof AliasesHomeRoute
-  '/register': typeof AliasesRegisterRoute
-  '/report': typeof AliasesReportRoute
-  '/sponsor': typeof AliasesSponsorRoute
-  '/team': typeof AliasesTeamRoute
-  '/a/sender': typeof ASenderRoute
-  '/a/signature': typeof ASignatureRoute
-  '/developer/bsod': typeof DeveloperBsodRoute
-  '/eda/report': typeof EdaReportRoute
-  '/eda/under-construction': typeof EdaUnderConstructionRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/about': typeof AboutIndexRoute
-  '/developer': typeof DeveloperIndexRoute
-  '/gallery': typeof GalleryIndexRoute
-  '/posts': typeof PostsIndexRoute
-  '/programs': typeof ProgramsIndexRoute
-  '/sponsors': typeof SponsorsIndexRoute
-  '/tools': typeof ToolsIndexRoute
-  '/developer/crumbtest/bogey': typeof DeveloperCrumbtestBogeyRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
-  '/programs/hackathon': typeof ProgramsHackathonIndexRoute
-  '/programs/hackfest': typeof ProgramsHackfestIndexRoute
-  '/programs/hackathon/register': typeof ProgramsHackathonRegisterIndexRoute
+  "/": typeof IndexRoute;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/developer/crumbtest": typeof DeveloperCrumbtestRouteRouteWithChildren;
+  "/about-us": typeof AliasesAboutUsRoute;
+  "/contact": typeof AliasesContactRoute;
+  "/feedback": typeof AliasesFeedbackRoute;
+  "/home": typeof AliasesHomeRoute;
+  "/register": typeof AliasesRegisterRoute;
+  "/report": typeof AliasesReportRoute;
+  "/sponsor": typeof AliasesSponsorRoute;
+  "/team": typeof AliasesTeamRoute;
+  "/a/sender": typeof ASenderRoute;
+  "/a/signature": typeof ASignatureRoute;
+  "/developer/bsod": typeof DeveloperBsodRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/eda/under-construction": typeof EdaUnderConstructionRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/about": typeof AboutIndexRoute;
+  "/developer": typeof DeveloperIndexRoute;
+  "/gallery": typeof GalleryIndexRoute;
+  "/posts": typeof PostsIndexRoute;
+  "/programs": typeof ProgramsIndexRoute;
+  "/sponsors": typeof SponsorsIndexRoute;
+  "/tools": typeof ToolsIndexRoute;
+  "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/programs/hackathon": typeof ProgramsHackathonIndexRoute;
+  "/programs/hackfest": typeof ProgramsHackfestIndexRoute;
+  "/programs/hackathon/register": typeof ProgramsHackathonRegisterIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/_aliases': typeof AliasesRouteRouteWithChildren
-  '/developer': typeof DeveloperRouteRouteWithChildren
-  '/posts': typeof PostsRouteRouteWithChildren
-  '/programs': typeof ProgramsRouteRouteWithChildren
-  '/tools': typeof ToolsRouteRouteWithChildren
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/developer/crumbtest': typeof DeveloperCrumbtestRouteRouteWithChildren
-  '/programs/hackathon': typeof ProgramsHackathonRouteRouteWithChildren
-  '/_aliases/about-us': typeof AliasesAboutUsRoute
-  '/_aliases/contact': typeof AliasesContactRoute
-  '/_aliases/feedback': typeof AliasesFeedbackRoute
-  '/_aliases/home': typeof AliasesHomeRoute
-  '/_aliases/register': typeof AliasesRegisterRoute
-  '/_aliases/report': typeof AliasesReportRoute
-  '/_aliases/sponsor': typeof AliasesSponsorRoute
-  '/_aliases/team': typeof AliasesTeamRoute
-  '/a/sender': typeof ASenderRoute
-  '/a/signature': typeof ASignatureRoute
-  '/developer/bsod': typeof DeveloperBsodRoute
-  '/eda/report': typeof EdaReportRoute
-  '/eda/under-construction': typeof EdaUnderConstructionRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/about/': typeof AboutIndexRoute
-  '/developer/': typeof DeveloperIndexRoute
-  '/gallery/': typeof GalleryIndexRoute
-  '/posts/': typeof PostsIndexRoute
-  '/programs/': typeof ProgramsIndexRoute
-  '/sponsors/': typeof SponsorsIndexRoute
-  '/tools/': typeof ToolsIndexRoute
-  '/developer/crumbtest/bogey': typeof DeveloperCrumbtestBogeyRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
-  '/programs/hackathon/': typeof ProgramsHackathonIndexRoute
-  '/programs/hackfest/': typeof ProgramsHackfestIndexRoute
-  '/programs/hackathon/register/': typeof ProgramsHackathonRegisterIndexRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/_aliases": typeof AliasesRouteRouteWithChildren;
+  "/developer": typeof DeveloperRouteRouteWithChildren;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/programs": typeof ProgramsRouteRouteWithChildren;
+  "/tools": typeof ToolsRouteRouteWithChildren;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/developer/crumbtest": typeof DeveloperCrumbtestRouteRouteWithChildren;
+  "/programs/hackathon": typeof ProgramsHackathonRouteRouteWithChildren;
+  "/_aliases/about-us": typeof AliasesAboutUsRoute;
+  "/_aliases/contact": typeof AliasesContactRoute;
+  "/_aliases/feedback": typeof AliasesFeedbackRoute;
+  "/_aliases/home": typeof AliasesHomeRoute;
+  "/_aliases/register": typeof AliasesRegisterRoute;
+  "/_aliases/report": typeof AliasesReportRoute;
+  "/_aliases/sponsor": typeof AliasesSponsorRoute;
+  "/_aliases/team": typeof AliasesTeamRoute;
+  "/a/sender": typeof ASenderRoute;
+  "/a/signature": typeof ASignatureRoute;
+  "/developer/bsod": typeof DeveloperBsodRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/eda/under-construction": typeof EdaUnderConstructionRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/about/": typeof AboutIndexRoute;
+  "/developer/": typeof DeveloperIndexRoute;
+  "/gallery/": typeof GalleryIndexRoute;
+  "/posts/": typeof PostsIndexRoute;
+  "/programs/": typeof ProgramsIndexRoute;
+  "/sponsors/": typeof SponsorsIndexRoute;
+  "/tools/": typeof ToolsIndexRoute;
+  "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
+  "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
+  "/programs/hackathon/register/": typeof ProgramsHackathonRegisterIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/developer'
-    | '/posts'
-    | '/programs'
-    | '/tools'
-    | '/thecakeisalie'
-    | '/developer/crumbtest'
-    | '/programs/hackathon'
-    | '/about-us'
-    | '/contact'
-    | '/feedback'
-    | '/home'
-    | '/register'
-    | '/report'
-    | '/sponsor'
-    | '/team'
-    | '/a/sender'
-    | '/a/signature'
-    | '/developer/bsod'
-    | '/eda/report'
-    | '/eda/under-construction'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/about/'
-    | '/developer/'
-    | '/gallery/'
-    | '/posts/'
-    | '/programs/'
-    | '/sponsors/'
-    | '/tools/'
-    | '/developer/crumbtest/bogey'
-    | '/posts/tag/$tag'
-    | '/programs/hackathon/'
-    | '/programs/hackfest/'
-    | '/programs/hackathon/register/'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/developer"
+    | "/posts"
+    | "/programs"
+    | "/tools"
+    | "/thecakeisalie"
+    | "/developer/crumbtest"
+    | "/programs/hackathon"
+    | "/about-us"
+    | "/contact"
+    | "/feedback"
+    | "/home"
+    | "/register"
+    | "/report"
+    | "/sponsor"
+    | "/team"
+    | "/a/sender"
+    | "/a/signature"
+    | "/developer/bsod"
+    | "/eda/report"
+    | "/eda/under-construction"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/about/"
+    | "/developer/"
+    | "/gallery/"
+    | "/posts/"
+    | "/programs/"
+    | "/sponsors/"
+    | "/tools/"
+    | "/developer/crumbtest/bogey"
+    | "/posts/tag/$tag"
+    | "/programs/hackathon/countdown"
+    | "/programs/hackathon/"
+    | "/programs/hackfest/"
+    | "/programs/hackathon/register/";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/thecakeisalie'
-    | '/developer/crumbtest'
-    | '/about-us'
-    | '/contact'
-    | '/feedback'
-    | '/home'
-    | '/register'
-    | '/report'
-    | '/sponsor'
-    | '/team'
-    | '/a/sender'
-    | '/a/signature'
-    | '/developer/bsod'
-    | '/eda/report'
-    | '/eda/under-construction'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/about'
-    | '/developer'
-    | '/gallery'
-    | '/posts'
-    | '/programs'
-    | '/sponsors'
-    | '/tools'
-    | '/developer/crumbtest/bogey'
-    | '/posts/tag/$tag'
-    | '/programs/hackathon'
-    | '/programs/hackfest'
-    | '/programs/hackathon/register'
+    | "/"
+    | "/thecakeisalie"
+    | "/developer/crumbtest"
+    | "/about-us"
+    | "/contact"
+    | "/feedback"
+    | "/home"
+    | "/register"
+    | "/report"
+    | "/sponsor"
+    | "/team"
+    | "/a/sender"
+    | "/a/signature"
+    | "/developer/bsod"
+    | "/eda/report"
+    | "/eda/under-construction"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/about"
+    | "/developer"
+    | "/gallery"
+    | "/posts"
+    | "/programs"
+    | "/sponsors"
+    | "/tools"
+    | "/developer/crumbtest/bogey"
+    | "/posts/tag/$tag"
+    | "/programs/hackathon/countdown"
+    | "/programs/hackathon"
+    | "/programs/hackfest"
+    | "/programs/hackathon/register";
   id:
-    | '__root__'
-    | '/'
-    | '/_aliases'
-    | '/developer'
-    | '/posts'
-    | '/programs'
-    | '/tools'
-    | '/thecakeisalie'
-    | '/developer/crumbtest'
-    | '/programs/hackathon'
-    | '/_aliases/about-us'
-    | '/_aliases/contact'
-    | '/_aliases/feedback'
-    | '/_aliases/home'
-    | '/_aliases/register'
-    | '/_aliases/report'
-    | '/_aliases/sponsor'
-    | '/_aliases/team'
-    | '/a/sender'
-    | '/a/signature'
-    | '/developer/bsod'
-    | '/eda/report'
-    | '/eda/under-construction'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/about/'
-    | '/developer/'
-    | '/gallery/'
-    | '/posts/'
-    | '/programs/'
-    | '/sponsors/'
-    | '/tools/'
-    | '/developer/crumbtest/bogey'
-    | '/posts/tag/$tag'
-    | '/programs/hackathon/'
-    | '/programs/hackfest/'
-    | '/programs/hackathon/register/'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/_aliases"
+    | "/developer"
+    | "/posts"
+    | "/programs"
+    | "/tools"
+    | "/thecakeisalie"
+    | "/developer/crumbtest"
+    | "/programs/hackathon"
+    | "/_aliases/about-us"
+    | "/_aliases/contact"
+    | "/_aliases/feedback"
+    | "/_aliases/home"
+    | "/_aliases/register"
+    | "/_aliases/report"
+    | "/_aliases/sponsor"
+    | "/_aliases/team"
+    | "/a/sender"
+    | "/a/signature"
+    | "/developer/bsod"
+    | "/eda/report"
+    | "/eda/under-construction"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/about/"
+    | "/developer/"
+    | "/gallery/"
+    | "/posts/"
+    | "/programs/"
+    | "/sponsors/"
+    | "/tools/"
+    | "/developer/crumbtest/bogey"
+    | "/posts/tag/$tag"
+    | "/programs/hackathon/countdown"
+    | "/programs/hackathon/"
+    | "/programs/hackfest/"
+    | "/programs/hackathon/register/";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AliasesRouteRoute: typeof AliasesRouteRouteWithChildren
-  DeveloperRouteRoute: typeof DeveloperRouteRouteWithChildren
-  PostsRouteRoute: typeof PostsRouteRouteWithChildren
-  ProgramsRouteRoute: typeof ProgramsRouteRouteWithChildren
-  ToolsRouteRoute: typeof ToolsRouteRouteWithChildren
-  ThecakeisalieRoute: typeof ThecakeisalieRoute
-  ASenderRoute: typeof ASenderRoute
-  ASignatureRoute: typeof ASignatureRoute
-  EdaReportRoute: typeof EdaReportRoute
-  EdaUnderConstructionRoute: typeof EdaUnderConstructionRoute
-  GoSlugRoute: typeof GoSlugRoute
-  AboutIndexRoute: typeof AboutIndexRoute
-  GalleryIndexRoute: typeof GalleryIndexRoute
-  SponsorsIndexRoute: typeof SponsorsIndexRoute
+  IndexRoute: typeof IndexRoute;
+  AliasesRouteRoute: typeof AliasesRouteRouteWithChildren;
+  DeveloperRouteRoute: typeof DeveloperRouteRouteWithChildren;
+  PostsRouteRoute: typeof PostsRouteRouteWithChildren;
+  ProgramsRouteRoute: typeof ProgramsRouteRouteWithChildren;
+  ToolsRouteRoute: typeof ToolsRouteRouteWithChildren;
+  ThecakeisalieRoute: typeof ThecakeisalieRoute;
+  ASenderRoute: typeof ASenderRoute;
+  ASignatureRoute: typeof ASignatureRoute;
+  EdaReportRoute: typeof EdaReportRoute;
+  EdaUnderConstructionRoute: typeof EdaUnderConstructionRoute;
+  GoSlugRoute: typeof GoSlugRoute;
+  AboutIndexRoute: typeof AboutIndexRoute;
+  GalleryIndexRoute: typeof GalleryIndexRoute;
+  SponsorsIndexRoute: typeof SponsorsIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases': {
-      id: '/_aliases'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AliasesRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/developer': {
-      id: '/developer'
-      path: '/developer'
-      fullPath: '/developer'
-      preLoaderRoute: typeof DeveloperRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts': {
-      id: '/posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs': {
-      id: '/programs'
-      path: '/programs'
-      fullPath: '/programs'
-      preLoaderRoute: typeof ProgramsRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/thecakeisalie': {
-      id: '/thecakeisalie'
-      path: '/thecakeisalie'
-      fullPath: '/thecakeisalie'
-      preLoaderRoute: typeof ThecakeisalieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tools': {
-      id: '/tools'
-      path: '/tools'
-      fullPath: '/tools'
-      preLoaderRoute: typeof ToolsRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases/about-us': {
-      id: '/_aliases/about-us'
-      path: '/about-us'
-      fullPath: '/about-us'
-      preLoaderRoute: typeof AliasesAboutUsRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/contact': {
-      id: '/_aliases/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof AliasesContactRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/feedback': {
-      id: '/_aliases/feedback'
-      path: '/feedback'
-      fullPath: '/feedback'
-      preLoaderRoute: typeof AliasesFeedbackRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/home': {
-      id: '/_aliases/home'
-      path: '/home'
-      fullPath: '/home'
-      preLoaderRoute: typeof AliasesHomeRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/register': {
-      id: '/_aliases/register'
-      path: '/register'
-      fullPath: '/register'
-      preLoaderRoute: typeof AliasesRegisterRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/report': {
-      id: '/_aliases/report'
-      path: '/report'
-      fullPath: '/report'
-      preLoaderRoute: typeof AliasesReportRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/sponsor': {
-      id: '/_aliases/sponsor'
-      path: '/sponsor'
-      fullPath: '/sponsor'
-      preLoaderRoute: typeof AliasesSponsorRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/_aliases/team': {
-      id: '/_aliases/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof AliasesTeamRouteImport
-      parentRoute: typeof AliasesRouteRoute
-    }
-    '/a/sender': {
-      id: '/a/sender'
-      path: '/a/sender'
-      fullPath: '/a/sender'
-      preLoaderRoute: typeof ASenderRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/a/signature': {
-      id: '/a/signature'
-      path: '/a/signature'
-      fullPath: '/a/signature'
-      preLoaderRoute: typeof ASignatureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about/': {
-      id: '/about/'
-      path: '/about'
-      fullPath: '/about/'
-      preLoaderRoute: typeof AboutIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/developer/': {
-      id: '/developer/'
-      path: '/'
-      fullPath: '/developer/'
-      preLoaderRoute: typeof DeveloperIndexRouteImport
-      parentRoute: typeof DeveloperRouteRoute
-    }
-    '/developer/bsod': {
-      id: '/developer/bsod'
-      path: '/bsod'
-      fullPath: '/developer/bsod'
-      preLoaderRoute: typeof DeveloperBsodRouteImport
-      parentRoute: typeof DeveloperRouteRoute
-    }
-    '/developer/crumbtest': {
-      id: '/developer/crumbtest'
-      path: '/crumbtest'
-      fullPath: '/developer/crumbtest'
-      preLoaderRoute: typeof DeveloperCrumbtestRouteRouteImport
-      parentRoute: typeof DeveloperRouteRoute
-    }
-    '/eda/report': {
-      id: '/eda/report'
-      path: '/eda/report'
-      fullPath: '/eda/report'
-      preLoaderRoute: typeof EdaReportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eda/under-construction': {
-      id: '/eda/under-construction'
-      path: '/eda/under-construction'
-      fullPath: '/eda/under-construction'
-      preLoaderRoute: typeof EdaUnderConstructionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery/': {
-      id: '/gallery/'
-      path: '/gallery'
-      fullPath: '/gallery/'
-      preLoaderRoute: typeof GalleryIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/go/$slug': {
-      id: '/go/$slug'
-      path: '/go/$slug'
-      fullPath: '/go/$slug'
-      preLoaderRoute: typeof GoSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts/': {
-      id: '/posts/'
-      path: '/'
-      fullPath: '/posts/'
-      preLoaderRoute: typeof PostsIndexRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/posts/$postId': {
-      id: '/posts/$postId'
-      path: '/$postId'
-      fullPath: '/posts/$postId'
-      preLoaderRoute: typeof PostsPostIdRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/posts/@{$author}': {
-      id: '/posts/@{$author}'
-      path: '/@{$author}'
-      fullPath: '/posts/@{$author}'
-      preLoaderRoute: typeof PostsAtChar123authorChar125RouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/programs/': {
-      id: '/programs/'
-      path: '/'
-      fullPath: '/programs/'
-      preLoaderRoute: typeof ProgramsIndexRouteImport
-      parentRoute: typeof ProgramsRouteRoute
-    }
-    '/programs/hackathon': {
-      id: '/programs/hackathon'
-      path: '/hackathon'
-      fullPath: '/programs/hackathon'
-      preLoaderRoute: typeof ProgramsHackathonRouteRouteImport
-      parentRoute: typeof ProgramsRouteRoute
-    }
-    '/sponsors/': {
-      id: '/sponsors/'
-      path: '/sponsors'
-      fullPath: '/sponsors/'
-      preLoaderRoute: typeof SponsorsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tools/': {
-      id: '/tools/'
-      path: '/'
-      fullPath: '/tools/'
-      preLoaderRoute: typeof ToolsIndexRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/tools/birdie': {
-      id: '/tools/birdie'
-      path: '/birdie'
-      fullPath: '/tools/birdie'
-      preLoaderRoute: typeof ToolsBirdieRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/tools/bogey': {
-      id: '/tools/bogey'
-      path: '/bogey'
-      fullPath: '/tools/bogey'
-      preLoaderRoute: typeof ToolsBogeyRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/developer/crumbtest/bogey': {
-      id: '/developer/crumbtest/bogey'
-      path: '/bogey'
-      fullPath: '/developer/crumbtest/bogey'
-      preLoaderRoute: typeof DeveloperCrumbtestBogeyRouteImport
-      parentRoute: typeof DeveloperCrumbtestRouteRoute
-    }
-    '/posts/tag/$tag': {
-      id: '/posts/tag/$tag'
-      path: '/tag/$tag'
-      fullPath: '/posts/tag/$tag'
-      preLoaderRoute: typeof PostsTagTagRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/programs/hackathon/': {
-      id: '/programs/hackathon/'
-      path: '/'
-      fullPath: '/programs/hackathon/'
-      preLoaderRoute: typeof ProgramsHackathonIndexRouteImport
-      parentRoute: typeof ProgramsHackathonRouteRoute
-    }
-    '/programs/hackfest/': {
-      id: '/programs/hackfest/'
-      path: '/hackfest'
-      fullPath: '/programs/hackfest/'
-      preLoaderRoute: typeof ProgramsHackfestIndexRouteImport
-      parentRoute: typeof ProgramsRouteRoute
-    }
-    '/programs/hackathon/register/': {
-      id: '/programs/hackathon/register/'
-      path: '/register'
-      fullPath: '/programs/hackathon/register/'
-      preLoaderRoute: typeof ProgramsHackathonRegisterIndexRouteImport
-      parentRoute: typeof ProgramsHackathonRouteRoute
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases": {
+      id: "/_aliases";
+      path: "";
+      fullPath: "/";
+      preLoaderRoute: typeof AliasesRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/developer": {
+      id: "/developer";
+      path: "/developer";
+      fullPath: "/developer";
+      preLoaderRoute: typeof DeveloperRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts": {
+      id: "/posts";
+      path: "/posts";
+      fullPath: "/posts";
+      preLoaderRoute: typeof PostsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/programs": {
+      id: "/programs";
+      path: "/programs";
+      fullPath: "/programs";
+      preLoaderRoute: typeof ProgramsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/thecakeisalie": {
+      id: "/thecakeisalie";
+      path: "/thecakeisalie";
+      fullPath: "/thecakeisalie";
+      preLoaderRoute: typeof ThecakeisalieRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tools": {
+      id: "/tools";
+      path: "/tools";
+      fullPath: "/tools";
+      preLoaderRoute: typeof ToolsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases/about-us": {
+      id: "/_aliases/about-us";
+      path: "/about-us";
+      fullPath: "/about-us";
+      preLoaderRoute: typeof AliasesAboutUsRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/contact": {
+      id: "/_aliases/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof AliasesContactRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/feedback": {
+      id: "/_aliases/feedback";
+      path: "/feedback";
+      fullPath: "/feedback";
+      preLoaderRoute: typeof AliasesFeedbackRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/home": {
+      id: "/_aliases/home";
+      path: "/home";
+      fullPath: "/home";
+      preLoaderRoute: typeof AliasesHomeRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/register": {
+      id: "/_aliases/register";
+      path: "/register";
+      fullPath: "/register";
+      preLoaderRoute: typeof AliasesRegisterRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/report": {
+      id: "/_aliases/report";
+      path: "/report";
+      fullPath: "/report";
+      preLoaderRoute: typeof AliasesReportRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/sponsor": {
+      id: "/_aliases/sponsor";
+      path: "/sponsor";
+      fullPath: "/sponsor";
+      preLoaderRoute: typeof AliasesSponsorRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/_aliases/team": {
+      id: "/_aliases/team";
+      path: "/team";
+      fullPath: "/team";
+      preLoaderRoute: typeof AliasesTeamRouteImport;
+      parentRoute: typeof AliasesRouteRoute;
+    };
+    "/a/sender": {
+      id: "/a/sender";
+      path: "/a/sender";
+      fullPath: "/a/sender";
+      preLoaderRoute: typeof ASenderRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/a/signature": {
+      id: "/a/signature";
+      path: "/a/signature";
+      fullPath: "/a/signature";
+      preLoaderRoute: typeof ASignatureRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/about/": {
+      id: "/about/";
+      path: "/about";
+      fullPath: "/about/";
+      preLoaderRoute: typeof AboutIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/developer/": {
+      id: "/developer/";
+      path: "/";
+      fullPath: "/developer/";
+      preLoaderRoute: typeof DeveloperIndexRouteImport;
+      parentRoute: typeof DeveloperRouteRoute;
+    };
+    "/developer/bsod": {
+      id: "/developer/bsod";
+      path: "/bsod";
+      fullPath: "/developer/bsod";
+      preLoaderRoute: typeof DeveloperBsodRouteImport;
+      parentRoute: typeof DeveloperRouteRoute;
+    };
+    "/developer/crumbtest": {
+      id: "/developer/crumbtest";
+      path: "/crumbtest";
+      fullPath: "/developer/crumbtest";
+      preLoaderRoute: typeof DeveloperCrumbtestRouteRouteImport;
+      parentRoute: typeof DeveloperRouteRoute;
+    };
+    "/eda/report": {
+      id: "/eda/report";
+      path: "/eda/report";
+      fullPath: "/eda/report";
+      preLoaderRoute: typeof EdaReportRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/eda/under-construction": {
+      id: "/eda/under-construction";
+      path: "/eda/under-construction";
+      fullPath: "/eda/under-construction";
+      preLoaderRoute: typeof EdaUnderConstructionRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/gallery/": {
+      id: "/gallery/";
+      path: "/gallery";
+      fullPath: "/gallery/";
+      preLoaderRoute: typeof GalleryIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/go/$slug": {
+      id: "/go/$slug";
+      path: "/go/$slug";
+      fullPath: "/go/$slug";
+      preLoaderRoute: typeof GoSlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts/": {
+      id: "/posts/";
+      path: "/";
+      fullPath: "/posts/";
+      preLoaderRoute: typeof PostsIndexRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/posts/$postId": {
+      id: "/posts/$postId";
+      path: "/$postId";
+      fullPath: "/posts/$postId";
+      preLoaderRoute: typeof PostsPostIdRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/posts/@{$author}": {
+      id: "/posts/@{$author}";
+      path: "/@{$author}";
+      fullPath: "/posts/@{$author}";
+      preLoaderRoute: typeof PostsAtChar123authorChar125RouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/programs/": {
+      id: "/programs/";
+      path: "/";
+      fullPath: "/programs/";
+      preLoaderRoute: typeof ProgramsIndexRouteImport;
+      parentRoute: typeof ProgramsRouteRoute;
+    };
+    "/programs/hackathon": {
+      id: "/programs/hackathon";
+      path: "/hackathon";
+      fullPath: "/programs/hackathon";
+      preLoaderRoute: typeof ProgramsHackathonRouteRouteImport;
+      parentRoute: typeof ProgramsRouteRoute;
+    };
+    "/sponsors/": {
+      id: "/sponsors/";
+      path: "/sponsors";
+      fullPath: "/sponsors/";
+      preLoaderRoute: typeof SponsorsIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tools/": {
+      id: "/tools/";
+      path: "/";
+      fullPath: "/tools/";
+      preLoaderRoute: typeof ToolsIndexRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/tools/birdie": {
+      id: "/tools/birdie";
+      path: "/birdie";
+      fullPath: "/tools/birdie";
+      preLoaderRoute: typeof ToolsBirdieRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/tools/bogey": {
+      id: "/tools/bogey";
+      path: "/bogey";
+      fullPath: "/tools/bogey";
+      preLoaderRoute: typeof ToolsBogeyRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/developer/crumbtest/bogey": {
+      id: "/developer/crumbtest/bogey";
+      path: "/bogey";
+      fullPath: "/developer/crumbtest/bogey";
+      preLoaderRoute: typeof DeveloperCrumbtestBogeyRouteImport;
+      parentRoute: typeof DeveloperCrumbtestRouteRoute;
+    };
+    "/posts/tag/$tag": {
+      id: "/posts/tag/$tag";
+      path: "/tag/$tag";
+      fullPath: "/posts/tag/$tag";
+      preLoaderRoute: typeof PostsTagTagRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/programs/hackathon/": {
+      id: "/programs/hackathon/";
+      path: "/";
+      fullPath: "/programs/hackathon/";
+      preLoaderRoute: typeof ProgramsHackathonIndexRouteImport;
+      parentRoute: typeof ProgramsHackathonRouteRoute;
+    };
+    "/programs/hackathon/countdown": {
+      id: "/programs/hackathon/countdown";
+      path: "/countdown";
+      fullPath: "/programs/hackathon/countdown";
+      preLoaderRoute: typeof ProgramsHackathonCountdownRouteImport;
+      parentRoute: typeof ProgramsHackathonRouteRoute;
+    };
+    "/programs/hackfest/": {
+      id: "/programs/hackfest/";
+      path: "/hackfest";
+      fullPath: "/programs/hackfest/";
+      preLoaderRoute: typeof ProgramsHackfestIndexRouteImport;
+      parentRoute: typeof ProgramsRouteRoute;
+    };
+    "/programs/hackathon/register/": {
+      id: "/programs/hackathon/register/";
+      path: "/register";
+      fullPath: "/programs/hackathon/register/";
+      preLoaderRoute: typeof ProgramsHackathonRegisterIndexRouteImport;
+      parentRoute: typeof ProgramsHackathonRouteRoute;
+    };
   }
 }
 
 interface AliasesRouteRouteChildren {
-  AliasesAboutUsRoute: typeof AliasesAboutUsRoute
-  AliasesContactRoute: typeof AliasesContactRoute
-  AliasesFeedbackRoute: typeof AliasesFeedbackRoute
-  AliasesHomeRoute: typeof AliasesHomeRoute
-  AliasesRegisterRoute: typeof AliasesRegisterRoute
-  AliasesReportRoute: typeof AliasesReportRoute
-  AliasesSponsorRoute: typeof AliasesSponsorRoute
-  AliasesTeamRoute: typeof AliasesTeamRoute
+  AliasesAboutUsRoute: typeof AliasesAboutUsRoute;
+  AliasesContactRoute: typeof AliasesContactRoute;
+  AliasesFeedbackRoute: typeof AliasesFeedbackRoute;
+  AliasesHomeRoute: typeof AliasesHomeRoute;
+  AliasesRegisterRoute: typeof AliasesRegisterRoute;
+  AliasesReportRoute: typeof AliasesReportRoute;
+  AliasesSponsorRoute: typeof AliasesSponsorRoute;
+  AliasesTeamRoute: typeof AliasesTeamRoute;
 }
 
 const AliasesRouteRouteChildren: AliasesRouteRouteChildren = {
@@ -798,47 +815,43 @@ const AliasesRouteRouteChildren: AliasesRouteRouteChildren = {
   AliasesReportRoute: AliasesReportRoute,
   AliasesSponsorRoute: AliasesSponsorRoute,
   AliasesTeamRoute: AliasesTeamRoute,
-}
+};
 
-const AliasesRouteRouteWithChildren = AliasesRouteRoute._addFileChildren(
-  AliasesRouteRouteChildren,
-)
+const AliasesRouteRouteWithChildren = AliasesRouteRoute._addFileChildren(AliasesRouteRouteChildren);
 
 interface DeveloperCrumbtestRouteRouteChildren {
-  DeveloperCrumbtestBogeyRoute: typeof DeveloperCrumbtestBogeyRoute
+  DeveloperCrumbtestBogeyRoute: typeof DeveloperCrumbtestBogeyRoute;
 }
 
-const DeveloperCrumbtestRouteRouteChildren: DeveloperCrumbtestRouteRouteChildren =
-  {
-    DeveloperCrumbtestBogeyRoute: DeveloperCrumbtestBogeyRoute,
-  }
+const DeveloperCrumbtestRouteRouteChildren: DeveloperCrumbtestRouteRouteChildren = {
+  DeveloperCrumbtestBogeyRoute: DeveloperCrumbtestBogeyRoute,
+};
 
-const DeveloperCrumbtestRouteRouteWithChildren =
-  DeveloperCrumbtestRouteRoute._addFileChildren(
-    DeveloperCrumbtestRouteRouteChildren,
-  )
+const DeveloperCrumbtestRouteRouteWithChildren = DeveloperCrumbtestRouteRoute._addFileChildren(
+  DeveloperCrumbtestRouteRouteChildren,
+);
 
 interface DeveloperRouteRouteChildren {
-  DeveloperCrumbtestRouteRoute: typeof DeveloperCrumbtestRouteRouteWithChildren
-  DeveloperBsodRoute: typeof DeveloperBsodRoute
-  DeveloperIndexRoute: typeof DeveloperIndexRoute
+  DeveloperCrumbtestRouteRoute: typeof DeveloperCrumbtestRouteRouteWithChildren;
+  DeveloperBsodRoute: typeof DeveloperBsodRoute;
+  DeveloperIndexRoute: typeof DeveloperIndexRoute;
 }
 
 const DeveloperRouteRouteChildren: DeveloperRouteRouteChildren = {
   DeveloperCrumbtestRouteRoute: DeveloperCrumbtestRouteRouteWithChildren,
   DeveloperBsodRoute: DeveloperBsodRoute,
   DeveloperIndexRoute: DeveloperIndexRoute,
-}
+};
 
 const DeveloperRouteRouteWithChildren = DeveloperRouteRoute._addFileChildren(
   DeveloperRouteRouteChildren,
-)
+);
 
 interface PostsRouteRouteChildren {
-  PostsPostIdRoute: typeof PostsPostIdRoute
-  PostsAtChar123authorChar125Route: typeof PostsAtChar123authorChar125Route
-  PostsIndexRoute: typeof PostsIndexRoute
-  PostsTagTagRoute: typeof PostsTagTagRoute
+  PostsPostIdRoute: typeof PostsPostIdRoute;
+  PostsAtChar123authorChar125Route: typeof PostsAtChar123authorChar125Route;
+  PostsIndexRoute: typeof PostsIndexRoute;
+  PostsTagTagRoute: typeof PostsTagTagRoute;
 }
 
 const PostsRouteRouteChildren: PostsRouteRouteChildren = {
@@ -846,59 +859,55 @@ const PostsRouteRouteChildren: PostsRouteRouteChildren = {
   PostsAtChar123authorChar125Route: PostsAtChar123authorChar125Route,
   PostsIndexRoute: PostsIndexRoute,
   PostsTagTagRoute: PostsTagTagRoute,
-}
+};
 
-const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(
-  PostsRouteRouteChildren,
-)
+const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(PostsRouteRouteChildren);
 
 interface ProgramsHackathonRouteRouteChildren {
-  ProgramsHackathonIndexRoute: typeof ProgramsHackathonIndexRoute
-  ProgramsHackathonRegisterIndexRoute: typeof ProgramsHackathonRegisterIndexRoute
+  ProgramsHackathonCountdownRoute: typeof ProgramsHackathonCountdownRoute;
+  ProgramsHackathonIndexRoute: typeof ProgramsHackathonIndexRoute;
+  ProgramsHackathonRegisterIndexRoute: typeof ProgramsHackathonRegisterIndexRoute;
 }
 
-const ProgramsHackathonRouteRouteChildren: ProgramsHackathonRouteRouteChildren =
-  {
-    ProgramsHackathonIndexRoute: ProgramsHackathonIndexRoute,
-    ProgramsHackathonRegisterIndexRoute: ProgramsHackathonRegisterIndexRoute,
-  }
+const ProgramsHackathonRouteRouteChildren: ProgramsHackathonRouteRouteChildren = {
+  ProgramsHackathonCountdownRoute: ProgramsHackathonCountdownRoute,
+  ProgramsHackathonIndexRoute: ProgramsHackathonIndexRoute,
+  ProgramsHackathonRegisterIndexRoute: ProgramsHackathonRegisterIndexRoute,
+};
 
-const ProgramsHackathonRouteRouteWithChildren =
-  ProgramsHackathonRouteRoute._addFileChildren(
-    ProgramsHackathonRouteRouteChildren,
-  )
+const ProgramsHackathonRouteRouteWithChildren = ProgramsHackathonRouteRoute._addFileChildren(
+  ProgramsHackathonRouteRouteChildren,
+);
 
 interface ProgramsRouteRouteChildren {
-  ProgramsHackathonRouteRoute: typeof ProgramsHackathonRouteRouteWithChildren
-  ProgramsIndexRoute: typeof ProgramsIndexRoute
-  ProgramsHackfestIndexRoute: typeof ProgramsHackfestIndexRoute
+  ProgramsHackathonRouteRoute: typeof ProgramsHackathonRouteRouteWithChildren;
+  ProgramsIndexRoute: typeof ProgramsIndexRoute;
+  ProgramsHackfestIndexRoute: typeof ProgramsHackfestIndexRoute;
 }
 
 const ProgramsRouteRouteChildren: ProgramsRouteRouteChildren = {
   ProgramsHackathonRouteRoute: ProgramsHackathonRouteRouteWithChildren,
   ProgramsIndexRoute: ProgramsIndexRoute,
   ProgramsHackfestIndexRoute: ProgramsHackfestIndexRoute,
-}
+};
 
 const ProgramsRouteRouteWithChildren = ProgramsRouteRoute._addFileChildren(
   ProgramsRouteRouteChildren,
-)
+);
 
 interface ToolsRouteRouteChildren {
-  ToolsBirdieRoute: typeof ToolsBirdieRoute
-  ToolsBogeyRoute: typeof ToolsBogeyRoute
-  ToolsIndexRoute: typeof ToolsIndexRoute
+  ToolsBirdieRoute: typeof ToolsBirdieRoute;
+  ToolsBogeyRoute: typeof ToolsBogeyRoute;
+  ToolsIndexRoute: typeof ToolsIndexRoute;
 }
 
 const ToolsRouteRouteChildren: ToolsRouteRouteChildren = {
   ToolsBirdieRoute: ToolsBirdieRoute,
   ToolsBogeyRoute: ToolsBogeyRoute,
   ToolsIndexRoute: ToolsIndexRoute,
-}
+};
 
-const ToolsRouteRouteWithChildren = ToolsRouteRoute._addFileChildren(
-  ToolsRouteRouteChildren,
-)
+const ToolsRouteRouteWithChildren = ToolsRouteRoute._addFileChildren(ToolsRouteRouteChildren);
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -916,16 +925,16 @@ const rootRouteChildren: RootRouteChildren = {
   AboutIndexRoute: AboutIndexRoute,
   GalleryIndexRoute: GalleryIndexRoute,
   SponsorsIndexRoute: SponsorsIndexRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }

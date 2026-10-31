@@ -13,6 +13,7 @@ const redirects: Record<string, string> = {
   workshops: "https://github.com/hackgwinnett/workshops",
   aboutworkshops: "/programs/hackathon#workshops",
   wsarchive: "https://github.com/hackgwinnett/workshops",
+  countdown: "/programs/hackathon/countdown",
 
   // socials
   instagram: socialLinks.instagram || "/",
