@@ -7,7 +7,7 @@ import { trackEvent } from "#/lib/analytics.ts";
 const redirects: Record<string, string> = {
   // redirects
   register: events.hackathon.registration?.page || "/programs/hackathon",
-  volunteer: events.hackathon.volunteer || "/programs/hackathon",
+  volunteer: events.hackathon.volunteer?.url || "/programs/hackathon",
   form: events.hackathon.registration?.url || "/programs/hackathon",
   issues: "/report",
   workshops: "https://github.com/hackgwinnett/workshops",

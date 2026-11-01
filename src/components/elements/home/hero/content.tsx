@@ -42,7 +42,7 @@ export function HomepageHero({ isScrolled }: { isScrolled: boolean }) {
           <p className="text-lg sm:text-xl md:text-2xl text-white/80">
             {events.hackathon.name}
             {hackathonOver ? (
-              <>has concluded. Thank you, everyone!</>
+              <> has concluded. Thank you, everyone!</>
             ) : (
               <>
                 {events.hackathon.date ? (

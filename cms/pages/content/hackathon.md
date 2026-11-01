@@ -1,3 +1,5 @@
+**Thank you all for a great hackathon!**
+
 HackGwinnett's 6th annual hackathon is back and better than ever.
 
 Middle and high school students work solo or in teams to create a project based on a secret theme revealed on-site, competing for prizes and ultimate glory. Students across Georgia are welcome to participate!

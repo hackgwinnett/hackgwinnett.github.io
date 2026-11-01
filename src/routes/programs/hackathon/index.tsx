@@ -94,7 +94,7 @@ function RouteComponent() {
         left: {
           // /programs/hackathon#workshops brings you to this description
           start: <div id="workshops" />,
-          cta: (
+          cta: !events.hackathon.volunteer?.closed && (
             <Button
               variant="secondary"
               size="lg"

@@ -18,10 +18,12 @@ const eventList = {
     registration: {
       url: "https://docs.google.com/forms/d/e/1FAIpQLSfZn384gkF09tDDLrMyxB9WhqiCsW3_hMMEek7lDLB_L-gjNw/viewform",
       page: "/programs/hackathon/register",
-      // closed: true, REGISTRATION... IS NOW... OPEN!
+      closed: true,
     },
-    volunteer:
-      "https://docs.google.com/forms/d/e/1FAIpQLSfTV8Gh3-4WEkZlvdjhdP0qsVM7GTzhKC0AdbCCbrjNVsIzPQ/viewform",
+    volunteer: {
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSfTV8Gh3-4WEkZlvdjhdP0qsVM7GTzhKC0AdbCCbrjNVsIzPQ/viewform",
+      closed: true,
+    },
   },
   hackfest: {
     name: "HackFest IV",
@@ -89,5 +91,14 @@ export interface HGEvent {
     page?: string;
   };
   /** The volunteer registration link. Could be a Google Form, email compose link, etc. */
-  volunteer?: string;
+  volunteer?: {
+    /** The volunteer registration link. Could be a Google Form, email compose link, etc. */
+    url: string;
+    /** Whether volunteer registration has closed for this event
+     * if the event is far into the future, set to false
+     * if the event date is close but volunteer registration deadline has passed, set to true
+     * otherwise, set to false (or nothing)
+     */
+    closed?: boolean;
+  };
 }
