@@ -5,15 +5,18 @@ import { events } from "#/lib/meta/events";
 import { trackEvent } from "#/lib/analytics.ts";
 
 const redirects: Record<string, string> = {
-  // redirects
+  // hackathon redirects
   register: events.hackathon.registration?.page || "/programs/hackathon",
   volunteer: events.hackathon.volunteer?.url || "/programs/hackathon",
   form: events.hackathon.registration?.url || "/programs/hackathon",
-  issues: "/report",
   workshops: "https://github.com/hackgwinnett/workshops",
   aboutworkshops: "/programs/hackathon#workshops",
   wsarchive: "https://github.com/hackgwinnett/workshops",
   countdown: "/programs/hackathon/countdown",
+  archive: "/programs/hackathon/archive",
+
+  // other redirects
+  issues: "/report",
 
   // socials
   instagram: socialLinks.instagram || "/",

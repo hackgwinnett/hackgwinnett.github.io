@@ -46,6 +46,7 @@ import { Route as ToolsBogeyRouteImport } from "./routes/tools/bogey";
 import { Route as DeveloperCrumbtestBogeyRouteImport } from "./routes/developer/crumbtest/bogey";
 import { Route as PostsTagTagRouteImport } from "./routes/posts/tag.$tag";
 import { Route as ProgramsHackathonIndexRouteImport } from "./routes/programs/hackathon/index";
+import { Route as ProgramsHackathonArchiveRouteImport } from "./routes/programs/hackathon/archive";
 import { Route as ProgramsHackathonCountdownRouteImport } from "./routes/programs/hackathon/countdown";
 import { Route as ProgramsHackfestIndexRouteImport } from "./routes/programs/hackfest/index";
 import { Route as ProgramsHackathonRegisterIndexRouteImport } from "./routes/programs/hackathon/register/index";
@@ -234,6 +235,11 @@ const ProgramsHackathonIndexRoute = ProgramsHackathonIndexRouteImport.update({
   path: "/",
   getParentRoute: () => ProgramsHackathonRouteRoute,
 } as any);
+const ProgramsHackathonArchiveRoute = ProgramsHackathonArchiveRouteImport.update({
+  id: "/archive",
+  path: "/archive",
+  getParentRoute: () => ProgramsHackathonRouteRoute,
+} as any);
 const ProgramsHackathonCountdownRoute = ProgramsHackathonCountdownRouteImport.update({
   id: "/countdown",
   path: "/countdown",
@@ -286,6 +292,7 @@ export interface FileRoutesByFullPath {
   "/tools/": typeof ToolsIndexRoute;
   "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
   "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
   "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
@@ -322,6 +329,7 @@ export interface FileRoutesByTo {
   "/tools": typeof ToolsIndexRoute;
   "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
   "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
   "/programs/hackathon": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest": typeof ProgramsHackfestIndexRoute;
@@ -365,6 +373,7 @@ export interface FileRoutesById {
   "/tools/": typeof ToolsIndexRoute;
   "/developer/crumbtest/bogey": typeof DeveloperCrumbtestBogeyRoute;
   "/posts/tag/$tag": typeof PostsTagTagRoute;
+  "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
   "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
@@ -408,6 +417,7 @@ export interface FileRouteTypes {
     | "/tools/"
     | "/developer/crumbtest/bogey"
     | "/posts/tag/$tag"
+    | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
     | "/programs/hackathon/"
     | "/programs/hackfest/"
@@ -444,6 +454,7 @@ export interface FileRouteTypes {
     | "/tools"
     | "/developer/crumbtest/bogey"
     | "/posts/tag/$tag"
+    | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
     | "/programs/hackathon"
     | "/programs/hackfest"
@@ -486,6 +497,7 @@ export interface FileRouteTypes {
     | "/tools/"
     | "/developer/crumbtest/bogey"
     | "/posts/tag/$tag"
+    | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
     | "/programs/hackathon/"
     | "/programs/hackfest/"
@@ -771,6 +783,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ProgramsHackathonIndexRouteImport;
       parentRoute: typeof ProgramsHackathonRouteRoute;
     };
+    "/programs/hackathon/archive": {
+      id: "/programs/hackathon/archive";
+      path: "/archive";
+      fullPath: "/programs/hackathon/archive";
+      preLoaderRoute: typeof ProgramsHackathonArchiveRouteImport;
+      parentRoute: typeof ProgramsHackathonRouteRoute;
+    };
     "/programs/hackathon/countdown": {
       id: "/programs/hackathon/countdown";
       path: "/countdown";
@@ -864,12 +883,14 @@ const PostsRouteRouteChildren: PostsRouteRouteChildren = {
 const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(PostsRouteRouteChildren);
 
 interface ProgramsHackathonRouteRouteChildren {
+  ProgramsHackathonArchiveRoute: typeof ProgramsHackathonArchiveRoute;
   ProgramsHackathonCountdownRoute: typeof ProgramsHackathonCountdownRoute;
   ProgramsHackathonIndexRoute: typeof ProgramsHackathonIndexRoute;
   ProgramsHackathonRegisterIndexRoute: typeof ProgramsHackathonRegisterIndexRoute;
 }
 
 const ProgramsHackathonRouteRouteChildren: ProgramsHackathonRouteRouteChildren = {
+  ProgramsHackathonArchiveRoute: ProgramsHackathonArchiveRoute,
   ProgramsHackathonCountdownRoute: ProgramsHackathonCountdownRoute,
   ProgramsHackathonIndexRoute: ProgramsHackathonIndexRoute,
   ProgramsHackathonRegisterIndexRoute: ProgramsHackathonRegisterIndexRoute,
