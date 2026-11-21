@@ -15,6 +15,11 @@ const redirects: Record<string, string> = {
   countdown: "/programs/hackathon/countdown",
   archive: "/programs/hackathon/archive",
 
+  // general redirects
+  home: "/",
+  apply27:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfQTV_eAauUI3BsBDOWlP-WkRBrRfeFpSn4esEbNZqPh-OXpg/viewform",
+
   // other redirects
   issues: "/report",
 
