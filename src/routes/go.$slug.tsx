@@ -19,6 +19,8 @@ const redirects: Record<string, string> = {
   home: "/",
   apply27:
     "https://docs.google.com/forms/d/e/1FAIpQLSfQTV_eAauUI3BsBDOWlP-WkRBrRfeFpSn4esEbNZqPh-OXpg/viewform",
+  apply27doc:
+    "https://docs.google.com/document/d/12Jv4lsI5H5DK9xIGzQsMtBs8OSlQMf-cgeo4cvaKXe0/template/preview",
 
   // other redirects
   issues: "/report",
