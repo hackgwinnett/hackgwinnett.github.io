@@ -336,7 +336,7 @@ function NavDrawerSection({ item }: { item: NavItem }) {
 
   return (
     <div className="mt-3 flex flex-col gap-3">
-      <h4 className="border-b pb-2 text-lg font-thin uppercase font-brand">{item.title}</h4>
+      <h5 className="border-b pb-2 font-thin uppercase font-brand">{item.title}</h5>
       <div className="flex flex-col gap-3 p-1.5 bg-accent/40">
         {item.list.items.map((subItem) => (
           <NavRowLink key={itemKey(subItem)} item={subItem} />

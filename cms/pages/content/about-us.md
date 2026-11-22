@@ -16,7 +16,9 @@ HackGwinnett is a student-run organization that aims to promote computer science
 
 We believe that interest in computer science and the desire to is the first (and most important) step to changing the world.
 
-If these sound like values you share, we'd love to have you on the team! Keep an eye out for our officer applications coming shortly after [Hackathon 6.0](/programs/hackathon).
+If these sound like values you share, we'd love to have you on the team! Officer applications are now open: visit [hackgwinnett.org/go/hgta](/go/hgta) for more information.
+
+<!-- Keep an eye out for our officer applications coming shortly after [Hackathon 6.0](/programs/hackathon). -->
 
 <!--  const fallback = `HackGwinnett is a student-run organization that aims to promote computer science and technology education in Gwinnett County, Georgia. We organize hackathons, workshops, and other events to help students learn and grow in the field of technology.`;
 -->

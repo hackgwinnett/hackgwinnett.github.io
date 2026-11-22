@@ -28,15 +28,15 @@ export function HomepageHero({ isScrolled }: { isScrolled: boolean }) {
     <div className="relative bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
       <div className="min-h-safe-dvh px-6 sm:px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
         <div className="flex flex-col justify-center gap-4 max-w-md sm:max-w-xl md:max-w-2xl">
-          <ColorBadge render={<Link to="/posts/$postId" params={{ postId: "new-tshirts-26" }} />}>
-            NEW: HackGwinnett T-shirts have arrived!
+          <ColorBadge render={<Link to="/posts/$postId" params={{ postId: "join-us-27" }} />}>
+            NEW: Officer applications are now open!
             <RiArrowRightDoubleLine />
           </ColorBadge>
           <h1 className="text-2xl sm:text-5xl md:text-6xl max-w-2xl font-mono leading-8 sm:leading-14 md:leading-17 select-none">
             Atlanta's premier{" "}
-            <span className="text-primary-light">
+            <Link to="/thecakeisalie" className="text-primary-light" tabIndex={-1}>
               <TextScramble trigger={!reducedMotion}>computer science</TextScramble>
-            </span>{" "}
+            </Link>{" "}
             organization
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/80">

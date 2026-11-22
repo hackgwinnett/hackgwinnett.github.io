@@ -48,6 +48,10 @@
     @apply text-3xl font-semibold;
   }
 
+  h4 {
+    @apply text-2xl font-semibold;
+  }
+
   @supports not (display: grid-lanes) {
     .grid-lanes {
       display: grid;

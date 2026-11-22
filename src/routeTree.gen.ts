@@ -43,6 +43,7 @@ import { Route as SponsorsIndexRouteImport } from "./routes/sponsors/index";
 import { Route as ToolsIndexRouteImport } from "./routes/tools/index";
 import { Route as ToolsBirdieRouteImport } from "./routes/tools/birdie";
 import { Route as ToolsBogeyRouteImport } from "./routes/tools/bogey";
+import { Route as AboutJoinUsIndexRouteImport } from "./routes/about/join-us.index";
 import { Route as DeveloperCrumbtestBogeyRouteImport } from "./routes/developer/crumbtest/bogey";
 import { Route as PostsTagTagRouteImport } from "./routes/posts/tag.$tag";
 import { Route as ProgramsHackathonIndexRouteImport } from "./routes/programs/hackathon/index";
@@ -220,6 +221,11 @@ const ToolsBogeyRoute = ToolsBogeyRouteImport.update({
   path: "/bogey",
   getParentRoute: () => ToolsRouteRoute,
 } as any);
+const AboutJoinUsIndexRoute = AboutJoinUsIndexRouteImport.update({
+  id: "/about/join-us/",
+  path: "/about/join-us/",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const DeveloperCrumbtestBogeyRoute = DeveloperCrumbtestBogeyRouteImport.update({
   id: "/bogey",
   path: "/bogey",
@@ -294,6 +300,7 @@ export interface FileRoutesByFullPath {
   "/posts/tag/$tag": typeof PostsTagTagRoute;
   "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/about/join-us/": typeof AboutJoinUsIndexRoute;
   "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
   "/programs/hackathon/register/": typeof ProgramsHackathonRegisterIndexRoute;
@@ -331,6 +338,7 @@ export interface FileRoutesByTo {
   "/posts/tag/$tag": typeof PostsTagTagRoute;
   "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/about/join-us": typeof AboutJoinUsIndexRoute;
   "/programs/hackathon": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest": typeof ProgramsHackfestIndexRoute;
   "/programs/hackathon/register": typeof ProgramsHackathonRegisterIndexRoute;
@@ -375,6 +383,7 @@ export interface FileRoutesById {
   "/posts/tag/$tag": typeof PostsTagTagRoute;
   "/programs/hackathon/archive": typeof ProgramsHackathonArchiveRoute;
   "/programs/hackathon/countdown": typeof ProgramsHackathonCountdownRoute;
+  "/about/join-us/": typeof AboutJoinUsIndexRoute;
   "/programs/hackathon/": typeof ProgramsHackathonIndexRoute;
   "/programs/hackfest/": typeof ProgramsHackfestIndexRoute;
   "/programs/hackathon/register/": typeof ProgramsHackathonRegisterIndexRoute;
@@ -419,6 +428,7 @@ export interface FileRouteTypes {
     | "/posts/tag/$tag"
     | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
+    | "/about/join-us/"
     | "/programs/hackathon/"
     | "/programs/hackfest/"
     | "/programs/hackathon/register/";
@@ -456,6 +466,7 @@ export interface FileRouteTypes {
     | "/posts/tag/$tag"
     | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
+    | "/about/join-us"
     | "/programs/hackathon"
     | "/programs/hackfest"
     | "/programs/hackathon/register";
@@ -499,6 +510,7 @@ export interface FileRouteTypes {
     | "/posts/tag/$tag"
     | "/programs/hackathon/archive"
     | "/programs/hackathon/countdown"
+    | "/about/join-us/"
     | "/programs/hackathon/"
     | "/programs/hackfest/"
     | "/programs/hackathon/register/";
@@ -520,6 +532,7 @@ export interface RootRouteChildren {
   AboutIndexRoute: typeof AboutIndexRoute;
   GalleryIndexRoute: typeof GalleryIndexRoute;
   SponsorsIndexRoute: typeof SponsorsIndexRoute;
+  AboutJoinUsIndexRoute: typeof AboutJoinUsIndexRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -762,6 +775,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ToolsBogeyRouteImport;
       parentRoute: typeof ToolsRouteRoute;
     };
+    "/about/join-us/": {
+      id: "/about/join-us/";
+      path: "/about/join-us";
+      fullPath: "/about/join-us/";
+      preLoaderRoute: typeof AboutJoinUsIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/developer/crumbtest/bogey": {
       id: "/developer/crumbtest/bogey";
       path: "/bogey";
@@ -946,6 +966,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutIndexRoute: AboutIndexRoute,
   GalleryIndexRoute: GalleryIndexRoute,
   SponsorsIndexRoute: SponsorsIndexRoute,
+  AboutJoinUsIndexRoute: AboutJoinUsIndexRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
