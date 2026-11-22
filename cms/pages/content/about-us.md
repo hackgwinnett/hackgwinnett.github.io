@@ -6,7 +6,7 @@ title: "About HackGwinnett"
 
 We're the HackGwinnett team, 101% dedicated to empowering novice developers that love computer science and software as much as we do!
 
-![The 2025 HackGwinnett officer team](/assets/images/team/gp2025-resize.jpg){caption="The 2025 HackGwinnett officer team at Hackathon 5.0. Don't we look spiffy?"}
+![The 2025 HackGwinnett officer team](/assets/images/team/gp2026.jpeg){caption="The 2026 HackGwinnett officer team at Hackathon 6.0. Don't we look spiffy?"}
 
 HackGwinnett is a student-run organization that aims to promote computer science and technology education in Gwinnett County, Georgia. We organize hackathons, workshops, and other events to help students learn and grow in the field of technology. Our core values include:
 
