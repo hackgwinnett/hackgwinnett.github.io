@@ -17,9 +17,11 @@ const redirects: Record<string, string> = {
 
   // general redirects
   home: "/",
-  hgta27form: "https://hackgwinnett.github.io/go/hgta27form",
-  hgta27app: "https://hackgwinnett.github.io/go/hgta27application",
   hgta: "/about/join-us#timeline",
+  hgta27form:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfQTV_eAauUI3BsBDOWlP-WkRBrRfeFpSn4esEbNZqPh-OXpg/viewform",
+  hgta27app:
+    "https://docs.google.com/document/d/12Jv4lsI5H5DK9xIGzQsMtBs8OSlQMf-cgeo4cvaKXe0/template/preview",
 
   // other redirects
   issues: "/report",
