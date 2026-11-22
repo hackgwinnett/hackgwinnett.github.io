@@ -19,9 +19,9 @@ We aren't looking for the applicant with the most technical experience, and we w
 
 ## How to apply
 
-1. Get the [application document](/go/apply27doc) (select "Use Template" to edit in Docs).
+1. Get the [application document](/go/hgta27app) (select "Use Template" to edit in Docs).
 2. Complete it, then save it as a PDF named `Last_First_HGTA27.pdf` (e.g., `Lovelace_Ada-Lee_HGTA27.pdf`).
-3. Upload it to the [application form](/go/apply27). Optional extras like a resume or recommendation go in their own field as `Last_First_[description]_HGTA27_D.pdf`.
+3. Upload it to the [application form](/go/hgta27form). Optional extras like a resume or recommendation go in their own field as `Last_First_[description]_HGTA27_D.pdf`.
 
 > Read the full instructions and check out the timeline (including _due dates_!) on our [Join Us page](/about/join-us). Applications must be submitted on time to be considered.
 

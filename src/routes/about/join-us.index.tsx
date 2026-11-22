@@ -9,8 +9,8 @@ const JOIN_US_PAGE_ID = "join-us";
 const hgta = {
   name: "HackGwinnett Team Applications 2027", // HGTA
   closed: false,
-  form: "/go/apply27",
-  document: "/go/apply27doc",
+  form: "/go/hgta27form",
+  document: "/go/hgta27app",
   timeline: [
     {
       title: "Applications open",

@@ -4,7 +4,7 @@ title: "Join Us"
 
 ## Information
 
-This application is for current 9th and 10th graders interested in joining HackGwinnett’s executive team. Current 11th graders will be considered, but underclassmen are preferred.
+This application is for current 9th and 10th graders interested in joining HackGwinnett’s executive board. Current 11th graders will be considered, but underclassmen are preferred.
 
 There are no formal positions at HackGwinnett; we all work towards our mission—promoting computer science and technology education in Georgia—in an equal fashion, utilizing our own unique skill sets. You won’t find formal position descriptions on the application or elsewhere.
 
@@ -12,7 +12,7 @@ Please be honest and thoughtful in your responses. We are not looking for the ap
 
 ## Instructions
 
-Once you have completed the [application](/go/apply27doc) in its entirety, upload it as a PDF to the appropriate field on the [form](/go/apply27) using the following naming convention:
+Once you have completed the [application](/go/hgta27app) in its entirety, upload it as a PDF to the appropriate field on the [form](/go/hgta27form) using the following naming convention:
 
 ```
 Last_First_HGTA27.pdf
