@@ -10,6 +10,8 @@ There are no formal positions at HackGwinnett; we all work towards our missionâ€
 
 Please be honest and thoughtful in your responses. We are not looking for the applicant with the most technical experience, nor will we automatically select those who have won hackathons. Both those things are nice to have, but above all, we want unique team members that are interested in CS and stand out from the crowd.
 
+**Time commitment notice (approximate times, subject to change):** HackGwinnett is a large time commitment, especially in the weeks leading up to our flagship event. Our first meeting in April gets you oriented with the team, we do some work over the summer, and start planning for [our fall hackathon](/programs/hackathon) as far back as August! Plus with Hackfest in the spring, there is _no room for indolence!_ Team members with tenure will help you out, but you are expected to take initiative in our operations based on your own availability and skills (don't fret, we are very friendly!).
+
 ## Instructions
 
 Once you have completed the [application](/go/hgta27app) in its entirety, upload it as a PDF to the appropriate field on the [form](/go/hgta27form) using the following naming convention:
