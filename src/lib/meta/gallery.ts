@@ -17,15 +17,26 @@ const TEAM = "/assets/images/team";
 // newest first: the gallery wall keeps this order
 export const galleryImages: GalleryImage[] = [
   {
+    src: `${HG6}/IMG_3118.JPG`,
+    alt: "1st prize winners in the AI division with the HackGwinnett Team at the 6.0 Awards Ceremony.",
+    caption: "1st prize (AI division) at Hackathon 6.0",
+  },
+  {
+    src: `${HG6}/IMG_3110.JPG`,
+    alt: "1st prize winners in the Non AI division with the HackGwinnett Team at the 6.0 Awards Ceremony.",
+    caption: "1st prize (Non AI division) at Hackathon 6.0",
+  },
+  {
     src: `${HG6}/IMG_3056.jpg`,
-    alt: "Participants crowd around the demo table, next to a giant rubber duck cutout.",
-    caption: "Project demos at Hackathon 6.0",
+    alt: "Participants crowd around the front desk, next to a large rubber duck cutout (thanks, GSMST CS Club!).",
+    caption: "Getting busy at Hackathon 6.0",
     featured: true,
     event: "hackathon",
   },
   {
     src: `${TEAM}/gp2026.jpg`,
     alt: "The 2026 HackGwinnett officer team at Hackathon 6.0.",
+    caption: "The 2026 HackGwinnett officer team at Hackathon 6.0",
   },
   {
     src: `${HG6}/IMG_2796.jpg`,
@@ -55,16 +66,19 @@ export const galleryImages: GalleryImage[] = [
   { src: `${HG6}/IMG_2837.jpg`, alt: "Two participants focus on a laptop." },
   {
     src: `${HG6}/IMG_2839.jpg`,
-    alt: "A participant presents at the podium, beside a rubber duck cutout.",
+    alt: "A nerd controls the big screen behind him.",
   },
   {
     src: `${HG6}/IMG_3058.jpg`,
-    alt: "A team demos their project to the judges.",
+    alt: "A team discusses their project with Wyn.",
     event: "hackathon",
   },
-  { src: `${HG6}/IMG_3061.jpg`, alt: "Two participants look over a project on a laptop." },
+  {
+    src: `${HG6}/IMG_3061.jpg`,
+    alt: "Evan and Zihong, in their best attire, look over a project on a laptop.",
+  },
   { src: `${HG6}/IMG_3064.jpg`, alt: "A camera's screen frames the cafeteria during filming." },
-  { src: `${HG6}/IMG_3065.jpg`, alt: "Participants line up at the demo table." },
+  { src: `${HG6}/IMG_3065.jpg`, alt: "The team handles participants' questions in the cafe." },
   {
     src: `${HG6}/IMG_3067.jpg`,
     alt: "Participants in costume laugh together.",
@@ -73,13 +87,18 @@ export const galleryImages: GalleryImage[] = [
   {
     src: `${HG6}/IMG_3069.jpg`,
     alt: "A participant in white gloves presents a laptop to the camera.",
-    caption: "Behind the scenes with the media team",
+    caption: "Two participants demonstrate their project to the media team",
   },
-  { src: `${HG6}/IMG_3072.jpg`, alt: "Participants pose and goof around in the hallway." },
+  {
+    src: `${HG6}/IMG_3072.jpg`,
+    alt: "Participants pose and goof around in the hallway.",
+    caption: "Don't sleep on Serge L.'s project!",
+  },
   { src: `${HG6}/IMG_3074.jpg`, alt: "A participant laughs in the hallway." },
   {
     src: `${TEAM}/gp2025.jpg`,
     alt: "The 2025 HackGwinnett officer team at Hackathon 5.0.",
+    caption: "The 2025 HackGwinnett officer team at Hackathon 5.0",
     featured: true,
   },
   {
