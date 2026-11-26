@@ -64,6 +64,11 @@ const navItems = [
     href: "/posts",
   },
   {
+    title: "Gallery",
+    description: "Photos from our hackathons, workshops, and events.",
+    href: "/gallery",
+  },
+  {
     title: "Sponsors",
     description: "HackGwinnett wouldn't be possible without the support of our sponsors.",
     className: "hidden", // drawer-only
@@ -118,12 +123,11 @@ const navItems = [
   },
   {
     title: "Archive",
-    className: "hidden lg:flex", // drawer-only on mobile/tablet
+    className: "hidden", // drawer-only
     list: {
       className:
         "grid grid-flow-col grid-rows-3 gap-2 md:grid-cols-2 w-84 [&_.nav-label]:font-brand",
       items: [
-        // { title: "Media gallery", href: "/gallery" },
         {
           title: "Hackathon 6.0",
           href: "https://hackgwinnett-6-0.devpost.com/project-gallery",

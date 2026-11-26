@@ -63,11 +63,15 @@ export function MakeCarousel({
     <Carousel
       plugins={[Autoplay(), WheelGestures({ wheelDraggingClass: "cursor-" })]}
       setApi={setApi}
-      className={cn("group/carousel relative", className)}
+      // slides fill the carousel's height, so a fixed-height carousel crops its slides
+      // instead of letting them overflow (and clip whatever sits at their bottom edge)
+      className={cn("group/carousel relative [&>[data-slot=carousel-content]]:h-full", className)}
     >
-      <CarouselContent>
+      <CarouselContent className="h-full">
         {items.map((item, index) => (
-          <CarouselItem key={index}>{item}</CarouselItem>
+          <CarouselItem key={index} className="h-full">
+            {item}
+          </CarouselItem>
         ))}
       </CarouselContent>
 

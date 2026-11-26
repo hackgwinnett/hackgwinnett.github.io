@@ -318,7 +318,7 @@ export function EventPage({
             <MakeCarousel
               className={cn(
                 "max-w-full md:max-w-xl lg:max-w-full h-80 overflow-hidden",
-                "[&>img]:block [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-center [&>img]:drag-none",
+                "[&_img]:block [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-center [&_img]:drag-none",
               )}
               items={gallery.map((image) => (
                 <img src={image.src.toAsset()} alt={image.alt} />

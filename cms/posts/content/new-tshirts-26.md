@@ -3,7 +3,7 @@ title: "HackGwinnett T-shirts are here!"
 authors: ["hackgwinnett"]
 cover:
   {
-    src: "/assets/posts/covers/hqs-hg-playful-logo-cols.png",
+    src: "/assets/posts/covers/hqs-hg-playful-logo-cols.jpg",
     alt: "The shirt's lettermark",
     height: 50,
   }
