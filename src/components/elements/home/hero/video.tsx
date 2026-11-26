@@ -1,7 +1,7 @@
 import { createDialogHandle, Dialog, DialogContent } from "#/components/ui/dialog";
 import { useEffect, useState } from "react";
 
-const YT_HERO_VIDEO_URL = "https://www.youtube.com/watch?v=aQhZfWQlVXU"; // https://www.youtube.com/watch?v=dQw4w9WgXcQ
+const YT_HERO_VIDEO_URL = "https://www.youtube.com/watch?v=oEfVMennJ_U&feature=youtu.be"; // https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 const getVideoId = (videoUrl: string) => {
   const url = new URL(videoUrl);
